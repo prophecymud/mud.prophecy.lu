@@ -4,3 +4,7 @@
 
 layout: home
 ---
+
+{{ site.description }}
+
+[mud.prophecy.lu:4000](telnet://mud.prophecy.lu:4000)
