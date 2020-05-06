@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Oedit helpfiles</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body link="#0000CC" vlink="#0000CC" alink="#0000CC">
+<font face="Arial, Helvetica, sans-serif"> </font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><font size="3"><strong><a name="top"></a>Oedit 
+  helpfiles (The &quot;?&quot; files...)</strong></font></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">This is a listing of all 
+  the help given when someone types &quot;? blahblah&quot; under any of the edits 
+  for OLC.</font></p>
+<hr>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Help files: <a href="#apply">apply</a> 
+  <a href="#apptype">apptype</a> <a href="#container">container</a> <a href="#extra">extra</a> 
+  <a href="#furniture">furniture</a> <a href="#liquid">liquid</a> <a href="#portal">portal</a> 
+  <a href="#spells">spells</a> <a href="#spellall">spellsall</a> <a href="#spellattdef">spellattdef</a> 
+  <a href="#type">type</a> <a href="#wclass">wclass</a> <a href="#wear">wear</a> 
+  <a href="#wtype">wtype</a> </font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="helpfiles.htm">All 
+  helpfiles</a><br>
+  <a href="ahelp.htm">Aedit helpfile</a><br>
+  <a href="rhelp.htm">Redit helpfiles</a><br>
+  </font><font size="2" face="Arial, Helvetica, sans-serif"><a href="mhelp.htm">Medit 
+  helpfiles</a></font></p>
+<hr>
+<font face="Arial, Helvetica, sans-serif">
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="apply"></a>? 
+  apply</strong></font></p>
+</font>
+<p><font size="2" face="Arial, Helvetica, sans-serif">A list of flags for &quot;addaffect&quot; 
+  command. Stats and spells are given, but consult with an area imp and check 
+  with the point system before adding spells or excessive stats.</font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="apptype"></a>? 
+  apptype (object addapply types)</strong></font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">- affects: do not use this 
+  any more, to add permspells please use addaffect<br>
+  - object: affects how an object might work<br>
+  - immune/resist/vuln: &#8220;addapply immune/res/vuln [stat] [modifier] [type 
+  of i/r/v] [level]&#8221; Check with area imps before adding immunities or resistances. 
+  Remember, adding immunities or resistances to objects is forbidden. <br>
+  - weapon: affects the actions of a weapon</font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+</font><font face="Arial, Helvetica, sans-serif">
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="container"></a>? 
+  container (container flags)</strong></font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">- closeable: container can 
+  be closed.<br>
+  - pickproof: thieves can't pick the lock on the container<br>
+  - closed: flagged as closed upon repop<br>
+  - locked: locks a closed container on repop<br>
+  - puton: objects are put on, rather than in, this container</font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+</font><font face="Arial, Helvetica, sans-serif">
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="extra"></a>? 
+  exra (object extra flags)</strong></font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">- glow: The object is glowing 
+  with its own light, a light source that can be seen in the dark.<br>
+  - hum: Object is humming with energy, and can be heard in a quiet room.<br>
+  - dark: object is hidden, and is darkened to someone who cannot see hidden things.<br>
+  - evil: Object reeks of evil, and will have a red aura to it.<br>
+  - invis: object is invisible, and the detect invis spell is needed to see it.<br>
+  - magic: object has a magical quality about it, and will have magical aura to 
+  it.<br>
+  - nodrop: character cannot drop the object from his inventory, unless he removes 
+  curse from it.<br>
+  - bless: object is blessed, and will do well against evil or unholy creatures.<br>
+  - anti-good: persons of good align (1000 to 300) may not use this item.<br>
+  - anti-neutral: persons of neutral align (300 to -300) may not use this item.<br>
+  - anti-evil: persons of evil align (-300 to -1000) may not use this item.<br>
+  - noremove: if this object is worn, character cannot remove it unless remove 
+  curse is cast.<br>
+  - inventory: for a shop keeper. Sets the object to repop indefinitely to a shop.<br>
+  - nopurge: object may not be purged by an imm from the room.<br>
+  - rotdeath: will receive a timer when a character dies, and when that timer 
+  expires, the object will crumble and be lost.<br>
+  - visdeath: will not be seen until the character has killed the mobile that 
+  has the object.<br>
+  - nosac: object may not be sacrificed to the character's god.<br>
+  - nonmetal: object has non-metallic properties, that could be harmful to certain 
+  mobiles.<br>
+  - nolocate: cannot be found by the locate object spell<br>
+  - meltdrop: will dissolve into smoke when the character drops it.<br>
+  - timer and sell: not to be used.<br>
+  - burnproof: the object cannot be damaged or destroyed by magic/weapons<br>
+  - nouncurse: object may not be uncursed using the remove curse spell<br>
+  - pkonly: Player Killers may only hold or use this item<br>
+  - nopkonly: Non-player killers may only hold or use this item.</font></p>
+<font face="Arial, Helvetica, sans-serif"> </font><font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="furniture"></a>? 
+  furniture (furniture flags)</strong><br>
+  sit_on rest_on sleep_on stand_on<br>
+  sit_at rest_at sleep_at stand_at<br>
+  sit_in rest_in sleep_in stand_in<br>
+  put_on put_at put_in put_inside</font></p>
+</font>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="liquid"></a>? 
+  liquid (liquid types)</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">This will list a series 
+  of liquids you may use in fountains and drink containers. There are differing 
+  columns with different stats.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">- name: name of the liquid 
+  in question<br>
+  - color: the color it will appear when someone looks at the container<br>
+  - proof: the higher the number, the quicker and longer the person stays drunk 
+  after drinking it<br>
+  - full: number of hours it will satisfy hunger. Some are none (like water) because 
+  they have no value in the way of nutrition.<br>
+  - thirst: number of hours it will satisfy thirst<br>
+  - food: its value as a food <br>
+  - ssize: how much of it will fit in a container, or how many drinks you could 
+  get out of filling once</font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="portal"></a>? 
+  portal (portal flags)</strong></font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">- normal_exit: normal exit, 
+  won't do anything messy to a character<br>
+  - no_curse: portal can't be cursed, or lead to a cursed area<br>
+  - go_with: charmies and pets may follow characters through this portal<br>
+  - buggy: random chance the portal might go somwhere else<br>
+  - random: portal leads to a random room</font></p>
+<font face="Arial, Helvetica, sans-serif"> </font><font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="spells"></a>? 
+  spells</strong></font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">- call lightning: A powerful 
+  bolt hits all enemies, given outdoors and bad weather<br>
+  - calm: stops fighting in a room, reduces hitroll<br>
+  - continual light: creates a ball of light for use as a light<br>
+  - control weather [better/worse]: make the weather better or worse<br>
+  - create food: magic mushroom, instant food supply<br>
+  - create rose: make a red rose for your darling<br>
+  - create spring: fountain-in-a-spell<br>
+  - earthquake: shakes ground, damaging non-flying mobs/people in the room.<br>
+  - faerie fog: reveals all hidden mobs/items in the room<br>
+  - farsight: just type &quot;scan&quot;<br>
+  - floating disc: a container floaty to take a load off your inventory.<br>
+  - gate: transport you to a given location<br>
+  - holy word: help your friends, damn your enemies, lose all your movement.<br>
+  - locate person: find out where that person is!<br>
+  - locate object: find the missing link...<br>
+  - mass healing: heal everyone in your group<br>
+  - mass invis: cast invisibility on everyone in your group<br>
+  - nexus: two-way gateway to somewhere<br>
+  - portal: a one-way gateway to somewhere<br>
+  - scourge of torak: area-affect maladictions, similar to holy word, but reverse 
+  affects<br>
+  - summon: pull a buddy out of trouble<br>
+  - ventriloquate: make someone say something they really didn't<br>
+  - gas breath: area affect poisoning spell</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="spellall"></a>? 
+  spells all</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Lists all the spells, instead 
+  of by group as above.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="spellattdef"></a>? 
+  spells attack/defend/self/object</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Most of these are commonly 
+  known and used attack spells. Any questions can be directed toward the area 
+  implementors or experienced builders.</font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2"><strong><a name="type"></a>? type (object types)</strong></font></p>
+<p><font size="2">Most of the object types are self-explanatory. There are too 
+  many of them here to write out what they do, so if you have any questions, just 
+  ask either an experienced builder or an imp if you don't know what a certain 
+  object type does.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="wclass"></a>? 
+  wclass (weapon types)</strong></font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">Lists the different weapon 
+  types that can be used on the mud.</font><font face="Arial, Helvetica, sans-serif"> 
+  </font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2"><strong><a name="wear"></a>? wear (object wear flags)</strong></font></p>
+<p><font size="2">- take: allows the character to get the object off of the ground.<br>
+  - finger: rings and such.<br>
+  - neck: capes, necklaces, and such.<br>
+  - body: worn about the torso<br>
+  - head: helmets, worn on the head.<br>
+  - legs: pants, leggings, arm plates, anything worn on the legs.<br>
+  - feet: boots, shoes, socks, anything worn on the feet.<br>
+  - hands: gloves, gauntlets, anything worn on the hands.<br>
+  - arms: arm plates, sleeves, anything worn on the arms.<br>
+  - shield: anything that could be used as a shield against attack.<br>
+  - about: worn about the body, like cloaks.<br>
+  - waist: belts, anything worn about the waist.<br>
+  - wrist: bracelets and bracers, anything worn about the wrists.<br>
+  - wield: weapons, anything wielded to do harm against another.<br>
+  - hold: wands, staves, anything held in the hand<br>
+  - float: set to float next to the character, and will fall away from the corpse 
+  upon death.</font></p>
+</font>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="wtype"></a>? 
+  wtype (special weapon flags)</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">- flaming: causes extra 
+  damage by burning the victim, possibility of blinding by smoke<br>
+  - frost: extra damage by freezing cold, may also add chill touch affect<br>
+  - vampiric: draws some life from the victim, adding to the attacker, also lowers 
+  align.<br>
+  - sharp: has a chance of cutting through sanctuary<br>
+  - vorpal: has a random chance of doing double damage<br>
+  - twohands: requires two hands to wield and use<br>
+  - shocking: causes extra damage thorugh electrocution, and may weaken victims<br>
+  - poison: may envenom the blood of an opponent.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+</body>
+</html>

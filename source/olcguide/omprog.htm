@@ -1,0 +1,987 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Original Mprog guide</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+This mprog Document was not made for Prophecy, but most of the mprog commands 
+are the same. 
+<p>First of all, we use mprogs through OLC, this is done through Medit and Pedit. 
+  Here is the Pedit syntax.<br>
+  Here is how I would make the mprog used in the sendar blacksmith.</p>
+<p>pedit only has a few commands available to use. Create, Code, Plist, Commands. 
+  Create is the same as other editors, and the syntax is &quot;pedit create &lt;mprog 
+  vnum&gt;&quot;. Code brings you into a text editer, and plist lists all the 
+  existing mprogs in the area.</p>
+<p>pedit create 3002 --&gt;This create the pedit vnum, same as the other editors.</p>
+<p>code --&gt;puts you into a text editer to write the mprog code. (use @ to finish)</p>
+<p>bow $n<br>
+  ' Welcome to my Weapon Shop $n.<br>
+  ' Allow me to introduce myself - I am Saxan, and I own this store. if there's<br>
+  anything I can help you with please let me know.<br>
+  mob echoat $n $I goes back to working the steel over an anvil.</p>
+<p>After making the mprog, I would have to add it to the mob itself. This is done 
+  through Medit.</p>
+<p>To add the above mprog, I would type the following in Medit</p>
+<p>medit &lt;mob vnum&gt;<br>
+  addmprog 3002 grall 100</p>
+<p>This would add the mprog 3002 to the Mob, with the grall trigger, 100% of the 
+  time.</p>
+<p>the addmprog syntax is addmprog [vnum] [trigger] [phrase]</p>
+<p>I hope this helps you.</p>
+<p>On Prophecy, please dont try using the if class, as it doesn't work properly. 
+  If you have any questions, Please ask<br>
+  Mandorallen, Ariana, or Lelldorin. If you are unsure about something, please 
+  ask. A bad mprog can crash the mud,<br>
+  and cause all sorts of weird things to happen.</p>
+<p>Feel free to use mpstat and mpdump on existing mobs/mprogs to see the code 
+  for them, and even to copy the code to your<br>
+  own mprogs (changing the says and the like of course). </p>
+<p>mpstat &lt;mob name&gt;<br>
+  mpdump &lt;mprog vnum, as shown in mpstat&gt;</p>
+<p>[----:----+----:----+----:----+----:----+----:----+----:----+----:----+----][----:----+----:----+----:----+----:----+----:----+----:----+----:----+----]<br>
+  Originally appeared in:<br>
+  Merc release 2.2<br>
+  Wednesday 24 November 1993</p>
+<p> N'atas-Ha natasha@gs118.sp.cs.cmu.edu<br>
+  Kahn</p>
+<p>Modified for ROM 2.4 in January 1996<br>
+  Newt@Imperium Gothique</p>
+<p>TABLE OF CONTENTS</p>
+<p> MOBprogram Syntax<br>
+  Linking MOBprograms<br>
+  Trigger Types<br>
+  Variables<br>
+  Control Flow Syntax<br>
+  Operators<br>
+  If_checks in Control Flow<br>
+  New Commands of Interest<br>
+  Regarding CPU Slowdown<br>
+  Loading Mobiles and Objects<br>
+  Miscellaneous Information<br>
+  --------------------------<br>
+  Quick Reference Sheet<br>
+  Examples</p>
+<p>----------------------------MOBprogram Syntax--------------------------------</p>
+<p> The simplest way to describe any syntax is by example, so here goes.<br>
+  First, define the notation: anything contained in braces {} is required,<br>
+  anything in brackets [ ] is optional, anything in quotes &quot;&quot; is a case<br>
+  insensitive literal, NL refers to a required new-line. The meanings of<br>
+  the labels used will be described following the syntax diagram.<br>
+  To use MOBprograms, you must add a #MOBPROGS section(s) to your area<br>
+  file(s).</p>
+<p>Section syntax:</p>
+<p>#MOBPROGS<br>
+  #{Vnum}<br>
+  {program_command_1} NL<br>
+  {program_command_2} NL<br>
+  {program_command_3} NL<br>
+  . . .<br>
+  {program_command_N} NL<br>
+  &quot;~&quot; NL<br>
+  . . .<br>
+  #0</p>
+<p>-- Explanations<br>
+  A VNUM is the MOBprogram virtual number that identifies the program the<br>
+  number must be unique across area files (like mobile and object vnums). <br>
+  A PROGRAM_COMMAND can be any legal mud command, or a control flow command.</p>
+<p>NOTE 1: Any whitespaces (space, tab, newline) are NOT stripped from the programs 
+  when loading the database (why? because I'm too damn lazy to have implemented 
+  it). Thus, to save memory and execution time, omit all unnecessary spaces from 
+  your MOBprogram scripts. If you must have indentation, use TAB.</p>
+<p>NOTE 2: MOBprograms do NOT have to be in the same area file as the mobile definitions, 
+  since the programs are linked to the mobiles after the database has been loaded. 
+  A MOBprogram can also be used as a subroutine (see MOB CALL<br>
+  command) without having to be linked to any mobile.</p>
+<p>-- Example<br>
+  #MOBPROGS<br>
+  #3001<br>
+  say Hey, no loitering!<br>
+  poke $n<br>
+  ~<br>
+  #0</p>
+<p>--------------------------Linking MOBprograms--------------------------------</p>
+<p> Once you've written your MOBprograms, you must link the programs to appropriate 
+  mobiles. In the #MOBILES section, for each mobile you wish to have a MOBprogram, 
+  add lines of the following type to the end of the mobile<br>
+  definition:</p>
+<p> &quot;M&quot; {Keyword} {Vnum} {Argument}~ NL</p>
+<p>--Explanations<br>
+  The KEYWORD is a single word, see below for explanations.<br>
+  The VNUM is the MOBprogram virtual number.<br>
+  The ARGUMENT is the argument that triggers the event.<br>
+  --Example</p>
+<p>M act 3001 sits down~</p>
+<p>In the above example, an ACT trigger is defined. When the mobile sees someone 
+  sitting down in the room, the mobile will execute program number<br>
+  3001 (defined in #MOBPROGS section).</p>
+<p>NOTE: Several mobiles can use the same MOBprogram, i.e. MOBprograms can be 
+  SHARED with several mobiles. The keyword and trigger argument can be different 
+  for each mobile even if they share the same MOBprogram code.</p>
+<p><br>
+  Here's a summary of triggers:</p>
+<p> Triggers are fairly easy to add, but this basic list should hold for most 
+  needs. Their names, argument list syntaxes, and translation into more articulate 
+  English are given below:</p>
+<p>ACT</p>
+<p>Keyword : 'act'<br>
+  Argument: string</p>
+<p>The argument is a phrase, a text string. The trigger is activated whenever 
+  the phrase is contained in the act() message.</p>
+<p>NOTE: Most general trigger. Applies to almost every event which happens in 
+  the mud. Anytime the function act() is called with a message to be delivered 
+  TO_CHAR,TO_VICT,TO_ROOM,etc. the act can be triggered. Basically this will trigger 
+  on almost everything you'll ever want. Output of &quot;say&quot;, &quot;shout&quot; 
+  and &quot;emote&quot; do not trigger this event.</p>
+<p>SPEECH</p>
+<p>Keyword : 'speech'<br>
+  Argument: string</p>
+<p>NOTE: This is only triggered when the phrase is contained in a message which 
+  has been said by a PC in the same room as the mob. The PC restriction is not 
+  necessary, but makes infinite loops between two talking mobiles impossible. 
+  It also makes it impossible for two NPC's to stand and discuss the weather however. 
+</p>
+<p>RANDOM</p>
+<p>Keyword : 'random'<br>
+  Argument: number</p>
+<p> The argument is a number betweeen 0 and 99 inclusive.</p>
+<p>NOTE: This trigger is checked at each PULSE_MOBILE and if the argument is greater 
+  than a percentage roll the trigger is activated. This will happen even if there 
+  is no PC in the room with the mob, but there must be players in the same area. 
+  It is useful to give mobiles a bit of a personality. For instance a janitor 
+  who stops to spit tobacco, or complain about the hours or wonder why there are 
+  no woman janitors on muds, or a fido which barks or growls or pees on the curb 
+  is much more alive than one which just sits there scavenging.<br>
+  Note that this trigger is checked only when there are players in the area. If 
+  you want this event to be triggered always, you must set the ACT_UPDATE_ALWAYS 
+  flag of the mobile.</p>
+<p>GREET/GREET ALL</p>
+<p>Keyword : 'greet'<br>
+  Argument: number</p>
+<p> Again a percentage argument.</p>
+<p>NOTE: Whenever someone enters the room with the mobile, and the mobile saw 
+  the person enter, this is checked. Good for shopkeepers who want to welcome 
+  customers, or for pseudo-aggressive mobiles which need to discriminate on who 
+  they attack. Greet trigger activates only when the mobile is not busy (fighting, 
+  sitting, sleeping etc.). If you want to be sure to catch all players, use grall.</p>
+<p>Keyword : 'grall'<br>
+  Argument: number</p>
+<p> Again a percentage argument.</p>
+<p>NOTE: Like greet, but it can be triggered even if the mobile didn't see the 
+  arrival (i.e. sneak, invis, etc) or is busy. Most useful for faking teleport 
+  rooms or for impassable guardians.<br>
+  <br>
+  ENTRY</p>
+<p>Keyword : 'entry'<br>
+  Argument: number</p>
+<p> Again a percentage argument.</p>
+<p>NOTE: The opposite of greet trigger. Whenever the mobile itself enters a new 
+  room, this can be triggered. Useful for looking around, or waving or other things 
+  that real PCs do when they arrive at a crowded room.<br>
+  IMPORTANT: In an entry program, the mobile can only refer to a random pc ($r 
+  in if checks) -- there's no way to know how many PCs exist in the room the mobile 
+  enters! Also, you must check visibility of the target in your program.</p>
+<p>EXIT/EXIT ALL</p>
+<p>Keyword : 'exit'<br>
+  Argument: number</p>
+<p> Argument is the exit number (0:north, 1:east, 2:south 3:west etc.)</p>
+<p>NOTE: The opposite of entry trigger. This is activated when PC tries to leave 
+  a room through an exit indicated by the argument, and the mobile sees the person 
+  leave. Useful for having a single guardian to watch several exits. An exit trigger 
+  works better than an entry trigger, since you can refer to a specific PC instead 
+  of a random PC.<br>
+  IMPORTANT: If this event is triggered, the victim will not move through the 
+  exit. If necessary, you must move the character yourself in your program (see 
+  MOB TRANSFER/MOB GTRANSFER). Also, this event is not triggered when a character 
+  flees from combat or the mobile is not in its default position.</p>
+<p>Keyword : 'exall'<br>
+  Argument: number</p>
+<p> Argument is the exit number (0 = north etc.)</p>
+<p>The same as exit trigger, but it can be triggered even if the mobile cannot 
+  see the person trying to leave the room or if the mobile is busy.</p>
+<p>GIVE </p>
+<p>Keyword : 'give'<br>
+  Argument: string or object vnum</p>
+<p>The argument is either the a string containing words to bematched against the 
+  keywords of the object, or the word &quot;all&quot;;<br>
+  e.g. argument &quot;long sword&quot; will match to objects &quot;long bow&quot; 
+  and &quot;small sword&quot;.<br>
+  Alternatively, the argument can be the virtual number of a single object.</p>
+<p>NOTE: This is triggered whenever something is given to the mobile. Best used 
+  for quests. Since the first successful trigger is the only one of this type, 
+  which is processed, having an &quot;all&quot; argument in the script at the 
+  end of the MOBprogram list is essentially a default response.</p>
+<p>BRIBE</p>
+<p>Keyword: 'bribe'<br>
+  Argument: number</p>
+<p> The argument is any positive integer number.</p>
+<p>NOTE: This trigger is activated whenever money is given to the mobile. If the 
+  amount given exceeds the number, then process the commands. Note again, that 
+  an argument of '1' would act as a default response. Also note that if the script 
+  is not triggered (because of too little money having been given), the mobile 
+  still keeps the money...</p>
+<p> ROM 2.4 NOTE: Since ROM 2.4 has two different types of currency (gold and 
+  silver coins), for<br>
+  bribe trigger the amount to be given is converted to silver coins with the rate 
+  of 1 gold = 100 silver. Thus, the number in the argument should be the expected 
+  amount in silver coins.</p>
+<p>KILL</p>
+<p>Keyword: 'kill'<br>
+  Argument: number</p>
+<p> The argument is a percent once again.</p>
+<p>NOTE: This trigger is checked whenever a PC attacks the mobile. The check occurs 
+  only ONCE, in the beginning of combat. Useful for summoning assistance etc. 
+  (See MOB MLOAD).</p>
+<p>FIGHT</p>
+<p>Keyword: 'fight'<br>
+  Argument: number</p>
+<p> The argument is a percentage.</p>
+<p>NOTE: Useful for giving mobiles combat attitude. It is checked every PULSE_VIOLENCE 
+  when the mobile is fighting. Can be used to cast spells (see MOB CAST), curse 
+  at the opponent, or whatever. Only the first successful one will be processed 
+  to save time. Also, this means that the mobile wont get lucky and 1. curse, 
+  cast a fireball and 2. spit on the player, cast another fireball in the same 
+  pulse.</p>
+<p>HIT POINT PERCENTAGE</p>
+<p>Keyword : 'hpcnt'<br>
+  Argument: number</p>
+<p> The argument is a percentage.</p>
+<p>NOTE: Is activated at each PULSE_VIOLENCE when the mobile is fighting. It checks 
+  to see if the hitpoints of the mobile are below the given percentage. Multiple 
+  hpcnt triggers should be listed in increasing order of percent since a 40% will 
+  always be activated before a 20% and, only the first successful trigger is performed. 
+  (See also MOB FLEE).</p>
+<p>DEATH</p>
+<p>Keyword : 'death'<br>
+  Argument: number</p>
+<p> The argument is a percent once again.</p>
+<p>NOTE: When the mobile dies, if the random percentage is less than the argument 
+  the mobile performs the MOBprogram commands rather than the usual death_cry() 
+  sequence. This is done before the corpse is made, so the commands can be considered 
+  the mobiles last gasp. It could perhaps destroy the items it was holding (see 
+  MOB REMOVE and MOB JUNK), or create some (see MOB OLOAD), or cast a spell (see 
+  MOB CAST) on the killer and the room, or even goto a new location (see MOB GOTO) 
+  and die there (with a text message, the corpse would seem to vanish) The position 
+  of the mobile is set to STANDING, and so it can do all the normal commands, 
+  without worrying about being DEAD. However, even if the mobile restores itself 
+  to full hitpoints, it will still die. This is not a way to immortal mobiles. 
+  However, the last thing this mobile does could be to goto some vacant room, 
+  load a fresh version of itself, drop all its items, force the new mobile to 
+  get all the items and wear them, send the new mobile back to the character who 
+  killed it and force the new mobile to attack that character. Along with a text 
+  message which said the mobile restored itself, this might be a convincing effect. 
+  (Note that your kitten could turn into a dragon this way too).</p>
+<p>DELAY</p>
+<p>Keyword : 'delay'<br>
+  Argument: number</p>
+<p> The argument is a percentage chance.</p>
+<p>NOTE: This trigger activates when the delay of a mobile (set with the MOB DELAY 
+  command) expires. This trigger can be used to create staged mobile behavior, 
+  for example, a guardian could see a player entering a room, give a warning and 
+  activate a delay. If the player is still present when the delay expires, the 
+  guard would attack the player. (See also MOB REMEMBER). A mobile can have several 
+  delay triggers, but every time the delay timer expires, all the triggers are 
+  checked and the first successful one executed.</p>
+<p>SURRENDER</p>
+<p>Keyword : 'surr'<br>
+  Argument: number</p>
+<p> The argument is a percentage.</p>
+<p>NOTE: This trigger activates when the mobile is fighting and the opponent issues 
+  a &quot;surrender&quot; command. When triggered, both parties will cease fighting, 
+  and the mobile can accept the surrender (perhaps taking all equipment from the 
+  character with MOB REMOVE). Note that if the mobile does not accept the surrender, 
+  it must resume fighting with MOB KILL. If a character surrenders and the mobile 
+  does not have a surrender trigger, or the trigger does not activate, the fight 
+  resumes normally.</p>
+<p>NOTE: No MOBprograms will be successful when the mobile is charmed (since it 
+  has no self volition, it should act like it has none) to protect mobiles which 
+  are given special powers from being implemented by a player.</p>
+<p>------------------------------Variables------------------------------------</p>
+<p> To make things come alive, variables are needed. These are represented in 
+  the MOBprograms by using a dollar sign convention as in the socials. When the 
+  mud command is processed, these variables are expanded into the values shown 
+  below. Usually, it is best to use the short descriptions of mobiles and the 
+  names of players when speaking them, but if you are performing an action to 
+  someone almost always you want the name. The title field for players is an extra 
+  that probably wont often be used. Without further hesitation... the variables:</p>
+<p>$i the first of the names of the mobile itself.<br>
+  $I the short description of the mobile itself.<br>
+  $n the name of whomever caused the trigger to happen.<br>
+  $N the name and title of whomever caused the trigger to happen.<br>
+  $t the name of a secondary character target (i.e A smiles at B)<br>
+  $T the short description, or name and title of target (NPC vs PC)<br>
+  $r the name of a random PC in the room with the mobile<br>
+  $R the short description, or name and title of the random PC<br>
+  $q the name of the MOBprogram target (see MOB REMEMBER)<br>
+  $Q the short description of the MOBprogram target</p>
+<p>$j he,she,it based on sex of $i.<br>
+  $e he,she,it based on sex of $n.<br>
+  $E he,she,it based on sex of $t.<br>
+  $J he,she,it based on sex of $r.</p>
+<p>$k him,her,it based on sex of $i.<br>
+  $m him,her,it based on sex of $n.<br>
+  $M him,her,it based on sex of $t.<br>
+  $K him,her,it based on sex of $r.</p>
+<p>$l his,hers,its based on sex of $i.<br>
+  $s his,hers,its based on sex of $n.<br>
+  $S his,hers,its based on sex of $t.<br>
+  $L his,hers,its based on sex of $r.</p>
+<p>$o the first of the names of the primary object (i.e A drops B)<br>
+  $O the short description of the primary object<br>
+  $p the first of the names of the secondary object (i.e A puts B in C)<br>
+  $P the short description of the secondary object</p>
+<p> Also, in if_checks, the accepted variables are the basic ones (i,n,t,r,o,p,q). 
+  If a variable is referenced that doesnt exist, then the value is simply left 
+  blank or replaced with &quot;someone&quot;/&quot;something&quot; in output (i.e 
+  referring to $o when the trigger is: A kisses B)</p>
+<p> If variable $q has not been defined, it is automatically set to the last player 
+  that has triggered the program being executed (i.e. variable $n). Once $q has 
+  been defined, it can be modified with MOB REMEMBER and MOB<br>
+  FORGET commands in a program. Variable $q lets the mobile &quot;remember&quot; 
+  a player across different programs, which can be useful. Note that $q is set 
+  automatically only the FIRST TIME the mobile executes a program, every time<br>
+  thereafter it must be set with MOB REMEMBER.</p>
+<p> The only problem with the variables is that the secondary object and nthe 
+  secondary target are passed by act() in the same location. This means that if 
+  you reference $t in an A puts B in C situation, the result will probably be 
+  a happy mud crash or some weird side effect, espescially if $t is used in an 
+  if_check (i.e. if isnpc($t) in the above situation) The basic fix for this is 
+  to change everyone who calls the act() procedure to specify a secondary object 
+  and a secondary character. But that is a fairly comprehensive trivial twiddle, 
+  so we left it the way it is so that, you arent forced to make all those twiddles 
+  to use the MOBprograms.</p>
+<p>---------------------------Control Flow Syntax------------------------------</p>
+<p> In place of any legal mud command in a MOBprogram, one can substitute a flow 
+  of control command. Here is the syntax for a flow of control command. The parts 
+  between [ and ] are optional.</p>
+<p>&quot;if&quot; &quot; &quot; {if_check_1} {argument} [ {operator} {value} ] 
+  NL<br>
+  [ &quot;or&quot; &quot; &quot; {if_check_2} {argument} [ {operator} {value} 
+  ] NL ]<br>
+  [ &quot;or&quot; &quot; &quot; {if_check_N} {argument} [ {operator} {value} 
+  ] NL ]<br>
+  . . .<br>
+  [ &quot;and&quot; &quot; &quot; {if_check_N} {argument} [ {operator} {value} 
+  ] NL ]<br>
+  [ &quot;and&quot; &quot; &quot; {if_check_N} {argument} [ {operator} {value} 
+  ] NL ]<br>
+  . . .</p>
+<p> [ {program_command_1} NL ]<br>
+  [ {program_command_2} NL ]<br>
+  . . .<br>
+  [ &quot;break&quot; NL ]<br>
+  . . .<br>
+  [ {program_command_N} NL ]</p>
+<p>[ &quot;else&quot; NL ]</p>
+<p> [ {program_command_1} NL ]<br>
+  [ {program_command_2} NL ]<br>
+  . . .<br>
+  [ &quot;break&quot; NL ]<br>
+  . . .<br>
+  [ {program_command_N} NL ]</p>
+<p>&quot;endif&quot; NL</p>
+<p> Basically, it is: an 'if' line, followed by zero or more 'or' lines, followed 
+  by zero of more 'and' lines ('and' and 'or' lines can be in any order) followed 
+  by zero or more legal mud commands, which may contain a 'break' line, possibly 
+  followed by an 'else' line , followed by zero or more legal mud commands, which 
+  may contain a 'break' line, followed by an 'endif' line.</p>
+<p>The only new syntax labels are all in the IF/OR/AND line:</p>
+<p>--Explanations</p>
+<p>An IF_CHECK is a string which describes under what context to compare things.<br>
+  The ARGUMENT is the reference point from which the LHS of an expression comes.<br>
+  The OPERATOR indicates how the LHS and RHS are going to be compared.<br>
+  The VALUE is the RHS of the expression to be compared by the operator.</p>
+<p>The BREAK command bails out of the entire MOBprogram regardless of the level 
+  if nesting. (END is a synonym for BREAK).</p>
+<p>If that looks confusing, skip to the end of the document and review the examples. 
+  Hopefully that should clear things, otherwise you'll probably have to give me 
+  a mail since examples are the best way I know to explain syntax.</p>
+<p>--------------------------------Operators-----------------------------------</p>
+<p> Most of the basic numeric operators are legal and perform the same function 
+  as in C.</p>
+<p>Operators: == != &gt; &lt; &gt;= &lt;=</p>
+<p>------------------------If_Checks In Control Flow---------------------------</p>
+<p> The provided list of if_checks and their arguments are below. They should 
+  all be fairly obvious in what they do, but some of the more obtuse deserve a 
+  slight explanation. Any '==' operator can be replaced with any of the available 
+  ones described above. The argument $* refers to any of the variables which make 
+  sense for that if_check (i.e. for an if_check which is referencing a person 
+  the only valid variables would be $i, $n, $t, $r or $q) A value type of string 
+  is a sequence of characters. It does not need to be included in quotes or anything 
+  like that (i.e. if name $n fido )</p>
+<p>There are five types of if checks:</p>
+<p>Type 1: Keyword and value</p>
+<p>rand num Is random percentage less than or equal to num<br>
+  mobhere vnum Is a NPC with this vnum in the room<br>
+  mobhere name Is a NPC with this name in the room<br>
+  objhere vnum Is an object with this vnum in the room<br>
+  objhere name Is an object with this name in the room<br>
+  mobexists name Does NPC 'name' exist somewhere in the world<br>
+  objexists name Does object 'name' exist somewhere in the world</p>
+<p>Type 2: Keyword, comparison and value</p>
+<p>people == integer Is the number of people in the room equal to integer<br>
+  players == integer Is the number of PCs in the room equal to integer<br>
+  mobs == integer Is the number of NPCs in the room equal to integer<br>
+  clones == integer Is the number of NPCs in the room with the same<br>
+  vnum as the NPC who activated the program equal<br>
+  to integer<br>
+  order == integer Is the order (of several similar NPCs) of the NPC<br>
+  who activated the trigger equal to integer<br>
+  hour == integer Is the hour (game time) equal to integer</p>
+<p>Type 3: Keyword and actor</p>
+<p>isnpc $* Is $* an NPC<br>
+  ispc $* Is $* a PC<br>
+  isgood $* Does $* have a good alignment <br>
+  isneutral $* Does $* have a neutral alignment<br>
+  isevil $* Does $* have an evil alignment<br>
+  isimmort $* Is $* an immortal (level of $* &gt; LEVEL_HERO)<br>
+  ischarm $* Is $* affected by charm<br>
+  isfollow $* Is $* a follower with their master in the room<br>
+  isactive $* Is $*'s position &gt; POS_SLEEPING<br>
+  isdelay $* Does $* have a delayed MOBprogram pending<br>
+  isvisible $* Is $* visible to NPC who activated the program<br>
+  hastarget $* Does $* have a MOBprogram target in the room<br>
+  istarget $* Is $* the target of NPC who activated the program</p>
+<p>Type 4: Keyword, actor and value</p>
+<p>affected $* 'affect' Is $* affected by 'affect'<br>
+  act $* 'act' Is $*'s ACT bit 'act' set<br>
+  off $* 'off' Is $*'s OFF bit 'off' set<br>
+  imm $* 'imm' Is $*'s IMM bit 'imm' set<br>
+  carries $* 'name' Is $* carrying object 'name'<br>
+  wears $* 'name' Is $* wearing object 'name'<br>
+  has $* 'type' Does $* have object of item_type 'type'<br>
+  uses $* 'type' Is $* wearing object of item_type 'type'<br>
+  name $* 'name' Is $*'s name 'name'<br>
+  pos $* 'position' Is $*'s position 'position' (sleeping etc.)<br>
+  clan $* 'name' Does $* belong to clan 'name'<br>
+  race $* 'name' Is $* of race 'name'<br>
+  class $* 'name' Is $*'s class 'name'<br>
+  objtype $* 'type' Is $*'s item_type 'type'</p>
+<p>Type 5: Keyword, actor, comparison and value</p>
+<p>vnum $* == integer Is $*'s virtual number equal to integer<br>
+  hpcnt $* == integer Is $*'s hitpoint percentage equal to integer<br>
+  room $* == integer Is vnum of the room $* is in equal to integer<br>
+  sex $* == integer Is $*'s sex equal to integer<br>
+  level $* == integer Is $*'s level equal to integer<br>
+  align $* == integer Is $*'s alignment equal to integer<br>
+  money $* == integer Does $* have money (in silver) equal to integer<br>
+  objval# $* == integer Is $*-&gt;value[#] equal to integer (# from 0-4)</p>
+<p>NOTE: The original MERC 2.2 MOBprograms used parenthesis '(' and ')'<br>
+  around variables. In this version, they are not allowed. Also,parameters<br>
+  MUST BE separated with spaces (if level $n&lt;10 is NOT valid, correct syntax<br>
+  is: if level $n &lt; 10).</p>
+<p>------------------------New Commands Of Interest-----------------------------<br>
+  1. GENERAL COMMANDS</p>
+<p>Syntax: SURRENDER</p>
+<p>This command can be issued in combat. If the one giving the command is a PC 
+  and the opponent is a NPC, the NPC will be checked for a surrender trigger. 
+  If the trigger activates, the fight will be terminated. Otherwise the combat 
+  will resume normally. Note that the mobile can resume the combat in the MOBprogram 
+  (see MOB KILL). If anyone (PC or NPC) surrenders to a PC, the combat will terminate.<br>
+  The PC can resume the combat with 'kill' command. <br>
+  With this command, and the use of surrender trigger, non-lethal combat can be 
+  implemented (arenas etc.).</p>
+<p>2. DIAGNOSTIC COMMANDS<br>
+  <br>
+  These two new commands are available to immortal players.</p>
+<p>Syntax: MPSTAT [mobile]</p>
+<p> Displays the triggers and MOBprogram vnums defined for the mobile.</p>
+<p>Syntax: MPDUMP [vnum]</p>
+<p> Displays the MOBprogram code of given vnum.</p>
+<p>3. MOBCOMMANDS</p>
+<p> MOBcommands are special commands that allow mobiles to perform immortal-like 
+  actions within a MOBprogram (transferring players or loading items, for example). 
+  Most MOBcommands them are wiz commands which have been<br>
+  changed to allow for mobiles to perform the commands. In this version of MOBprograms, 
+  players have been prevented from using these commands by adding a separate interpreter 
+  for MOBcommands. This also speeds up (in most cases)<br>
+  MOBprogram execution when MOBcommands are used. All MOBcommands are preceded 
+  with the word 'MOB' on the command line.</p>
+<p><br>
+  Syntax: MOB ASOUND [string]<br>
+  MOB ZECHO [string]<br>
+  MOB GECHO [string]</p>
+<p>ASOUND prints the text string to the rooms around the mobile in the same manner 
+  as a death cry. This is really useful for powerful aggressive and is also nice 
+  for wandering minstrels or mobiles like that in concept. ZECHO prints the string 
+  to all players in the same area with the mobile. GECHO prints the string to 
+  all players in the game.</p>
+<p>Syntax: MOB ECHO [string]<br>
+  MOB ECHOAT [victim] [string]<br>
+  MOB ECHOAROUND [victim] [string]</p>
+<p> ECHO displays the string to everyone in the room. ECHOAT displays<br>
+  the string to the victim only. ECHOAROUND displays the string to<br>
+  everyone except the victim.<br>
+  The three options let you tailor the message to goto victims or to do<br>
+  things sneaky like having a merchant do: <br>
+  mob at guard mob echoat guard rescue_please <br>
+  This coupled with a guard act trigger on rescue_please to:<br>
+  mob goto $n<br>
+  mob echo $I has arrived.<br>
+  It is an affective way of quickly bringing guards to the scene of<br>
+  an attack. (Note that the merchant has to be the only one of its<br>
+  kind in the game or have a unique name, otherwise the guard might<br>
+  go to different mobile...).<br>
+</p>
+<p>Syntax: MOB MLOAD [vnum]<br>
+  MOB OLOAD [vnum] [level] {'room'|'wear'}</p>
+<p> MLOAD creates a mobile and places it in the same room with the<br>
+  mobile.<br>
+  OLOAD loads the object into the inventory of the mobile. Even if the<br>
+  item is non-takable, the mobile will receive it in the inventory.<br>
+  This lets a mobile distribute a quest item or load a key or something.<br>
+  The optional 3rd parameter can be specified; 'room' means to load<br>
+  the object to the room, 'wear' means to force the mobile to wear<br>
+  the object loaded (useful for equipping mobiles on the fly).</p>
+<p>Syntax: MOB KILL [victim]</p>
+<p> Lets a mobile kill a player without having to murder. Lots of<br>
+  MOBprograms end up with mpkill $n commands floating around. It<br>
+  works on both mobiles and players.</p>
+<p>Syntax: MOB FLEE</p>
+<p> Causes a mobile to unconditionally flee from combat. Can be used<br>
+  for example with the hit point percentage trigger to simulate<br>
+  &quot;wimpy&quot; behavior.</p>
+<p>Syntax: MOB REMOVE [victim] [vnum|'all']</p>
+<p> Lets the mobile to strip an object of given vnum from the victim.<br>
+  Objects removed are destroyed. If the vnum is replaced with &quot;all&quot;,<br>
+  the whole inventory of the victim is destroyed. This command is<br>
+  probably most useful for extracting quest items from a player<br>
+  after a quest has been completed.</p>
+<p><br>
+  Syntax: MOB JUNK [object]</p>
+<p> Destroys the object refered to in the mobile's inventory. It prints<br>
+  no message to the world and you can do things like junk all.bread or<br>
+  junk all. This is nice for having janitor mobiles clean out their<br>
+  inventory if they are carrying too much (have a MOBprogram trigger on<br>
+  the 'full inventory')</p>
+<p>Syntax: MOB PURGE [argument]</p>
+<p> Destroys the argument from the room of the mobile. Without an argument<br>
+  the result is the cleansing of all NPC's and items from the room with<br>
+  the exception of the mobile itself. However, mppurge $i will indeed<br>
+  purge the mobile, but it MUST be the last command the mobile tries to<br>
+  do, otherwise the mud cant reference the acting mobile trying to do the<br>
+  commands and bad things happen. </p>
+<p>Syntax: MOB AT [location] [command]</p>
+<p> Perfoms the command at the designated location. Very useful for doing<br>
+  magic slight of hand tricks that leave players dumbfounded.. such as<br>
+  metamorphing mobiles, or guard summoning, or corpse vanishing.</p>
+<p>Syntax: MOB GOTO [location]</p>
+<p> Moves the mobile to the room or mobile or object requested. It makes<br>
+  no message of its departure or of its entrance, so these must be<br>
+  supplied with echo commands if they are desired.</p>
+<p>Syntax: MOB TRANSFER [victim|'all'] [location]<br>
+  MOB GTRANSFER [victim] [location]<br>
+  MOB OTRANSFER [object] [location]</p>
+<p> Sends the victim to the destination or to the room of the mobile as a<br>
+  default. if the victim is &quot;all&quot; then all the characters in the room<br>
+  of the mobile are transfered to the destination. Good for starting<br>
+  quests or things like that. There is no message given to the player<br>
+  that it has been transfered and the player doesnt do a look at the<br>
+  new room unless the mob forces them to.<br>
+  Gtransfer works like transfer, except that the group the victim<br>
+  belongs to is transferred with the victim. Otransfer transfers an<br>
+  object in the room.</p>
+<p>Syntax: MOB FORCE [victim|'all'] [command]<br>
+  MOB GFORCE [victim] [command]<br>
+  MOB VFORCE [vnum] [command]</p>
+<p> Forces the victim to do the designated command. The victim is not told<br>
+  that they are forced, they just do the command so usually some mpecho<br>
+  message is nice. You can force players to remove belongings and give<br>
+  them to you, etc. The player sees the normal command messages (such as<br>
+  removing the item and giving it away in the above example) Again, if<br>
+  the victim is &quot;all&quot; then everyone in the mobiles room does the command.<br>
+  Gforce works like force except that it affects the group the victim<br>
+  belongs to.<br>
+  Vforce affects all mobiles with given vnum in the game world. This<br>
+  is useful for, for example, purging certain type of NPCs from the<br>
+  game (by forcing them to purge themselves).</p>
+<p>Syntax: MOB CAST [spell] [victim]</p>
+<p> Lets the mobile to cast spells. Beware, this does only crude validity<br>
+  checking and does not use up any mana. All spells are available<br>
+  regardless of the race or other abilities of the mobile. Casting the<br>
+  spell occurs silently, but spell effects are displayed normally.</p>
+<p>Syntax: MOB DAMAGE [victim|'all'] [min] [max] {lethal}</p>
+<p> Causes unconditional damage to the victim. Specifying &quot;all&quot; as<br>
+  victim causes damage to all characters in the room except the mobile.<br>
+  Min and max parameters define the minimum and maximum amounts of<br>
+  damage caused. By default, the damage is non-lethal, but by supplying<br>
+  the optional 'lethal' parameter, the damage can kill the victim.<br>
+  This command is silent, you must echo all messages yourself in the<br>
+  program. Useful for implementing special attacks for mobiles.</p>
+<p>Syntax: MOB DELAY<br>
+  MOB CANCEL</p>
+<p> MOB DELAY sets the time in PULSE_MOBILE after which the mobile's<br>
+  delay trigger is activated. If the mobile has a program defined<br>
+  for delay trigger, the program is executed when the timer expires.<br>
+  MOB CANCEL resets the delay timer.</p>
+<p><br>
+  Syntax: MOB REMEMBER [victim]<br>
+  MOB FORGET</p>
+<p> This command enables the mobile to remember a player for future<br>
+  reference in a MOBprogram. The player can subsequently be referred<br>
+  as '$q' in programs activated by the mobile. MOB FORGET clears<br>
+  the target. Note that if the first time the mobile runs a program,<br>
+  $q is automatically set to the player who triggered the event.<br>
+  Most commonly this command is used in delayed programs, where the<br>
+  mobile has to remember the player who triggered the original<br>
+  event, for example to continue conversation.</p>
+<p>Syntax: MOB CALL [vnum] {victim} {target1} {target2}</p>
+<p> This command lets you call MOBprograms from within a running one,<br>
+  i.e. to call a MOBprogram subroutine. The first parameter is the<br>
+  vnum of the program to execute, the second is the victim's name<br>
+  (for example $n), and the third and fourth are optional object<br>
+  names. All other parameters except vnum can be replaced with<br>
+  word 'null' indicating ignored parameter.<br>
+  MOBprograms can be called recursively, but as a safety measure,<br>
+  parser allows only 5 recursions.<br>
+  <br>
+  --------------------------Regarding CPU Slowdown-------------------------------</p>
+<p>In the original MERC 2.2 MOBprogram documentation Nata'sha and Kahn wrote:<br>
+  &quot;We have no real idea how slow this makes a mud. However, you will<br>
+  find that if you are judicious with your use of MOBprograms, you can either<br>
+  do little damage, or even reduce the effort on your server! This means that<br>
+  mobile polling (including the rand_progs) need only be checked when players<br>
+  are around. This reduces computation of random_stuff a little, but it is<br>
+  still a polling method, and subject to a basic inefficiency there. However,<br>
+  aside from the rand_progs, the only additional slowdowns will be when the<br>
+  mobile is responding to the situation, and you would get that from a special<br>
+  procedure as well (although MOBprograms are surely not as efficient as<br>
+  compiled C code)&quot;<br>
+  I have used MOBprograms extensively in my own mud without adverse<br>
+  effects. This version of MOBprograms polls random triggers only when there<br>
+  are players in the area, so the load is kept to minimum. I would venture<br>
+  to claim that in most cases, line lag will exceed machine lag even with<br>
+  ample and complex use of MOBprograms.</p>
+<p>--------------------------Loading Mobiles and Objects--------------------------</p>
+<p> No doubt you want to load objects and mobiles in your MOBprograms<br>
+  with &quot;mob oload&quot; and &quot;mob mload&quot;. There are two problems 
+  connected to this.<br>
+  One is that mloaded mobiles will appear without equipment and the<br>
+  other is that it is difficult to keep track of the number of created<br>
+  mobiles and objects.<br>
+  If you want to mobiles to appear in your area as a result of the<br>
+  players' action, create a &quot;storage room&quot;. Define resets for the mobiles<br>
+  as usual (equipment etc.) and place them in the storage room. When you<br>
+  need to use the mobiles, just &quot;mob transfer&quot; them to the location 
+  you<br>
+  want. This is better than creating mobiles on the fly, since you don't have<br>
+  to worry about creating too many mobiles or equipping them, area resets<br>
+  take care of all that.<br>
+  If you have a MOBprogram that creates new mobiles, you might want<br>
+  to make the mobiles &quot;self-destructing&quot;. This is easiest to do with 
+  a random<br>
+  trigger that checks if the mobile is doing anything useful and possibly does<br>
+  'mob purge $i'.<br>
+  Another possibility is to use a &quot;purgemaster&quot;. Create a storage<br>
+  room with a single mobile. Attach a random trigger that does 'mob purge'<br>
+  to that mobile. Now, when you need to get rid of anything, just 'mob<br>
+  transfer' the mobile or item to purgemaster, and it will be destroyed<br>
+  sometime later.<br>
+  <br>
+  -------------------------Miscellaneous Information-----------------------------</p>
+<p> There is really no limit to the number of MOBprograms a given mobile<br>
+  can have. However, the length of a single command block is limited by the<br>
+  value of MAX_STRING_LENGTH. In my version it was around 4k, so that is<br>
+  probably about 100 lines. The indentation spaces shown in the example<br>
+  above are NOT required, but do make it easier to read (and debug). HOWEVER,<br>
+  all spaces and indentations are loaded into memory as a part of the<br>
+  program, so you're using up memory unnecessarily. Memory usage can also be<br>
+  reduced by using subroutines (see MOB CALL).</p>
+<p> It IS possible to accidentally make mobiles which can trigger in<br>
+  loops. Infinite loops have been prevented, but in case of a loop, the mobile<br>
+  behavior is undefined.</p>
+<p> The list of variables and triggers and if_checks will grow<br>
+  continuously as mud creators demand the ability to do certain things. If you<br>
+  have a request or if you have a new one, I don't mind hearing about them,<br>
+  and if you find bugs, I shall gladly attempt to squash them for you. As<br>
+  additions or fixes are made, the code will occasionally be redistributed.<br>
+  However, if you want a current version, please feel free to ask. When the<br>
+  code is redistributed, a file containing the change history from the original<br>
+  release will be provided (when possible) to allow you to patch in the changes<br>
+  with low grief.</p>
+<p>----------------------------------Credits-----------------------------------</p>
+<p> The reason this code was written was to enhance the playing<br>
+  experience at ThePrincedom (a Merc 2.0 based world scheduled to open in<br>
+  October 1993)</p>
+<p> The original idea for this type of MOBprogram came from playing on:<br>
+  WORLDS of CARNAGE, a dikumud implemented by Robbie Roberts and Aaron Buhr.<br>
+  Aaron (known as Dimwit Flathead the First) was the original author from what<br>
+  I have been told, and I hope he will not be totally offended and angered<br>
+  by my coding and sharing a mimicked version with the world. This version<br>
+  is probably not as good as the original and I do feel remorse for publishing<br>
+  the idea. However, since Carnage has been down for months without a word of<br>
+  information regarding its return, I am glad to let one of the best features<br>
+  live on in future generations of MUDs.</p>
+<p> There are no objections to this code being shared, since, aside from<br>
+  a nuclear destruction of all the Temples of Midgaard (excepting the original<br>
+  one!!), bland mobiles are the greatest bane of Dikumuds today. It would be<br>
+  nice to get a message saying you are using the code just for our references.<br>
+  We shant answer questions from anyone until told where they are using the<br>
+  code. *grin* Since this code is not copyrighted, you of course dont have to<br>
+  do anything we say, but it would be nice of you to put the mobprog help<br>
+  screen into your database. and have mobinfo show up somewhere on a more<br>
+  visable help screen (possibly tagged onto the bottom of credits as a see<br>
+  also...)</p>
+<p> I acknowledge all the work done by the original Diku authors as well as<br>
+  those at Merc Industries and appreciate their willingness to share code.<br>
+  Also, quick thanks to Wraith for doing a little beta-installation testing.</p>
+<p>N'Atas-Ha June, 1993<br>
+  natasha@gs118.sp.cs.cmu.edu</p>
+<p> In addition to this DOC file credit section, I'd like to add<br>
+  a thank you to Yaz, Mahatma, Zelda, and the rest of the 4th Realm crew for<br>
+  extensively testing MOBProgram 2.1 for me. You may see MOBPrograms in<br>
+  action as well as their own &quot;flavor&quot; of mud at marble.bu.edu 4000.</p>
+<p>Kahn Oct 28th, 1993<br>
+  MERC Industries</p>
+<p> This driver was rewritten by me in summer '95. I also added<br>
+  room and object programs (not in ROM 2.4 version). While I acknowledge the<br>
+  skill and insight of the above people who conceived the original MOBprogram<br>
+  idea, they should not be held responsible in any way for this release.<br>
+  I can't promise I will be able to support this code in the future, use at your<br>
+  own risk. However, if you're using this code, and/or have bug reports or<br>
+  improvements, I'd be glad to hear from you. The revised MOBprograms can be<br>
+  seen in action at Imperium Gothique, mud.pitek.fi 4000. This code may be<br>
+  freely used and distributed, but some favorable publicity (such as having<br>
+  my name appended to your in-game credits) would encourage me to develop<br>
+  this software.</p>
+<p>Newt@Imperium Gothique May 1995-Jan 1996<br>
+  mn54196@uta.fi (am I lazy or what?)</p>
+<p>===================CUT HERE FOR QUICK REFERENCE SHEET========================</p>
+<p>MOBprogram quick reference to triggers/variables/ifchecks/mobcommands</p>
+<p>-----------------------------------------------------------------------------<br>
+  Area file format<br>
+  -----------------------------------------------------------------------------<br>
+  #MOBILES</p>
+<p>M {trigger} {program vnum} {argument}~</p>
+<p>#MOBPROGS</p>
+<p>#{program vnum}<br>
+  {program code}~</p>
+<p>-----------------------------------------------------------------------------<br>
+  trigger argument and what must happen to activate trigger<br>
+  -----------------------------------------------------------------------------<br>
+  act STRING to match from act() to mobile<br>
+  speech STRING to match in dialogue (say, tell) to mobile<br>
+  rand PERCENT chance to check whenever a PC is in the mobiles zone<br>
+  bribe INTEGER miminum amount of silver coins given to mobile<br>
+  give OBJECT NAME, OBJECT VNUM or ALL to match when obj given to mobile<br>
+  greet PERCENT chance to check if visible char enters mobile's room<br>
+  grall PERCENT chance to check when any char enters mobile's room<br>
+  entry PERCENT chance to check when mobile moves to a new room<br>
+  exit EXIT NUMBER a visible char tries to exit mobile's room<br>
+  exall EXIT NUMBER any char tries to exit mobile's room<br>
+  kill PERCENT chance to check when the mobile begins fighting<br>
+  fight PERCENT chance to check at fight_pulse if mobile is fighting<br>
+  hpcnt PERCENT lower than mobile's hit/max_hit if mobile is fighting<br>
+  death PERCENT chance to check after mobile has been slain<br>
+  surr PERCENT chance to activate when a char surrenders to mobile</p>
+<p>----------------------------------------------------------------------------<br>
+  variable mobile actor victim random target object 2nd_object<br>
+  -----------------------------------------------------------------------------<br>
+  name $i $n $t $r $q $o $p <br>
+  shrt_desc/title $I $N $T $R $Q $O $P <br>
+  he/she/it $j $e $E $J $X -- -- <br>
+  him/her/it $l $m $M $L $Y -- -- <br>
+  his/hers/its $k $s $S $K $Z -- --<br>
+  a/an -- -- -- -- -- -- --</p>
+<p>----------------------------------------------------------------------------<br>
+  ifcheck argument(s) meaning<br>
+  -----------------------------------------------------------------------------<br>
+  rand num Is random percentage less than or equal to num<br>
+  mobhere vnum Is a NPC with this vnum in the room<br>
+  mobhere name Is a NPC with this name in the room<br>
+  objhere vnum Is an object with this vnum in the room<br>
+  objhere name Is an object with this name in the room<br>
+  mobexists name Does NPC 'name' exist somewhere in the world<br>
+  objexists name Does object 'name' exist somewhere in the world<br>
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -<br>
+  people == integer Is the number of people in the room equal to integer<br>
+  players == integer Is the number of PCs in the room equal to integer<br>
+  mobs == integer Is the number of NPCs in the room equal to integer<br>
+  clones == integer Is the number of NPCs in the room with the same<br>
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -<br>
+  isnpc $* Is $* an NPC<br>
+  ispc $* Is $* a PC<br>
+  isgood $* Does $* have a good alignment <br>
+  isneutral $* Does $* have a neutral alignment<br>
+  isevil $* Does $* have an evil alignment<br>
+  isimmort $* Is $* an immortal (level of $* &gt; LEVEL_HERO)<br>
+  ischarm $* Is $* affected by charm<br>
+  isfollow $* Is $* a follower with their master in the room<br>
+  isactive $* Is $*'s position &gt; POS_SLEEPING<br>
+  isdelay $* Does $* have a delayed MOBprogram pending<br>
+  isvisible $* Is $* visible to NPC who activated the program<br>
+  hastarget $* Does $* have a MOBprogram target in the room<br>
+  istarget $* Is $* the target of NPC who activated the program<br>
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -<br>
+  affected $* 'affect' Is $* affected by 'affect'<br>
+  act $* 'act' Is $*'s ACT bit 'act' set<br>
+  off $* 'off' Is $*'s OFF bit 'off' set<br>
+  imm $* 'imm' Is $*'s IMM bit 'imm' set<br>
+  carries $* 'name' Is $* carrying object 'name'<br>
+  wears $* 'name' Is $* wearing object 'name'<br>
+  has $* 'type' Does $* have object of item_type 'type'<br>
+  uses $* 'type' Is $* wearing object of item_type 'type'<br>
+  name $* 'name' Is $*'s name 'name'<br>
+  pos $* 'position' Is $*'s position 'position' (sleeping etc.)<br>
+  clan $* 'name' Does $* belong to clan 'name'<br>
+  race $* 'name' Is $* of race 'name'<br>
+  class $* 'name' Is $*'s class 'name'<br>
+  objtype $* 'type' Is $*'s item_type 'type'<br>
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -<br>
+  vnum $* == integer Is $*'s virtual number equal to integer<br>
+  hpcnt $* == integer Is $*'s hitpoint percentage equal to integer<br>
+  room $* == integer Is vnum of the room $* is in equal to integer<br>
+  sex $* == integer Is $*'s sex equal to integer<br>
+  level $* == integer Is $*'s level equal to integer<br>
+  align $* == integer Is $*'s alignment equal to integer<br>
+  money $* == integer Does $* have money (in silver) equal to integer<br>
+  objval# $* == integer Is $*-&gt;value[#] equal to integer (# from 0-4)</p>
+<p>-----------------------------------------------------------------------------<br>
+  MOBcommand argument_list MOBcommand argument_list<br>
+  -----------------------------------------------------------------------------<br>
+  ASOUND [text_string] ECHO [text_string]<br>
+  GECHO [text_string] ZECHO [text_string]<br>
+  ECHOAT [victim] [text_string] ECHOAROUND [victim] [text_string]<br>
+  MLOAD [vnum] OLOAD [vnum] [level] {wear|room}<br>
+  KILL [victim] FLEE<br>
+  REMOVE [victim] [vnum] MOB JUNK [object]<br>
+  PURGE [argument] AT [dest] [command]<br>
+  GOTO [dest] TRANSFER [victim] [dest]<br>
+  GTRANSFER [victim] [dest] OTRANSFER [object] [dest]<br>
+  FORCE [victim] [command] GFORCE [victim] [command]<br>
+  VFORCE [vnum] [command] CAST [spell] [victim]<br>
+  DAMAGE [victim] [min] [max] {lethal}<br>
+  DELAY CANCEL<br>
+  REMEMBER [victim] FORGET<br>
+  CALL [vnum] [victim] [target1] [target2]</p>
+<p>======================END OF QUICK REFERENCE SHEET===========================</p>
+<p>+++++++++++++++++++++++++++++++ EXAMPLES ++++++++++++++++++++++++++++++++++++</p>
+<p>In #MOBILES:</p>
+<p>M act 1000 pokes you in the ribs.~</p>
+<p>In #MOBPROGS:</p>
+<p>#1000<br>
+  if isnpc $n<br>
+  chuckle<br>
+  poke $n<br>
+  break<br>
+  else<br>
+  if level $n &lt;= 5<br>
+  or isgood $n<br>
+  tell $n I would rather you didnt poke me.<br>
+  else<br>
+  if level $n &gt; 15<br>
+  scream<br>
+  say Ya know $n. I hate being poked!!!<br>
+  if mobhere guard<br>
+  mob force guard kill $n<br>
+  endif<br>
+  kill $n<br>
+  break<br>
+  endif<br>
+  slap $n<br>
+  shout MOMMY!!! $N is poking me.<br>
+  endif<br>
+  endif<br>
+  ~</p>
+<p>Ok.. time to translate.. the trigger will only happen when the mobile gets 
+  the message &quot;... pokes you in the ...&quot; If the offender (recall the 
+  $n and $N refer to the char who did the poking...) is an NPC, then the mobile 
+  merely chuckles and pokes back. If the offender was a PC then good and low level 
+  characters get a warning, high level chars get attacked, and midlevel chars 
+  get slapped and whined at.<br>
+  Also, when attacking, the mobile will check if there are guards in the room 
+  (if mobhere guard) and if one is found, it will be forced to attack the player, 
+  too (mob force guard mob kill $n). Notice the use of a MOBcommand &quot;mob 
+  force&quot;.</p>
+<p>Note that two of these mobiles could easily get into an infinite poke war which 
+  slows down (or frequently crashes) the mud just a bit :( <br>
+  Be very careful about things like that if you can. (i.e dont respond to a poke 
+  with a poke, and try not to let heavily programmed robot mobiles wander around 
+  together. More on that is given above.)</p>
+<p>Also, it is clear that the 'order' command could get confused with the 'or' 
+  control flow. However, this is only the case when 'order' is abbreviated to 
+  its two letterform, and placed immediately following an 'if' line. Thus, if 
+  you want to be that malicious in trying to break the MOBprogram code, no one 
+  is going to stand in your way (However, the result of this would be a bug message 
+  and a bail out from the ifcheck so things don&#8217;t really break)</p>
+<p>Another example:</p>
+<p>This program could be used on a temple guardian mobile, whose job is to prevent 
+  evil characters from entering the sanctuary. Let's assume the exit to the temple 
+  is north (exit 0) and the temple antechamber is room 2301</p>
+<p>In #MOBILES</p>
+<p>M exit 1001 0</p>
+<p>In #MOBPROGS</p>
+<p>#1001<br>
+  if isgood $n<br>
+  say Hail!<br>
+  emote salutes $n.<br>
+  if carries $n holy<br>
+  mob transfer $n 2301<br>
+  else<br>
+  say If you wish to enter the temple, get a holy symbol.<br>
+  endif<br>
+  else<br>
+  curse $n<br>
+  say Get lost, you scum!<br>
+  endif<br>
+  ~</p>
+<p>How this works: The trigger is activated when the player tries to exit north 
+  from the room. If the player is of good alignment, the guard will greet the 
+  player. However, the guard will not let the player to the temple unless he or 
+  she carries a holy symbol. If the player is neutral or evil, the guard will 
+  curse and block the way.</p>
+<p>Example of using DELAY and REMEMBER:</p>
+<p>In #MOBILES</p>
+<p>M greet 1002 100<br>
+  M delay 1003 100</p>
+<p>In #MOBPROGS</p>
+<p>#1002<br>
+  if isevil $n<br>
+  say You infidel! Go away or face the wrath of mighty Mota!<br>
+  mob remember $n<br>
+  mob delay 10<br>
+  break<br>
+  endif<br>
+  ~<br>
+  #1003<br>
+  if hastarget $i<br>
+  growl<br>
+  mob echo $I screams and attacks $Q.<br>
+  mob kill $q<br>
+  else<br>
+  mob forget<br>
+  endif<br>
+  ~</p>
+<p>How this works: When the player enters a room, the mobile checks if the player 
+  is evil. If this is the case, the mobile makes the player the target (mob remember) 
+  and sets up a delay of 10 * PULSE_MOBILE.<br>
+  When the delay expires, program #1003 is activated. The mobile checks if the 
+  target is still in the room (hastarget), and if the player hasn't left, the 
+  mobile attacks ($q and $Q refer to the target). If the player has left, the 
+  mobile will forget the player (mob forget).</p>
+<p>Example of MOB CALL:</p>
+<p>In #MOBILES:</p>
+<p>M greet 1004 100</p>
+<p>In #MOBPROGS:</p>
+<p>#1004<br>
+  if isgood $n<br>
+  mob call 1005 $n null null<br>
+  else<br>
+  mob call 1006 $n null null<br>
+  endif<br>
+  ~<br>
+  #1005<br>
+  mob echo Suddenly, a bright aura surrounds $I!<br>
+  mob cast 'heal' $n<br>
+  ~<br>
+  #1006<br>
+  mob echoat $n $I points $l finger at you in fury!<br>
+  mob echoaround $I points $l finger at $N in fury!<br>
+  mob cast 'curse' $n<br>
+  ~</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</p>
+<p></p>
+</body>
+</html>

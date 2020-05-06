@@ -1,0 +1,931 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Creating mprogs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body link="#0000CC" vlink="#0000CC" alink="#0000CC">
+<p><font size="2" face="Arial, Helvetica, sans-serif"> <font size="3"><strong><a name="top"></a>Creating 
+  mprogs</strong></font></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Mprogs are useful in giving 
+  life to an area (an example would be Boktor), and are always used in miniquests. 
+  However, although they are more stable than oprogs, they do occassionally crash 
+  the MUD, so if you're unclear about something, feel free to ask an area immortal, 
+  a foreman or just a fellow builder for help.</font></p>
+<hr>
+<p><font size="2" face="Arial, Helvetica, sans-serif"> Mprog guide: <a href="#command">Commands</a> 
+  <a href="#creation">Making an mprog</a> <a href="#triggers">Triggers</a> <a href="#variable">Variables</a> 
+  <a href="#operators">Operators</a> <a href="#ifchecks">If checks</a> <a href="#mobcommands">Mob 
+  commands</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="quickref.htm">Quick 
+  reference sheet</a> <a href="examples.htm">Examples</a> <a href="omprog.htm">Original 
+  mprog guide</a></font></p>
+<hr>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="command"></a>Commands</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">&quot;pedit create&quot;<br>
+  Creates a new program.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">&quot;code&quot;<br>
+  Allows you to enter the append mode to modify the mprog.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">&quot;mpstat &lt;mob name&gt;&quot;<br>
+  Displays the triggers and MOBprogram vnums defined for the mobile.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">&quot;mpdump &lt;vnum&gt;&quot;<br>
+  Displays the MOBprogram code of given vnum.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">&quot;addmprog [vnum] [trigger] 
+  [phrase]&quot;<br>
+  Adds a mprog to a mob within medit.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="creation"></a>Making 
+  an mprog</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">I first type: &quot;pedit 
+  create 3002&quot; This creates an mprog with the vnum of 3002.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Then I type &quot;code&quot; 
+  and enter the append mode.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"> I then enter the commands, 
+  each command on a separate line. An example of a mprog, taken from Saxan in 
+  Sendar: </font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">bow $n<br>
+  say Welcome to my Weapon Shop $n.<br>
+  say Allow me to introduce myself - I am Saxan, and I own this store. if there's 
+  anything I can help you with please let me know.<br>
+  mob echoat $n $I goes back to working the steel over an anvil.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">After making the mprog, 
+  I would have to add it to the mob itself. This is done through medit. I would 
+  type the following:</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">medit &lt;mob vnum&gt;<br>
+  addmprog 3002 grall 100</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">This would add the mprog 
+  3002 to the mob, with the grall trigger, 100% of the time. This means the mob 
+  will perform the program everytime someone enters the room. </font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">The addmprog syntax is addmprog 
+  [vnum] [trigger] [phrase]</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">If you have any questions, 
+  ask an area immortal or one of the foremen, or failing both, a fellow builder. 
+  If you are unsure about something, please ask. A bad mprog can crash the mud, 
+  and cause all sorts of weird things to happen.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"> <a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a name="triggers"></a><strong>Triggers</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">ACT</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Keyword : 'act'<br>
+  Argument: string</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif">The argument is a phrase, 
+    a text string. The trigger is activated whenever the phrase is contained in 
+    the act() message.</font></p>
+  <p><font size="2" face="Arial, Helvetica, sans-serif">NOTE: Most general trigger. 
+    Applies to almost every event which happens in the mud. Anytime the function 
+    act() is called with a message to be delivered TO_CHAR,TO_VICT,TO_ROOM,etc. 
+    the act can be triggered. Basically this will trigger on almost everything 
+    you'll ever want. Output of &quot;say&quot;, &quot;shout&quot; and &quot;emote&quot; 
+    do not trigger this event.</font></p>
+  
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif">SPEECH</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Keyword : 'speech'<br>
+  Argument: string</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif">This is only triggered 
+    when the phrase is contained in a message which has been said by a PC in the 
+    same room as the mob. The PC restriction is not necessary, but makes infinite 
+    loops between two talking mobiles impossible. It also makes it impossible 
+    for two NPC's to stand and discuss the weather however. </font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif">RANDOM</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Keyword : 'random'<br>
+  Argument: number</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> The argument is a number 
+    betweeen 0 and 99 inclusive. This trigger is checked at each PULSE_MOBILE 
+    and if the argument is greater than a percentage roll the trigger is activated. 
+    This will happen even if there is no PC in the room with the mob, but there 
+    must be players in the same area. It is useful to give mobiles a bit of a 
+    personality. For instance a janitor who stops to spit tobacco, or complain 
+    about the hours or wonder why there are no woman janitors on muds, or a fido 
+    which barks or growls or pees on the curb is much more alive than one which 
+    just sits there scavenging.</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif">GREET</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Keyword : 'greet'<br>
+  Argument: percentage</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> A percentage argument. 
+    Whenever someone visible to the mobile enters the room with the mobile, this 
+    is checked. Good for shopkeepers who want to welcome customers, or for pseudo-aggressive 
+    mobiles which need to discriminate on who they attack. Greet trigger activates 
+    only when the mobile is not busy (fighting, sitting, sleeping etc.). If you 
+    want to be sure to catch all players, use grall.</font></p>
+  </blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif">GREET ALL</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Keyword : 'grall'<br>
+  Argument: percentage</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> A percentage argument. 
+    Like greet, but it can be triggered even if the mobile didn't see the arrival 
+    (i.e. sneak, invis, etc) or is busy. Most useful for faking teleport rooms 
+    or for impassable guardians.<br>
+    <br>
+    ENTRY</font></p>
+  </blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Keyword : 'entry'<br>
+  Argument: percentage</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> A percentage argument. 
+    The opposite of greet trigger. Whenever the mobile itself enters a new room, 
+    this can be triggered. Useful for looking around, or waving or other things 
+    that real PCs do when they arrive at a crowded room.</font></p>
+  <p><font size="2" face="Arial, Helvetica, sans-serif">IMPORTANT: In an entry 
+    program, the mobile can only refer to a random pc ($r in if checks) -- there's 
+    no way to know how many PCs exist in the room the mobile enters! Also, you 
+    must check visibility of the target in your program.</font></p>
+  </blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif">EXIT</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Keyword : 'exit'<br>
+  Argument:exit number (0:north, 1:east, 2:south 3:west etc.)</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> The opposite of entry 
+    trigger. This is activated when PC tries to leave a room through an exit indicated 
+    by the argument, and the mobile sees the person leave. Useful for having a 
+    single guardian to watch several exits. An exit trigger works better than 
+    an entry trigger, since you can refer to a specific PC instead of a random 
+    PC.</font></p>
+  <p><font size="2" face="Arial, Helvetica, sans-serif">IMPORTANT: If this event 
+    is triggered, the victim will not move through the exit. If necessary, you 
+    must move the character yourself in your program (see also<em> <a href="#mobtrans">mob 
+    transfer</a></em>). Also, this event is not triggered when a character flees 
+    from combat or the mobile is not in its default position.</font></p>
+  </blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif">EXIT ALL</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Keyword : 'exall'<br>
+  Argument: exit number (0:north, 1:east, 2:south 3:west etc.)</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif">The same as exit trigger, 
+    but it can be triggered even if the mobile cannot see the person trying to 
+    leave the room or if the mobile is busy.</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif">GIVE </font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Keyword : 'give'<br>
+  Argument: string or object vnum</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif">The argument is either 
+    the a string containing words to bematched against the keywords of the object, 
+    or the word &quot;all&quot;.<br>
+    e.g. argument &quot;long sword&quot; will match to objects &quot;long bow&quot; 
+    and &quot;small sword&quot;.<br>
+    Alternatively, the argument can be the virtual number of a single object.</font></p>
+  <p><font size="2" face="Arial, Helvetica, sans-serif">NOTE: This is triggered 
+    whenever something is given to the mobile. Best used for quests. Since the 
+    first successful trigger is the only one of this type, which is processed, 
+    having an &quot;all&quot; argument in the script at the end of the MOBprogram 
+    list is essentially a default response.</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif">BRIBE</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Keyword: 'bribe'<br>
+  Argument: positive integer number</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif">This trigger is activated 
+    whenever money is given to the mobile. If the amount given exceeds the number, 
+    then process the commands. Note again, that an argument of '1' would act as 
+    a default response. Also note that if the script is not triggered (because 
+    of too little money having been given), the mobile still keeps the money.</font></p>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> ROM 2.4 NOTE: Since ROM 
+    2.4 has two different types of currency (gold and silver coins), for bribe 
+    trigger the amount to be given is converted to silver coins with the rate 
+    of 1 gold = 100 silver. Thus, the number in the argument should be the expected 
+    amount in silver coins.</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif">KILL</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Keyword: 'kill'<br>
+  Argument: percentage</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> A percentage argument. 
+    This trigger is checked whenever a PC attacks the mobile. The check occurs 
+    only ONCE, in the beginning of combat. Useful for summoning assistance etc. 
+    (See <em><a href="#mobload">mob mload</a></em>).</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif">FIGHT</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Keyword: 'fight'<br>
+  Argument: percentage</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> A percentage argument. 
+    Useful for giving mobiles combat attitude. It is checked every PULSE_VIOLENCE 
+    when the mobile is fighting. Can be used to cast spells (see MOB CAST), curse 
+    at the opponent, or whatever. Only the first successful one will be processed 
+    to save time, which means the mobile cannot get lucky and 1. curse, cast a 
+    fireball and 2. spit on the player, cast another fireball in the same pulse.</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif">HIT POINT PERCENTAGE</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Keyword : 'hpcnt'<br>
+  Argument: percentage</font></p>
+<blockquote> 
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> The argument is a percentage. 
+    This is activated at each PULSE_VIOLENCE when the mobile is fighting. It checks 
+    to see if the hitpoints of the mobile are below the given percentage. Multiple 
+    hpcnt triggers should be listed in increasing order of percent since a 40% 
+    will always be activated before a 20% and, only the first successful trigger 
+    is performed. (see also <a href="#mobflee"><em>mob flee</em></a>).</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif">DEATH</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Keyword : 'death'<br>
+  Argument: percentage</font></p>
+<blockquote> 
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> A percentage argument. 
+    When the mobile dies, if the random percentage is less than the argument the 
+    mobile performs the MOBprogram commands rather than the usual death_cry() 
+    sequence. This is done before the corpse is made, so the commands can be considered 
+    the mobiles last gasp. The position of the mobile is set to STANDING, and 
+    so it can do all the normal commands, without worrying about being DEAD. However, 
+    even if the mobile restores itself to full hitpoints, it will still die. This 
+    is not a way to immortal mobiles. However, the last thing this mobile does 
+    could be to goto some vacant room, load a fresh version of itself, drop all 
+    its items, force the new mobile to get all the items and wear them, send the 
+    new mobile back to the character who killed it and force the new mobile to 
+    attack that character. Along with a text message which said the mobile restored 
+    itself, this might be a convincing effect.</font></p>
+  <p><font size="2" face="Arial, Helvetica, sans-serif">A few examples of what 
+    you can do with it: destroy the items the mob was holding (see <a href="#mobremove"><em>mob 
+    remove</em></a> and <a href="#mobjunk"><em>mob junk</em></a>), create some 
+    objects (see <a href="#mobload"><em>mob oload</em></a>), cast a spell (see 
+    <a href="#mobcast"><em>mob cast</em></a>) on the killer/room, or even goto 
+    a new location (see <a href="#mobgoto"><em>mob goto</em></a>) and die there 
+    (with a text message, the corpse would seem to vanish). </font></p>
+  </blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif">DELAY</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Keyword : 'delay'<br>
+  Argument: percentage</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> A percentage argument. 
+    This trigger activates when the delay of a mobile (set with the<em> <a href="#mobdelay">mob 
+    delay</a></em> command) expires. This trigger can be used to create staged 
+    mobile behavior, for example, a guardian could see a player entering a room, 
+    give a warning and activate a delay. If the player is still present when the 
+    delay expires, the guard would attack the player. (See also <em><a href="#mobremember">mob 
+    remember</a></em>). A mobile can have several delay triggers, but every time 
+    the delay timer expires, all the triggers are checked and the first successful 
+    one executed.</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif">SURRENDER</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Keyword : 'surr'<br>
+  Argument: percentage</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> A percentage argument.</font><font size="2" face="Arial, Helvetica, sans-serif"> 
+    This trigger activates when the mobile is fighting and the opponent issues 
+    a &quot;surrender&quot; command. When triggered, both parties will cease fighting, 
+    and the mobile can accept the surrender (perhaps taking all equipment from 
+    the character with <a href="#mobremove"><em>mob remove</em></a>). Note that 
+    if the mobile does not accept the surrender, it must resume fighting with 
+    MOB KILL. If a character surrenders and the mobile does not have a surrender 
+    trigger, or the trigger does not activate, the fight resumes normally.</font></p>
+  <p><font size="2" face="Arial, Helvetica, sans-serif">NOTE: No MOBprograms will 
+    be successful when the mobile is charmed (since it has no self volition, it 
+    should act like it has none) to protect mobiles which are given special powers 
+    from being implemented by a player.</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="variable"></a>Variables</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"> To make things come alive, 
+  variables are needed. These are represented in the MOBprograms by using a dollar 
+  sign convention as in the socials. When the mud command is processed, these 
+  variables are expanded into the values shown below. Usually, it is best to use 
+  the short descriptions of mobiles and the names of players when speaking them, 
+  but if you are performing an action to someone almost always you want the name. 
+  The title field for players is an extra that probably wont often be used. Without 
+  further hesitation... the variables:</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">$i the first of the names 
+  of the mobile itself.<br>
+  $I the short description of the mobile itself.<br>
+  $n the name of whomever caused the trigger to happen.<br>
+  $N the name and title of whomever caused the trigger to happen.<br>
+  $t the name of a secondary character target (i.e A smiles at B)<br>
+  $T the short description, or name and title of target (NPC vs PC)<br>
+  $r the name of a random PC in the room with the mobile<br>
+  $R the short description, or name and title of the random PC<br>
+  $q the name of the MOBprogram target (see MOB REMEMBER)<br>
+  $Q the short description of the MOBprogram target</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">$j he,she,it based on sex 
+  of $i.<br>
+  $e he,she,it based on sex of $n.<br>
+  $E he,she,it based on sex of $t.<br>
+  $J he,she,it based on sex of $r.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">$k him,her,it based on sex 
+  of $i.<br>
+  $m him,her,it based on sex of $n.<br>
+  $M him,her,it based on sex of $t.<br>
+  $K him,her,it based on sex of $r.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">$l his,hers,its based on 
+  sex of $i.<br>
+  $s his,hers,its based on sex of $n.<br>
+  $S his,hers,its based on sex of $t.<br>
+  $L his,hers,its based on sex of $r.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">$o the first of the names 
+  of the primary object (i.e A drops B)<br>
+  $O the short description of the primary object<br>
+  $p the first of the names of the secondary object (i.e A puts B in C)<br>
+  $P the short description of the secondary object</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"> Also, in if_checks, the 
+  accepted variables are the basic ones (i,n,t,r,o,p,q). If a variable is referenced 
+  that doesnt exist, then the value is simply left blank or replaced with &quot;someone&quot;/&quot;something&quot; 
+  in output (i.e referring to $o when the trigger is: A kisses B)</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"> If variable $q has not 
+  been defined, it is automatically set to the last player that has triggered 
+  the program being executed (i.e. variable $n). Once $q has been defined, it 
+  can be modified with MOB REMEMBER and MOB FORGET commands in a program. Variable 
+  $q lets the mobile &quot;remember&quot; a player across different programs, 
+  which can be useful. Note that $q is set automatically only the FIRST TIME the 
+  mobile executes a program, every time<br>
+  thereafter it must be set with MOB REMEMBER.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"> The only problem with the 
+  variables is that the secondary object and nthe secondary target are passed 
+  by act() in the same location. This means that if you reference $t in an A puts 
+  B in C situation, the result will probably be a happy mud crash or some weird 
+  side effect, espescially if $t is used in an if_check (i.e. if isnpc($t) in 
+  the above situation) The basic fix for this is to change everyone who calls 
+  the act() procedure to specify a secondary object and a secondary character. 
+  But that is a fairly comprehensive trivial twiddle, so we left it the way it 
+  is so that, you arent forced to make all those twiddles to use the MOBprograms.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><strong><font size="2" face="Arial, Helvetica, sans-serif"><a name="operators"></a>Operators</font></strong> 
+</p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"> Most of the basic numeric 
+  operators are legal and perform the same function as in C.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Operators: == != &gt; &lt; 
+  &gt;= &lt;=</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="ifchecks"></a>If 
+  checks</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"> The provided list of if_checks 
+  and their arguments are below. They should all be fairly obvious in what they 
+  do, but some of the more obtuse deserve a slight explanation. Any '==' operator 
+  can be replaced with any of the available ones described above. The argument 
+  $* refers to any of the variables which make sense for that if_check (i.e. for 
+  an if_check which is referencing a person the only valid variables would be 
+  $i, $n, $t, $r or $q) A value type of string is a sequence of characters. It 
+  does not need to be included in quotes or anything like that (i.e. if name $n 
+  fido )</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">There are five types of 
+  if checks:</font></p>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr> 
+    <td colspan="2"><p><font size="2" face="Arial, Helvetica, sans-serif">Type 
+        1: Keyword and value</font></p></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">rand num</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is random percentage 
+      less than or equal to num</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">mobhere vnum</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is a NPC with this 
+      vnum in the room</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">mobhere name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is a NPC with this 
+      name in the room</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">objhere vnum</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is an object with this 
+      vnum in the room</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">objhere name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is an object with this 
+      name in the room</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">mobexists name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does NPC 'name' exist 
+      somewhere in the world</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">objexists name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does object 'name' 
+      exist somewhere in the world</font></td>
+  </tr>
+  <tr> 
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td colspan="2"><p><font size="2" face="Arial, Helvetica, sans-serif">Type 
+        2: Keyword, comparison and value</font></p></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">people == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is the number of people 
+      in the room equal to integer</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">players == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is the number of PCs 
+      in the room equal to integer</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">mobs == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is the number of NPCs 
+      in the room equal to integer</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td height="20"><font size="2" face="Arial, Helvetica, sans-serif">clones 
+      == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is the number of NPCs 
+      in the room with the same vnum as the NPC who activated the program equal 
+      to integer</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">order == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is the order (of several 
+      similar NPCs) of the NPC who activated the trigger equal to integer</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">hour == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is the hour (game time) 
+      equal to integer</font></td>
+  </tr>
+  <tr> 
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td colspan="2"><p><font size="2" face="Arial, Helvetica, sans-serif">Type 
+        3: Keyword and actor</font></p></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isnpc $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* an NPC</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">ispc $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* a PC</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isgood $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* have a good 
+      alignment </font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isneutral $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* have a neutral 
+      alignment</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isevil $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* have an evil 
+      alignment</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isimmort $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* an immortal (level 
+      of $* &gt; LEVEL_HERO)</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">ischarm $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* affected by charm</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isfollow $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* a follower with 
+      their master in the room</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isactive $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s position &gt; 
+      POS_SLEEPING</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isdelay $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* have a delayed 
+      MOBprogram pending</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td height="27"><font size="2" face="Arial, Helvetica, sans-serif">isvisible 
+      $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* visible to NPC 
+      who activated the program</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">hastarget $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* have a MOBprogram 
+      target in the room</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">istarget $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* the target of 
+      NPC who activated the program</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isquested $* </font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* quested</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">violent $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> Is $* vt</font></td>
+  </tr>
+  <tr> 
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td colspan="2"><font size="2" face="Arial, Helvetica, sans-serif">Type 4: 
+      Keyword, actor and value</font> </td>
+  </tr>
+  <tr> 
+    <td><p><font size="2" face="Arial, Helvetica, sans-serif">affected $* affect</font></p></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* affected by affect</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">act $* act</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s ACT bit act 
+      set</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">off $* off</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s OFF bit off 
+      set</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">imm $* imm</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s IMM bit imm 
+      set</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">carries $* name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* carrying object 
+      name</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">wears $* name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* wearing object 
+      name</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">has $* type</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* have object 
+      of item_type type</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">uses $* type</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* wearing object 
+      of item_type type</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">name $* name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s name name</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">pos $* position</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s position position 
+      (sleeping etc.)</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">clan $* name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* belong to clan 
+      name</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">race $* name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* of race name</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">class $* name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s class name</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">objtype $* type</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s item_type type</font></td>
+  </tr>
+  <tr> 
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td colspan="2"><font size="2" face="Arial, Helvetica, sans-serif">Type 5: 
+      Keyword, actor, comparison and value</font> </td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">vnum $* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s virtual number 
+      equal to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">hpcnt $* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s hitpoint percentage 
+      equal to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">room $* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is vnum of the room 
+      $* is in equal to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">sex $* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s sex equal to 
+      integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">level $* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s level equal 
+      to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">align $* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s alignment equal 
+      to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">money $* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* have money 
+      (in silver) equal to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">objval# $* == integer</font></td>
+    <td><p><font size="2" face="Arial, Helvetica, sans-serif">Is $*-&gt;value[#] 
+        equal to integer (# from 0-4)</font></p></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">grpsize $* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is group size of $* 
+      equal to integer</font></td>
+  </tr>
+</table>
+<br>
+<font size="2" face="Arial, Helvetica, sans-serif">NOTE: The original MERC 2.2 
+MOBprograms used parenthesis '(' and ')' around variables. In this version, they 
+are not allowed. Also, parameters MUST BE separated with spaces (if level $n&lt;10 
+is NOT valid, correct syntax is: if level $n &lt; 10).</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="mobcommands"></a>Mob 
+  commands</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"> MOBcommands are special 
+  commands that allow mobiles to perform immortal-like actions within a MOBprogram 
+  (transferring players or loading items, for example). Most MOBcommands them 
+  are wiz commands which have been changed to allow for mobiles to perform the 
+  commands. In this version of MOBprograms, players have been prevented from using 
+  these commands by adding a separate interpreter for MOBcommands. This also speeds 
+  up (in most cases) MOBprogram execution when MOBcommands are used. All MOBcommands 
+  are preceded with the word 'MOB' on the command line.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Syntax: MOB ASOUND [string]<br>
+  MOB ZECHO [string]<br>
+  MOB GECHO [string]</font></p>
+<blockquote> 
+  <p><font size="2" face="Arial, Helvetica, sans-serif">ASOUND It prints the text 
+    string to the rooms around the mobile in the same manner as a death cry. This 
+    is really useful for powerful aggressive and is also nice for wandering minstrels 
+    or mobiles like that in concept.<br>
+    ZECHO prints the string to all players in the same area with the mobile.<br>
+    GECHO prints the string to all players in the game.</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Syntax: MOB ECHO [string]<br>
+  MOB ECHOAT [victim] [string]<br>
+  MOB ECHOAROUND [victim] [string]</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> ECHO displays the string 
+    to everyone in the room. ECHOAT displays the string to the victim only. ECHOAROUND 
+    displays the string to everyone except the victim. The three options let you 
+    tailor the message to goto victims or to do things sneaky like having a merchant 
+    do: mob at guard mob echoat guard rescue_please This coupled with a guard 
+    act trigger on rescue_please to:<br>
+    </font><font size="2" face="Arial, Helvetica, sans-serif">mob goto $n<br>
+    mob echo $I has arrived.<br>
+    </font><font size="2" face="Arial, Helvetica, sans-serif">It is an affective 
+    way of quickly bringing guards to the scene of an attack. (Note that the merchant 
+    has to be the only one of its kind in the game or have a unique name, otherwise 
+    the guard might go to different mobile...).</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a name="mobload"></a>Syntax: 
+  MOB MLOAD [vnum]<br>
+  MOB OLOAD [vnum] [level] {'room'|'wear'}</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> MLOAD creates a mobile 
+    and places it in the same room with the mobile.</font></p>
+  <p><font size="2" face="Arial, Helvetica, sans-serif">OLOAD loads the object 
+    into the inventory of the mobile. Even if the item is non-takable, the mobile 
+    will receive it in the inventory. This lets a mobile distribute a quest item 
+    or load a key or something. The optional 3rd parameter can be specified; 'room' 
+    means to load the object to the room, 'wear' means to force the mobile to 
+    wear the object loaded (useful for equipping mobiles on the fly).</font></p>
+  <p><font size="2" face="Arial, Helvetica, sans-serif">See <em><a href="#loadmob">Loading 
+    Mobiles and Objects</a></em> for more.</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Syntax: MOB KILL [victim]</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> Lets a mobile kill a 
+    player without having to murder. Lots of MOBprograms end up with mpkill $n 
+    commands floating around. It works on both mobiles and players.</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a name="mobflee"></a>Syntax: 
+  MOB FLEE</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> Causes a mobile to unconditionally 
+    flee from combat. Can be used for example with the hit point percentage trigger 
+    to simulate &quot;wimpy&quot; behavior.</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a name="mobremove"></a>Syntax: 
+  MOB REMOVE [victim] [vnum|'all']</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> Lets the mobile to strip 
+    an object of given vnum from the victim. Objects removed are destroyed. If 
+    the vnum is replaced with &quot;all&quot;, the whole inventory of the victim 
+    is destroyed. This command is probably most useful for extracting quest items 
+    from a player after a quest has been completed.</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><br>
+  <a name="mobjunk"></a>Syntax: MOB JUNK [object]</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> Destroys the object refered 
+    to in the mobile's inventory. It prints no message to the world and you can 
+    do things like junk all.bread or junk all. This is nice for having janitor 
+    mobiles clean out their inventory if they are carrying too much (have a MOBprogram 
+    trigger on the 'full inventory').</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Syntax: MOB PURGE [argument]</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> Destroys the argument 
+    from the room of the mobile. Without an argument the result is the cleansing 
+    of all NPC's and items from the room with the exception of the mobile itself. 
+    However, mppurge $i will indeed purge the mobile, but it MUST be the last 
+    command the mobile tries to do, otherwise the mud cant reference the acting 
+    mobile trying to do the commands and bad things happen. </font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Syntax: MOB AT [location] 
+  [command]</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> Perfoms the command at 
+    the designated location. Very useful for doing magic slight of hand tricks 
+    that leave players dumbfounded.. such as metamorphing mobiles, or guard summoning, 
+    or corpse vanishing.</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a name="mobgoto"></a>Syntax: 
+  MOB GOTO [location]</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> Moves the mobile to the 
+    room or mobile or object requested. It makes no message of its departure or 
+    of its entrance, so these must be supplied with echo commands if they are 
+    desired.</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a name="mobtrans"></a>Syntax: 
+  MOB TRANSFER [victim|'all'] [location]<br>
+  MOB GTRANSFER [victim] [location]<br>
+  MOB OTRANSFER [object] [location]</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> Sends the victim to the 
+    destination or to the room of the mobile as a default. if the victim is &quot;all&quot; 
+    then all the characters in the room of the mobile are transfered to the destination. 
+    Good for starting quests or things like that. There is no message given to 
+    the player that it has been transfered, but the player sees the room and the 
+    room description of the new room they enter.<br>
+    Gtransfer works like transfer, except that the group the victim belongs to 
+    is transferred with the victim. Mobs cannot transferred. Otransfer transfers 
+    an object in the room.</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Syntax: MOB FORCE [victim|'all'] 
+  [command]<br>
+  MOB GFORCE [victim] [command]<br>
+  MOB VFORCE [vnum] [command]</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> Forces the victim to 
+    do the designated command. The victim is not told that they are forced, they 
+    just do the command so usually some mpecho message is nice. You can force 
+    players to remove belongings and give them to you, etc. The player sees the 
+    normal command messages (such as removing the item and giving it away in the 
+    above example) Again, if the victim is &quot;all&quot; then everyone in the 
+    mobiles room does the command.<br>
+    Gforce works like force except that it affects the group the victim belongs 
+    to.<br>
+    Vforce affects all mobiles with given vnum in the game world. This is useful 
+    for, for example, purging certain type of NPCs from the game (by forcing them 
+    to purge themselves).</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a name="mobcast"></a>Syntax: 
+  MOB CAST [spell] [victim]</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> Lets the mobile to cast 
+    spells. Beware, this does only crude validity checking and does not use up 
+    any mana. All spells are available regardless of the race or other abilities 
+    of the mobile. Casting the spell occurs silently, but spell effects are displayed 
+    normally.</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Syntax: MOB DAMAGE [victim|'all'] 
+  [min] [max] {lethal}</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> Causes unconditional 
+    damage to the victim. Specifying &quot;all&quot; as victim causes damage to 
+    all characters in the room except the mobile. Min and max parameters define 
+    the minimum and maximum amounts of damage caused. By default, the damage is 
+    non-lethal, but by supplying the optional 'lethal' parameter, the damage can 
+    kill the victim. This command is silent, you must echo all messages yourself 
+    in the program. Useful for implementing special attacks for mobiles.</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a name="mobdelay"></a>Syntax: 
+  MOB DELAY<br>
+  MOB CANCEL</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> MOB DELAY sets the time 
+    in PULSE_MOBILE after which the mobile's delay trigger is activated. If the 
+    mobile has a program defined for delay trigger, the program is executed when 
+    the timer expires.<br>
+    MOB CANCEL resets the delay timer.</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><br>
+  <a name="mobremember"></a>Syntax: MOB REMEMBER [victim]<br>
+  MOB FORGET</font></p>
+<blockquote>
+  <p><font size="2" face="Arial, Helvetica, sans-serif"> MOB REMEMBER enables 
+    the mobile to remember a player for future reference in a MOBprogram. The 
+    player can subsequently be referred<br>
+    as '$q' in programs activated by the mobile.<br>
+    MOB FORGET clears the target.<br>
+    Note that if the first time the mobile runs a program, $q is automatically 
+    set to the player who triggered the event. Most commonly this command is used 
+    in delayed programs, where the mobile has to remember the player who triggered 
+    the original event, for example to continue conversation.</font></p>
+</blockquote>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Syntax: MOB CALL [vnum] 
+  {victim} {target1} {target2}</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"> This command lets you call 
+  MOBprograms from within a running one, i.e. to call a MOBprogram subroutine. 
+  The first parameter is the vnum of the program to execute, the second is the 
+  victim's name (for example $n), and the third and fourth are optional object 
+  names. All other parameters except vnum can be replaced with word 'null' indicating 
+  ignored parameter.<br>
+  MOBprograms can be called recursively, but as a safety measure, parser allows 
+  only 5 recursions.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="loadmob"></a>Loading 
+  Mobiles and Objects</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"> No doubt you want to load 
+  objects and mobiles in your MOBprograms with &quot;mob oload&quot; and &quot;mob 
+  mload&quot;. There are two problems connected to this. One is that mloaded mobiles 
+  will appear without equipment and the other is that it is difficult to keep 
+  track of the number of created mobiles and objects.<br>
+  If you want to mobiles to appear in your area as a result of the players' action, 
+  create a &quot;storage room&quot;. Define resets for the mobiles as usual (equipment 
+  etc.) and place them in the storage room. When you need to use the mobiles, 
+  just &quot;mob transfer&quot; them to the location you want. This is better 
+  than creating mobiles on the fly, since you don't have to worry about creating 
+  too many mobiles or equipping them, area resets take care of all that.<br>
+  If you have a MOBprogram that creates new mobiles, you might want to make the 
+  mobiles &quot;self-destructing&quot;. This is easiest to do with a random trigger 
+  that checks if the mobile is doing anything useful and possibly does 'mob purge 
+  $i'.<br>
+  Another possibility is to use a &quot;purgemaster&quot;. Create a storage room 
+  with a single mobile. Attach a random trigger that does 'mob purge' to that 
+  mobile. Now, when you need to get rid of anything, just 'mob transfer' the mobile 
+  or item to purgemaster, and it will be destroyed sometime later.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>Version &amp; Credits 
+  (not too sure where this goes):</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Originally appeared in:<br>
+  Merc release 2.2<br>
+  Wednesday 24 November 1993</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"> N'atas-Ha natasha@gs118.sp.cs.cmu.edu<br>
+  Kahn</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Modified for ROM 2.4 in 
+  January 1996<br>
+  Newt@Imperium Gothique</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">The reason this code was 
+  written was to enhance the playing experience at ThePrincedom (a Merc 2.0 based 
+  world scheduled to open in October 1993)</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"> The original idea for this 
+  type of MOBprogram came from playing on: WORLDS of CARNAGE, a dikumud implemented 
+  by Robbie Roberts and Aaron Buhr. Aaron (known as Dimwit Flathead the First) 
+  was the original author from what I have been told, and I hope he will not be 
+  totally offended and angered by my coding and sharing a mimicked version with 
+  the world. This version is probably not as good as the original and I do feel 
+  remorse for publishing the idea. However, since Carnage has been down for months 
+  without a word of information regarding its return, I am glad to let one of 
+  the best features live on in future generations of MUDs.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"> There are no objections 
+  to this code being shared, since, aside from a nuclear destruction of all the 
+  Temples of Midgaard (excepting the original one!!), bland mobiles are the greatest 
+  bane of Dikumuds today. It would be nice to get a message saying you are using 
+  the code just for our references. We shant answer questions from anyone until 
+  told where they are using the code. *grin* Since this code is not copyrighted, 
+  you of course dont have to do anything we say, but it would be nice of you to 
+  put the mobprog help screen into your database. and have mobinfo show up somewhere 
+  on a more visable help screen (possibly tagged onto the bottom of credits as 
+  a see also...)</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"> I acknowledge all the work 
+  done by the original Diku authors as well as those at Merc Industries and appreciate 
+  their willingness to share code. Also, quick thanks to Wraith for doing a little 
+  beta-installation testing.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">N'Atas-Ha June, 1993<br>
+  natasha@gs118.sp.cs.cmu.edu</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"> In addition to this DOC 
+  file credit section, I'd like to add a thank you to Yaz, Mahatma, Zelda, and 
+  the rest of the 4th Realm crew for extensively testing MOBProgram 2.1 for me. 
+  You may see MOBPrograms in action as well as their own &quot;flavor&quot; of 
+  mud at marble.bu.edu 4000.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Kahn Oct 28th, 1993<br>
+  MERC Industries</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"> This driver was rewritten 
+  by me in summer '95. I also added room and object programs (not in ROM 2.4 version). 
+  While I acknowledge the skill and insight of the above people who conceived 
+  the original MOBprogram idea, they should not be held responsible in any way 
+  for this release. I can't promise I will be able to support this code in the 
+  future, use at your own risk. However, if you're using this code, and/or have 
+  bug reports or improvements, I'd be glad to hear from you. The revised MOBprograms 
+  can be seen in action at Imperium Gothique, mud.pitek.fi 4000. This code may 
+  be freely used and distributed, but some favorable publicity (such as having 
+  my name appended to your in-game credits) would encourage me to develop this 
+  software.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Newt@Imperium Gothique May 
+  1995-Jan 1996<br>
+  mn54196@uta.fi (am I lazy or what?)</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"> </font></p>
+</body>
+</html>

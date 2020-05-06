@@ -1,0 +1,80 @@
+Grolims:
+Priest: Your basic priest
+Sorcerer: Toned-down sorc, group type spells
+Chandim: sacrifice some magic for combat ability, bite skill, high str/con
+
+Murgos:
+Warriors
+Thieves
+Spies
+
+Malloreans:
+Warriors
+Spies
+Guardsmen: Evil knight?
+
+Asturian:
+"Brigands" -> Thieves with woodland skills
+Bowmen: Warriors, archery and woodland skills
+
+Mimbrate:
+Knight: guys
+Healer: gals, herbalism as opposed to spells
+
+Drasnian:
+Assassins: Thieves, a little stronger, maybe envenom or other assassination skill
+Spies
+Pikemen: warrior, concentrate on spear, polearm, perhaps tweak weapons and/or create skills
+
+Nyissan:
+Poisoner
+Eunuch: Herbal, some priest
+
+Tolnedran:
+Legionnaire
+Priest
+Monk -> hand to hand?
+
+Dryad:
+Ranger
+Warrior
+Thief
+
+Thulls:
+Warriors
+Thieves
+
+Nadrak:
+Warrior
+Spy
+
+Cherek:
+Priest
+Berserker-> remove dual wield, but allow wearing of two-hand weapons in one hand with shield? berserk
+Pirate: thief, skills improve while over water
+
+Algar:
+Horseman: mount, feats of dexterity, free pet?
+Ranger
+Priest
+
+Rivan:
+Spy
+Warder (warrior)
+Sorcerer ....?
+
+Sendarian:
+Priest
+Warrior
+Ranger
+Sorcerer ....?
+
+Ulgo:
+Priest
+Zealot (warrior, with some basic healing skills and combat casting, remove dual wield, up to third attack)
+Sorcerer ....?
+
+Dalasian:
+Seer (visionary magic)
+Necromancer (death magic)
+Giant (warrior, no ability to speak)

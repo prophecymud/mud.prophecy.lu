@@ -1,0 +1,419 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body link="#0000CC" vlink="#0000CC" alink="#0000CC">
+<p><font size="3" face="Arial, Helvetica, sans-serif"> <strong><a name="top"></a>Creating 
+  oprogs</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Some oprogs are slightly 
+  buggy, so be careful when using them. If uncertain, consult the builder immortal, 
+  a foreman or a fellow builder. As you can see, they can be useful in the right 
+  circumstances. However, unless you need something to which an mprog would be 
+  unsuited, use a mprog.</font></p>
+<hr>
+<a href="#commands"><font size="2" face="Arial, Helvetica, sans-serif">Commands</font></a> 
+<font size="2" face="Arial, Helvetica, sans-serif"><a href="#ifcheck">If checks</a> <a href="#triggers">Triggers</a> 
+<a href="#examples">Examples </a></font> 
+<hr>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="commands"></a>Commands 
+  that can be used in oprogs (in pedit):</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">test - to test if a check 
+  works.<br>
+  say - Object will 'say'<br>
+  emote - Object will emote</font><font size="2" face="Arial, Helvetica, sans-serif"><br>
+  cast - Object will cast a spell. Be careful, limited checks on this.<br>
+  damage - Object will do x amount of damage<br>
+  echo - Object echo - BUGGED, DO NOT USE.<br>
+  gecho - Object gecho, don't use<br>
+  zecho - Object zecho, does an echo to the entire zone (area)<br>
+  asound - object will display the string to all in nearby rooms<br>
+  oload - object will load an object<br>
+  mload - object will load a mob<br>
+  purge - object will purge<br>
+  transfer - object will transfer a char/mob<br>
+  force -object will force a char</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="ifcheck"></a>Checks 
+  that can be used with oprogs in the code (made in pedit):</strong></font></p>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr> 
+    <td><strong><font size="2" face="Arial, Helvetica, sans-serif">If check</font></strong></td>
+    <td><strong><font size="2" face="Arial, Helvetica, sans-serif">Argument(s)</font></strong></td>
+    <td><strong><font size="2" face="Arial, Helvetica, sans-serif">Meaning</font></strong></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">rand</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">number</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is random percentage 
+      less than or equal to number</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">mobhere</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">vnum</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is a mobile with this 
+      vnum in the room</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is a mobile with this 
+      name in the room</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">objhere</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">vnum</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is an object with this 
+      vnum in the room</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is an object with this 
+      name in the room</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">mobexists</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does NPC 'name' exist 
+      somewhere in the world</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">objexists</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does object 'name' 
+      exist somewhere in the world</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">people</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">== integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is the number of people 
+      in room equal to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">players</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">== integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is the number of PCs 
+      in the room equal to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">mobs</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">== integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is the number of NPCs 
+      in the room equal to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">clones</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">== integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is the number of objects 
+      in the room with the same vnum as the objects who activated the program 
+      equal to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">hour</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is the hour (game time) 
+      equal to integer</font></td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isnpc</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">$*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* an NPC</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">ispc</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">$*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* a PC</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isgood</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* have a good 
+      alignment</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isneutral</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* have a neutral 
+      alignment</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isevil</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* have an evil 
+      alignment</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isimmort</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* an immortal (level 
+      of $* &gt; LEVEL_HERO)</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">ischarm</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* affected by charm</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isfollow</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* a follower with 
+      their master in the room</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isactive</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s position &gt; 
+      POS_SLEEPING</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isdelay</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* have a delayed 
+      MOBprogram pending</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">hastarget</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* have a MOBprogram 
+      target in the room</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">istarget</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* the target of 
+      NPC who activated the program</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isquested</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">$*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* quested</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">exists</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">$*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* exist in game</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">affected</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* affect</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* affected by affect</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">act</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* act</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s ACT set to 
+      act</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">off</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* off</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s OFF set to 
+      off</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">imm</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* imm</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s IMM set to 
+      imm</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">carries</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* carrying object 
+      name</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">wears</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* wearing object 
+      name</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">has</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* type</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* have object 
+      of item_type type</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">uses</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* type</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* wearing object 
+      of item_type type</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s name name</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">pos</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* position</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s position position 
+      (sleeping etc.)</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">clan</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* belong to clan 
+      name</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">race</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* of race name</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">class</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* name</font></td>
+    <td><p><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s class name</font></p></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">objtype</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* type</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s item_type type</font></td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">vnum</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s virtual number 
+      equal to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">hpcnt</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">$* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s hippoint percentage 
+      equal to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">room</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">$* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is vnum of the room 
+      $* is in equal to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">sex</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">$* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s sex equal to 
+      integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">level</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">$* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s level equal 
+      to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">align</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">$* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s align equal 
+      to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">money</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">$* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* have money 
+      (in silver) equal to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">grpsize</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is group size of $* 
+      equal to integer</font></td>
+  </tr>
+</table>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="triggers"></a>Triggers 
+  (used in oedit with addoprog)</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">***NOTE*** Do NOT use the 
+  triggers 'examine' or 'use'</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">wear - when object is worn<br>
+  remove - when object is removed<br>
+  sac - when object is sacrificed<br>
+  get - when someone gets the object<br>
+  drop - when object is dropped<br>
+  act - when someone performs an specific action (see examples)<br>
+  grall - when someone enters the room</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="examples"></a>Examples</strong><br>
+  <br>
+  Suppose you wanted a sword to shimmer with godly might when worn by a member 
+  if the guardian clan. The code would be; Lets suppose the program was vnum 111 
+  and the object is vnum 100. You would type<br>
+  pedit create 111<br>
+  then type 'code' to enter the editer</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">if clan $n guardian<br>
+  obj emote shimmers with godly might.<br>
+  endif</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">This oprog would then be 
+  added to the object in question.<br>
+  oedit 100<br>
+  addoprog 111 wear 100</font></p>
+<hr>
+<p><font size="2" face="Arial, Helvetica, sans-serif">How about an oprog for a 
+  fountain to bubble when someone enters the room. The code would be:</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">obj emote bubbles up from 
+  the ground in spurts of mist.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">and would then be added 
+  to an object (same vnums as above example) with;<br>
+  addoprog 111 grall 100</font></p>
+<hr>
+<p><font size="2" face="Arial, Helvetica, sans-serif">How about we get a little 
+  more involved. I don't recommend getting complicated with oprogs unless you 
+  know *EXACTLY* what you are doing. Lets make an oprog that could be used as 
+  a clan guard in conjunction with a mob, for say... the AoA clan with Angarak, 
+  Grolim, Dagashi, and disciple subclans. The object this is on will be a trip 
+  wire object with<br>
+  a 'grall' trigger.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">if clan $n Angarak<br>
+  obj emote shimmers to nothing as you pass and reforms behind you.<br>
+  break<br>
+  else<br>
+  if clan $n Dagashi<br>
+  obj emote shimmers to nothing as you pass and reforms behind you.<br>
+  break<br>
+  else<br>
+  if clan $n Grolim<br>
+  obj emote shimmers to nothing as you pass and reforms behind you.<br>
+  break<br>
+  else<br>
+  if clan $n Torak<br>
+  obj emote shimmers to nothing as you pass and reforms behind you.<br>
+  break<br>
+  else<br>
+  obj emote snaps with a loud twang.<br>
+  obj trans &quot;aoa clan guard&quot;<br>
+  obj force &quot;aoa clan guard&quot; emote screams with rage as his blades fall 
+  upon <br>
+  intruders!<br>
+  obj force &quot;aoa clan guard&quot; kill $n<br>
+  obj emote reforms behind the intruder, $n<br>
+  endif<br>
+  endif<br>
+  endif<br>
+  endif</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+</body>
+</html>

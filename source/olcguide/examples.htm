@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Examples</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body link="#0000CC" vlink="#0000CC" alink="#0000CC">
+<p><font size="3" face="Arial, Helvetica, sans-serif"><strong><a name="top"></a>Mprog 
+  examples </strong></font></p>
+<hr>
+<p><font size="2" face="Arial, Helvetica, sans-serif"> Examples: <font size="2" face="Arial, Helvetica, sans-serif"><a href="#miniquest">Simple 
+  miniquest/rareloads</a></font>&nbsp;<a href="#multiple">Multiple if checks</a> 
+  <a href="#guard">Guard mprog</a> <a href="#delay">Delay and remember</a></font> 
+  <font size="2" face="Arial, Helvetica, sans-serif"><a href="#mobcall">Mob call</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="mprog.htm">Mprog 
+  guide</a> <a href="quickref.htm">Quick reference sheet</a> <a href="omprog.htm">Original 
+  mprog guide</a></font></p>
+<hr>
+<p><strong><font size="2" face="Arial, Helvetica, sans-serif"><a name="miniquest"></a>Simple 
+  miniquest/rareloads</font></strong></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">In #MOBILES:</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Priest:<br>
+  M greet 1007 100<br>
+  M give 1008 1000</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Bandit:<br>
+  M death 1009 10</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">In #MOBPROGS:</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">#1007<br>
+  if sex $n &lt; 2<br>
+  emote paces around the room.<br>
+  emote looks up.</font><font size="2" face="Arial, Helvetica, sans-serif"><br>
+  say Kind sir, can you help us? A group of bandits stole the Book of Nedra!<br>
+  say You will be richly rewarded if you return with the book!<br>
+  else<br>
+  emote paces around the room.<br>
+  emote looks up.</font><font size="2" face="Arial, Helvetica, sans-serif"><br>
+  say Dear lady, can you help us? A group of bandits stole the Book of Nedra!<br>
+  say You will be richly rewarded if you return with the book!<br>
+  endif<br>
+  ~<br>
+  #1008<br>
+  emote bows his head with joy.<br>
+  mob oload 1001<br>
+  give dagger $n<br>
+  say Thank you very much!<br>
+  mob junk<br>
+  ~<br>
+  #1009<br>
+  mob oload 1000</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">How this works:</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">When a player walks into 
+  the room, the priest checks the player's gender. If male/neuter, the priest 
+  will greet him as 'sir', if female, the priest will greet her as 'lady'. The 
+  player then kills some bandits, and the object (vnum 1000) loads on the bandits 
+  10% of the time. This acts as rareload. When the player gives the object vnum 
+  1000 to the priest, the priest then loads the reward and gives it to the player.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">A simple 'fetch the item' 
+  miniquest.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="multiple"></a>Multiple 
+  if checks</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">In #MOBILES:</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">M act 1000 pokes you in 
+  the ribs.~</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">In #MOBPROGS:</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">#1000<br>
+  if isnpc $n<br>
+  chuckle<br>
+  poke $n<br>
+  break<br>
+  else<br>
+  if level $n &lt;= 5<br>
+  or isgood $n<br>
+  tell $n I would rather you didnt poke me.<br>
+  else<br>
+  if level $n &gt; 15<br>
+  scream<br>
+  say Ya know $n. I hate being poked!!!<br>
+  if mobhere guard<br>
+  mob force guard kill $n<br>
+  endif<br>
+  kill $n<br>
+  break<br>
+  endif<br>
+  slap $n<br>
+  shout MOMMY!!! $N is poking me.<br>
+  endif<br>
+  endif<br>
+  ~</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Ok.. time to translate.. 
+  the trigger will only happen when the mobile gets the message &quot;... pokes 
+  you in the ...&quot; If the offender (recall the $n and $N refer to the char 
+  who did the poking...) is an NPC, then the mobile merely chuckles and pokes 
+  back. If the offender was a PC then good and low level characters get a warning, 
+  high level chars get attacked, and midlevel chars get slapped and whined at.<br>
+  Also, when attacking, the mobile will check if there are guards in the room 
+  (if mobhere guard) and if one is found, it will be forced to attack the player, 
+  too (mob force guard mob kill $n). Notice the use of a MOBcommand &quot;mob 
+  force&quot;.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Note that two of these mobiles 
+  could easily get into an infinite poke war which slows down (or frequently crashes) 
+  the mud just a bit :( <br>
+  Be very careful about things like that if you can. (i.e dont respond to a poke 
+  with a poke, and try not to let heavily programmed robot mobiles wander around 
+  together. More on that is given above.)</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Also, it is clear that the 
+  'order' command could get confused with the 'or' control flow. However, this 
+  is only the case when 'order' is abbreviated to its two letterform, and placed 
+  immediately following an 'if' line. Thus, if you want to be that malicious in 
+  trying to break the MOBprogram code, no one is going to stand in your way (However, 
+  the result of this would be a bug message and a bail out from the ifcheck so 
+  things don&#8217;t really break)</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="guard"></a>Guard 
+mprog</strong> </font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">This program could be used 
+  on a temple guardian mobile, whose job is to prevent evil characters from entering 
+  the sanctuary. Let's assume the exit to the temple is north (exit 0) and the 
+  temple antechamber is room 2301</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">In #MOBILES</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">M exit 1001 0</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">In #MOBPROGS</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">#1001<br>
+  if isgood $n<br>
+  say Hail!<br>
+  emote salutes $n.<br>
+  if carries $n holy<br>
+  mob transfer $n 2301<br>
+  else<br>
+  say If you wish to enter the temple, get a holy symbol.<br>
+  endif<br>
+  else<br>
+  curse $n<br>
+  say Get lost, you scum!<br>
+  endif<br>
+  ~</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">How this works:</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">The trigger is activated 
+  when the player tries to exit north from the room. If the player is of good 
+  alignment, the guard will greet the player. However, the guard will not let 
+  the player to the temple unless he or she carries a holy symbol. If the player 
+  is neutral or evil, the guard will curse and block the way.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="delay"></a>Delay 
+  and remember</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">In #MOBILES</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">M greet 1002 100<br>
+  M delay 1003 100</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">In #MOBPROGS</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">#1002<br>
+  if isevil $n<br>
+  say You infidel! Go away or face the wrath of mighty Mota!<br>
+  mob remember $n<br>
+  mob delay 10<br>
+  break<br>
+  endif<br>
+  ~<br>
+  #1003<br>
+  if hastarget $i<br>
+  growl<br>
+  mob echo $I screams and attacks $Q.<br>
+  mob kill $q<br>
+  else<br>
+  mob forget<br>
+  endif<br>
+  ~</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">How this works:</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">When the player enters a 
+  room, the mobile checks if the player is evil. If this is the case, the mobile 
+  makes the player the target (mob remember) and sets up a delay of 10 * PULSE_MOBILE.<br>
+  When the delay expires, program #1003 is activated. The mobile checks if the 
+  target is still in the room (hastarget), and if the player hasn't left, the 
+  mobile attacks ($q and $Q refer to the target). If the player has left, the 
+  mobile will forget the player (mob forget).</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="mobcall"></a>Mob 
+  call</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">In #MOBILES:</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">M greet 1004 100</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">In #MOBPROGS:</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">#1004<br>
+  if isgood $n<br>
+  mob call 1005 $n null null<br>
+  else<br>
+  mob call 1006 $n null null<br>
+  endif<br>
+  ~<br>
+  #1005<br>
+  mob echo Suddenly, a bright aura surrounds $I!<br>
+  mob cast 'heal' $n<br>
+  ~<br>
+  #1006<br>
+  mob echoat $n $I points $l finger at you in fury!<br>
+  mob echoaround $I points $l finger at $N in fury!<br>
+  mob cast 'curse' $n</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">How this works:</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">When a player enters the 
+  room, the mobile checks if the player is good aligned. If this is the case, 
+  the mobile will execute mprog #1005, which will heal the player. Otherwise, 
+  if the player is neutral or evil aligned, the mobile will cast curse on the 
+  player.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+</body>
+</html>

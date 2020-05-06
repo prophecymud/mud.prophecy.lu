@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>OLC walkthrough</title>
+<!-- TemplateEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+</head>
+
+<body link="#0000CC" vlink="#0000CC" alink="#0000CC">
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr bordercolor="#FFFFFF"> 
+    <td width="7%"><font size="2" face="Arial, Helvetica, sans-serif"><strong><a href="walk.htm">Main</a></strong></font></td>
+    <td width="14%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Modifying 
+      an area</font></td>
+    <td width="17%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      rooms</font></td>
+    <td width="19%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      objects</font></td>
+    <td width="16%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      mobiles</font></td>
+    <td width="10%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Resets</font></td>
+    <td width="17%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      a prog</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td>&nbsp;</td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk1.htm">1</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk2.htm">2</a>, 
+      <a href="walk3.htm">3</a>, <a href="walk4.htm">4</a>, <a href="walk5.htm">5</a>, 
+      <a href="walk6.htm">6</a>, <a href="walk7.htm">7</a> </font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk8.htm">8</a>, 
+      <a href="walk9.htm">9</a>, <a href="walk10.htm">10</a>, <a href="walk11.htm">11</a>, 
+      <a href="walk12.htm">12</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk13.htm">13</a>, 
+      <a href="walk14.htm">14</a>, <a href="walk15.htm">15</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk16.htm">16</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk17.htm">17</a>, 
+      <a href="walk18.htm">18</a></font></td>
+  </tr>
+</table>
+<!-- TemplateBeginEditable name="body" -->Body<!-- TemplateEndEditable --> 
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr bordercolor="#FFFFFF"> 
+    <td width="50%"> <div align="right"><font size="2" face="Arial, Helvetica, sans-serif"><!-- TemplateBeginEditable name="previous" -->previous<!-- TemplateEndEditable --></font></div></td>
+    <td width="50%"> 
+      <div align="left"><!-- TemplateBeginEditable name="next" --><font size="2" face="Arial, Helvetica, sans-serif">next</font><!-- TemplateEndEditable --></div></td>
+  </tr>
+</table>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr bordercolor="#FFFFFF"> 
+    <td width="7%"><font size="2" face="Arial, Helvetica, sans-serif"><strong><a href="walk.htm">Main</a></strong></font></td>
+    <td width="14%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Modifying 
+      an area</font></td>
+    <td width="17%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      rooms</font></td>
+    <td width="19%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      objects</font></td>
+    <td width="16%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      mobiles</font></td>
+    <td width="10%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Resets</font></td>
+    <td width="17%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      a prog</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td>&nbsp;</td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk1.htm">1</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk2.htm">2</a>, 
+      <a href="walk3.htm">3</a>, <a href="walk4.htm">4</a>, <a href="walk5.htm">5</a>, 
+      <a href="walk6.htm">6</a>, <a href="walk7.htm">7</a> </font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk8.htm">8</a>, 
+      <a href="walk9.htm">9</a>, <a href="walk10.htm">10</a>, <a href="walk11.htm">11</a>, 
+      <a href="walk12.htm">12</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk13.htm">13</a>, 
+      <a href="walk14.htm">14</a>, <a href="walk15.htm">15</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk16.htm">16</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk17.htm">17</a>, 
+      <a href="walk18.htm">18</a></font></td>
+  </tr>
+</table>
+</body>
+</html>

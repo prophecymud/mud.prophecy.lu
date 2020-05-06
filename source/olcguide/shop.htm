@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+<strong><font size="3" face="Arial, Helvetica, sans-serif">Creating Shops in Areas 
+</font></strong> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">Shops provide another opportunity 
+  for players to acquire items, rather than having to kill for them, but also 
+  a place where they can sell items of their own to the shopkeeper.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">First and foremost, <strong>medit 
+  the vnum of the mobile</strong> you wish to be the shopkeeper.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>1) Shop Assign</strong><br>
+  This will assign a shop to the mobile, the very first command used for the purpose 
+  of placing a shop using this mobile.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>2) Shop Type [0 
+  - 4] [type of item]</strong><br>
+  Sets the type of shop and what items it will sell. You can set values for each, 
+  five total.<br>
+  Example: Shop type 0 weapon<br>
+  Item types that can be used: Light, Scroll, Wand, Staff, Weapon, Treasure, Armor, 
+  Potion, Clothing, Furniture, Container, Drinkcontainer, Boat, Pill, Map, Portal, 
+  Warpstone, Gem, Jewelry</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>3) Shop Hours [open 
+  hour] [close hour]</strong><br>
+  Sets the times the shop opens and closes. 0 to 23 is a 24 hour shop, use military/24 
+  hour clock in calculating times.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>4) Shop Profit [% 
+  of value for character buying] [% of value for character selling]</strong><br>
+  The first % value is the markup for the mob selling the item to the character, 
+  modified by haggle skill. Thus, an item valued at 100 silver, with the number 
+  set at 150, will cost the purchaser 150 silver to buy. A lower value, such as 
+  75, make the cost 75% of that value.<br>
+  </font><font size="2" face="Arial, Helvetica, sans-serif">The second % value 
+  is the markdown the shop takes for a character trying to sell the mobile an 
+  item, modified by the haggle skill. Generally set to lower than 100, to reflect 
+  the shop haggling down the cost to the shop's purchasing benefit. An item valued 
+  at 100, with a markdwon of 75%, will be sold for just 75 silver.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><u>Resetting shopkeeper 
+  and goods</u></strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Resets are needed for both 
+  the mob shopkeeper in the room, and the objects he or she will sell. This can 
+  be accomplished by doing the following:</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">In the room where the shop is to 
+  be, the first reset will be the shopkeeper mobile.<br>
+  &quot;reset 1 mob (vnum) 1 1&quot;</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Then, list objects in subsequent 
+  reset order, settled in the inventory of the mobile.<br>
+  &quot;reset 2 obj (vnum) none&quot;<br>
+  &quot;reset 3 obj (vnum) none&quot;</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Upon repop, the items should 
+  appear in the list of items sold, with appropriate price given markup and markdown 
+  scores. If the shop hours are not 24 hours, and the purchaser is trying to buy 
+  at the wrong time, they will get a polite &quot;Sorry, I'm closed. Come back 
+  later.&quot; Wait out the ticks and list if this happens. Other questions and 
+  problems can be asked of the area imps or experienced builders.</font></p>
+</body>
+</html>

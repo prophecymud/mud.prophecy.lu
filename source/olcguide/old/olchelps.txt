@@ -1,0 +1,442 @@
+OLC In-Editor helps (The "?" files...)
+--------------------------------------
+This is a listing of all the help given when someone types "? blahblah" under 
+any of the edits for OLC.
+
+? Area
+
+-changed: an automatic flag when someone edits anything inside the area.
+-added: an area that has been recently added to the mud.
+-noquest: no autoquests will be given in the area with this flag.
+-noenter: allows nobody but the builder to enter the area.
+-newbie: an area geared toward newbies, level 1-5 as like the mud schol.
+-norecall: an area generally made no-recall for purposes of the recall skill,
+	   word of recall spell, or clan recall.
+
+
+? Room
+
+-dark: players without lights will not be able to see, unless it is outdoors
+       and in broad daylight hours.
+-no_mob: no mobiles allowed in the room, good for healers or rooms frequented by
+	 players.
+-indoors: changes in time and weather cannot be seen by the player if the room is 
+	  flagged indoors.
+-no_teleport: players may not use the teleport spell to enter this room.
+-no_clanrecall: clan members may not return to their clan halls from here.
+-no_quit: players may not quit in this room, and are asked to go before they do.
+-private: 2 people or mobiles may be in the room at any one given time.
+-safe: fighting will not occur in this room as long as it is safe.
+-solitary: one person or mob to a room at a time.
+-pet_shop: flags the room as a pet shop, using that room and the next room consecutively
+	   in vnums.  The first room is where the shopkeeper sells the pets, and the second
+	   room is where the pet mobs will be reset.
+-no_recall: flags the room unable to be recalled from, using the recall skill or the word of
+	    recall spell.
+-imp_only: implementor-levelled immortals may enter this room only.
+-gods_only: immortals only in this room.
+-heroes_only: mortal heroes may enter this room, or higher level.
+-newbies_only: characters from level 1 to 5 may enter this room only.
+-law: Pk rules will be enforced in this room, useful for city streets.
+-nowhere: someone in this room will not appear when someone types "where"
+-wizard_only: another immortal level, for imms only in this room.
+-stable: mount seller, and as code doesn't support mount, it has no use right now.
+-no_magic: spells may not be cast in this room
+-nogate: characters may not use the gate spell to enter this room.
+-nologon: if a character quits here, they will log back on at recall.
+-nostatus: characters will be unaffected by hunger or thirst in this room.
+
+
+? Sector
+
+-inside: 1 movement point to move into this sector.
+-city: 2 movement points to move into this sector.
+-field: 2 movement points to move into this sector.
+-forest: 3 movement points to move into this sector.
+-hills: 4 movement points to move into this sector.
+-mountain: 6 movement points to move into this sector.
+-swim: 4 movement points to move into this sector.
+-noswim: fly spell required to move over this terrain, or a boat.
+-unused: unused, and leave it that way (don't use if for a sector).
+-air: fly spell required to negotiate through this region.
+-desert: 9 mv points, and will affect thirst a little quicker.
+
+
+? Exit
+
+-door: creates a door in a specified direction.
+-closed: sets a door to reset at the closed position.
+-locked: locks a closed door, in a specified direction.
+-pickproof: thieves can't pick the lock on the door.
+-nopass: pass_door will not work trying to go through the door.
+-easy: thieves find it easy to pick this kind of lock.
+-hard: thieves find picking this lock a small challenge.
+-infuriating: thieves will be yelling and screaming to get this open.
+-noclose: Characters won't be able to shut the door
+-nolock: Characters won't be able to lock the door.
+-hidden: hides the exit, as long as there's no door.
+-window: makes a window to look through, as long as there isn't a door already there.
+
+
+? Type (Object Types)
+
+Most of the object types are self-explanatory.  There are too many of them here to
+write out what they do, so if you have any questions, just ask either an experienced
+builder or an imp if you don't know what a certain object type does.
+
+
+? Exra (Object Extra Flags)
+
+-Glow: The object is glowing with its own light, a light source that can be seen in the dark.
+-Hum: Object is humming with energy, and can be heard in a quiet room.
+-Dark: object is hidden, and is darkened to someone who cannot see hidden things.
+-Evil: Object reeks of evil, and will have a red aura to it.
+-invis: object is invisible, and the detect invis spell is needed to see it.
+-magic: object has a magical quality about it, and will have magical aura to it.
+-nodrop: character cannot drop the object from his inventory, unless he removes curse from it.
+-bless: object is blessed, and will do well against evil or unholy creatures.
+-anti-good: persons of good align (1000 to 300) may not use this item.
+-anti-neutral: persons of neutral align (300 to -300) may not use this item.
+-anti-evil: persons of evil align (-300 to -1000) may not use this item.
+-noremove: if this object is worn, character cannot remove it unless remove curse is cast.
+-inventory: for a shop keeper.  Sets the object to repop indefinitely to a shop.
+-nopurge: object may not be purged by an imm from the room.
+-rotdeath: will receive a timer when a character dies, and when that timer expires, the 
+	   object will crumble and be lost.
+-visdeath: will not be seen until the character has killed the mobile that has the object.
+-nosac: object may not be sacrificed to the character's god.
+-nonmetal: object has non-metallic properties, that could be harmful to certain mobiles.
+-nolocate: cannot be found by the locate object spell
+-meltdrop: will dissolve into smoke when the character drops it.
+-timer and sell: not to be used.
+-burnproof: acidic and fire-based attacks will not damage or destroy this object.
+-nouncurse: object may not be uncursed using the remove curse spell
+-pkonly: Player Killers may only hold or use this item
+-nopkonly: Non-player killers may only hold or use this item.
+
+
+? wear (Object Wear Flags)
+
+-take: allows the character to get the object off of the ground.
+-finger: rings and such.
+-neck: capes, necklaces, and such.
+-body: worn about the torso
+-head: helmets, worn on the head.
+-legs: pants, leggings, arm plates, anything worn on the legs.
+-feet: boots, shoes, socks, anything worn on the feet.
+-hands: gloves, gauntlets, anything worn on the hands.
+-arms: arm plates, sleeves, anything worn on the arms.
+-shield: anything that could be used as a shield against attack.
+-about: worn about the body, like cloaks.
+-waist: belts, anything worn about the waist.
+-wrist: bracelets and bracers, anything worn about the wrists.
+-wield: weapons, anything wielded to do harm against another.
+-hold: wands, staves, anything held in the hand
+-float: set to float next to the character, and will fall away from the corpse upon death.
+
+
+? spec (Special mobile functions)
+
+spec_breath_any: mob will cast any type of breath spell
+spec_breath_gas: mob casts gas breath
+spec_breath_acid: mob casts acid breath
+spec_breath_fire: mob casts fire breath
+spec_breath_frost: mob casts frost breath
+spec_breath_lighnting: mob casts lightning breath
+spec_cast_adept: mob casts adept-level mage spells.
+spec_cast_cleric: mob casts cleric spells, like blind.
+spec_cast_judge: mob casts judging spells (not sure what they do)
+spec_cast_mage: casts mage spells, like fireball.
+spec_cast_undead: casts plaguing, undead spells
+spec_executioner: mob acts as a form of executioner of the law.
+spec_fido: mob will devour corpses on the ground.
+spec_guard: mob enforces the law, protecting the innocent and punishing those needing it.
+spec_janitor: mob picks up things from the ground, as its cleaning duty.
+spec_mayor: DON'T USE - specific movement of Sendar's mayor, won't work in your town.
+spec_poison: mob will poison player, if given the chance
+spec_thief: mob backstabs and steals money from a player.
+spec_nasty: low down, dirty scoundrel.
+spec_troll_member and spec_ogre_member: no such things as trolls and ogres in Prophecy.  Don't use.
+spec_patrolman: an old police officer, please don't use.
+spec_angarak_guard: an Eastern guard, will react unfavorably towards Alorns.
+spec_alorn_guard: A western guard, will attack Angaraks on sight.
+spec_questmaster: holds questmaster's routine and code, ask imps before using.
+spec_inkeeper: hostel keeper's code, don't use
+
+
+? Sex (Mobile Genders)
+
+Male, female, neutral, random, and none, all self-explanatory.
+
+
+? act (Mobile Actions)
+
+-sentinel: mob will not move around in the area, instead staying in one room.
+-scavenger: random chance the mob will pick something up off of the floor in a room.
+-banker: will deposit and withdraw money for characters.
+-aggressive: will attack PC's according to its level.
+-stay_area: mob will not wander out of its prescribed area.
+-wimpy: mob will flee when it reaches a certain hp percentage.
+-pet: mob is charmed, and someone's pet.
+-train: mob can train other players and their stats.
+-practice: mob helps characters practice skills.
+-horse: mountable, but without mount code yet, we can't use it, yet :(
+-quest: mob can be used as a quest target.
+-undead: mob acts as a skeleton, ghost, or other undead, in spells and attacks.
+-monk: powerful hand to hand warrior
+-cleric: healer or hurter, based on how you want it to act toward you.
+-mage: can cast mage spells
+-thief: backstabs, steals, and runs away
+-warrior: fights as a warrior, strong, many attacks, no magic
+-noalign: mob not considered for alignment purposes, use sparingly.
+-nopurge: mob may not be purged by an imm from the room.
+-indoors: mob can't go outside to play
+-outdoors: mob can't come in from the cold.
+-healer: heals characters, for a certain fee.
+-gain: characters may gain skills at this person.
+-update_always: used with code updates, buggy, please don't use.
+-changer: mob can exchange gold and silver for players.
+
+
+? affect (mobile affect flags)
+
+-blind: mob is blinded
+-invisilbe: mob is affected by the invisible spell.
+-detect_evil: can sense evil beings
+-detect_invis: mob can see invisible people
+-detect_magic: mob can sense magical items
+-detect_hidden: mob can see hidden or sneaking people
+-detect_good: mob can sense the light side of the Force.
+-sneak: mob is sneaking around, hard to see him come in or leave.
+-sanctuary: mob is surrounded by an aura, taking only half normal damage.
+-faerie_fire: mobs Armor Class is lowered based on level
+-infared: mob can sense heat in the dark.
+-curse: mob is cursed, making it a little easier to hit with weapons and spells.
+-poison: mob is poisoned, and will lose some hp during the course of a fight
+-protect_evil: bonus save vs. spell and AC against evil characters
+-protect_good: bonus save vs. spell and AC against good characters
+-hide: mob is trying to hide, but you need detect hidden to see him
+-sleep: mob has been put to sleep
+-charm: mob has been charmed and is now under the control of someone else.
+-flying: mob is affected by the flying spell, can't be tripped.
+-pass_door: mob is affected by pass door, affecting its movement and ability to be bashed.
+-haste: mob is moving at a high rate of speed, increasing the number of its attacks.
+-calm: mob less likely to be aggressive and also may hit less.
+-plague: mob has a disease, and can spread it to others.
+-weaken: mob has had its strength reduced
+-dark_vision: mob can see in the dark.
+-berserk: mob is in a frenzy, affecting its hit and damage by a marginal amount.
+-swim: mob can move through watery terrain.
+-regeneration: mob would gain hitpoints back faster when healing, but is bugged. don't use.
+-slow: mob has had its speed reduced to less than normal, will hit less often.
+
+
+? wear-loc (Mobile wear locations)
+
+Most of the wear locations are self-exlanatory, and the same as "? wear" above.
+-rfinger: right finger
+-lfinger: left finger
+-rwrist: right wrist
+-lwrist: left wrist
+-neck1/2: first or second neck location
+-none: in mobile's inventory
+
+
+? spells
+
+? spells ignore:
+-call lightning: A powerful bolt hits all enemies, given outdoors and bad weather
+-calm: stops fighting in a room, reduces hitroll
+-continual light: creates a ball of light for use as a light
+-control weather [better/worse]: make the weather better or worse
+-create food: magic mushroom, instant food supply
+-create rose: make a red rose for your darling
+-create spring: fountain-in-a-spell
+-earthquake: shakes ground, damaging non-flying mobs/people in the room.
+-faerie fog: reveals all hidden mobs/items in the room
+-farsight: just type "scan"
+-floating disc: a container floaty to take a load off your inventory.
+-gate: transport you to a given location
+-holy word: help your friends, damn your enemies, lose all your movement.
+-locate person: find out where that person is!
+-locate object: find the missing link...
+-mass healing: heal everyone in your group
+-mass invis: cast invisibility on everyone in your group
+-nexus: two-way gateway to somewhere
+-portal: a one-way gateway to somewhere
+-scourge of torak: area-affect maladictions, similar to holy word, but reverse affects
+-summon: pull a buddy out of trouble
+-ventriloquate: make someone say something they really didn't
+-gas breath: area affect poisoning spell
+
+? spells attack/defend/self/object
+Most of these are commonly known and used attack spells.  Any questions can be directed
+toward the area implementors or experienced builders.
+
+?spells all
+Lists all the spells, instead of by group as above.
+
+
+? Container (container flags)
+
+-closeable: container can be closed.
+-pickproof: thieves can't pick the lock on the container
+-closed: flagged as closed upon repop
+-locked: locks a closed container on repop
+-puton: objects are put on, rather than in, this container
+
+
+? armor (armor class types)
+The 4 types of AC, pierce, bash, slash, and magic (exotic)
+
+
+? apply
+
+A list of flags for "addaffect" command.  Stats and spells are given, but consult
+with an area imp before adding spells or excessive stats.
+
+
+? form (mobile form flags)
+
+-edible: parts can be eaten after killed
+-poison: parts poisonous when eaten
+-magical: creature is not "natural", and made of magic stuff
+-construct: creature is a magical construct, such as a golem
+-instant_decay: mob corpse rots upon death
+-other: mob form cannot be easily classified
+-animal: mob is a basic, natural animal
+-sentient: mob is capable of complex thoughts, human-like
+-undead: a spirit of the nether realms, skeleton, ghost, etc.
+-mist: form is that of a cloud or fine mist
+-intangible: cannot be seen or touched or thought of
+-biped: walks on two legs
+-centaur: body of a horse, torso and head and arms of a human
+-insect: a bug, generally small
+-spider: 8 legs, feared by many people
+-crustacean: crabs or other shellfish
+-worm: mush, creepy crawly insect that moves around in dirt.
+-blob: mob is a blob, without bones, slimy, oozy
+-mammal: warm blooded
+-bird: has wings to fly, generally small
+-reptile: cold blooded, scales, forked tongue
+-snake: slithery, cold blooded, feetless reptiles
+-dragon: very large and fearsome beast
+-amphibian: salamander, or any other creature that can live both on land and in water
+-fish: fins, scales, lives in water and nowhere else
+-cold_blood: cold blooded creature, needs sunlight, affected heavily by cold weather
+
+
+
+? part (mobile parts)
+
+typing this gives the builder a list of possible parts.  Each part should be self-explanatory.
+
+
+? imm/res/vuln
+
+Different types of immunities, resistances, and vulnerabilities are listed here.
+Most are self-explanatory, but if you need help, ask an area imp to explain them
+for you.
+
+
+? off (mobile offenseive behaviors)
+
+-area_attack: mob can hit more than one person at a time
+-backstab: mob is capable of using backstab skill against characters
+-bash: mob may bash character
+-berserk: mob may use berserk skill during combat
+-disarm: mob robs character of weapon, laying it to rest on the ground.
+-dodge: mob is dextrous enough to dodge a character's attack
+-fade: mob can fade in and out, hard to hit or see during a fight
+-fast: mob may take the initiative, getting the first attack in a fight
+-kick: mob throws out a mildly damaging kick during the fight
+-dirt_kick: blinds opponents temporarily.
+-parry: mob can fend off weapons with his own
+-rescue: mob will rescue those it deems worthy of it.
+-tail: mob uses tail for an extra weapon in a fight
+-trip: mob can take someone's feet out from under them
+-crush: overpowering attack, extra damage
+-assist_all: mob will assist anyone on a whim
+-assist_align: mob will assist like-aligned players and mobiles in a fight
+-assist_race: mob will assist players and mobs of the same race
+-assist_players: mob will assist players that are in a fight
+-assist_guard: mob will aid guards in seeing to justice
+-assist_vnum: mob assists only mobs of the same vnum
+-flurry: executes a flurry of attacks at random
+-spellbane: capable of reflecting spells back at the caster
+-riposte: a counterattack, based on parry success
+
+
+
+? Size (mobile sizes)
+
+Sizes affect how hard and how difficult it is to hit certain creatures.
+Large creatures may be a little slower, but hit harder, where as smal creatures
+might not do much damage, but are fast and hard to hit.  Keep mobile sizes relative
+and appropriate, humans being medium.
+
+
+? Position (mobile positions)
+
+Self explanatory
+
+
+? Wclass (weapon types)
+
+Lists the different weapon types that can be used on the mud.
+
+
+? wtype (special weapon flags)
+
+-flaming: causes extra damage by burning the victim, possibility of blinding by smoke
+-frost: extra damage by freezing cold, may also add chill touch affect
+-vampiric: draws some life from the victim, adding to the attacker, also lowers align.
+-sharp: has a chance of cutting through sanctuary
+-vorpal: has a random chance of doing double damage
+-twohands: requires two hands to wield and use
+-shocking: causes extra damage thorugh electrocution, and may weaken victims
+-poison: may envenom the blood of an opponent.
+
+
+? portal (portal flags)
+
+-normal_exit: normal exit, won't do anything messy to a character
+-no_curse: portal can't be cursed, or lead to a cursed area
+-go_with: charmies and pets may follow characters through this portal
+-buggy: random chance the portal might go somwhere else
+-random: portal leads to a random room
+
+
+? furniture (furniture flags)
+
+sit_on rest_on sleep_on stand_on
+sit_at rest_at sleep_at stand_at
+sit_in rest_in sleep_in stand_in
+put_on put_at put_in put_inside
+
+
+? liquid (Liquid types)
+
+This will list a series of liquids you may use in fountains and drink
+containers.  There are differing columns with different stats.
+
+-name: name of the liquid in question
+-color: the color it will appear when someone looks at the container
+-proof: the higher the number, the quicker and longer the person stays drunk after drinking it
+-full: number of hours it will satisfy hunger.  Some are none (like water) because they have no value
+	in the way of nutrition.
+-thirst: number of hours it will satisfy thirst
+-Food: its value as a food 
+-Ssize: how much of it will fit in a container, or how many drinks you could get out of filling
+	once
+
+
+? Apptype (Object Addapply types)
+
+-affects: affects a stat, using a spell.  example: addapply affects strength 2 giant_strength 25
+-object: affects how an object might work
+-immune/resist/vuln: addapply immune/res/vuln [stat] [modifier] [type of i/r/v] [level]
+  			check with area imps before adding immunities or resistances
+-weapon: affects the actions of a weapon
+
+al

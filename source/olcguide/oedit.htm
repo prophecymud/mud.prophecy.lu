@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Oedit</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body link="#0000CC" vlink="#0000CC" alink="#0000CC">
+<strong><font size="3" face="Arial, Helvetica, sans-serif">Oedit - OLC's Obect 
+Editor </font></strong> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">Making weapons and armor, keys to 
+  unlock doors, or cool-looking pieces of nothing, Oedit is the way to go. The 
+  list of commands goes as follows:</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>addaffect [location] 
+  [number]:</strong><br>
+  Adds an affect, such as hit roll or strength or whatnot, to an object. Check 
+  with builder imps before adding affects, as having too many may upset equipment 
+  balance in the game, which is working on being fixed. Be sure to stick COMPLETELY 
+  to the eq points system (<a href="helpeq.htm">help eq</a>). Type &quot;<a href="ohelp.htm#apply">? 
+  apply</a>&quot; to view the list of affects.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>addapply affects 
+  [type] [number] [spell] [level] [optionall hidden]:</strong><br>
+  Adds a permanent affect to a piece of eq. Please remember, as per <a href="equse.htm">help 
+  eq_use</a>, no resistances or immunities are allowed. Type &quot;<a href="ohelp.htm#apptype">? 
+  apptype</a>&quot; to see what affects can be added.<br>
+  Example : &quot;addapply vuln strength -3 weaken 100 hidden&quot;</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>condition:</strong><br>
+  Useless number, was used for a repair system, which we don't have. Don't use 
+  this, please.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>cost [# silver]:</strong><br>
+  Sets the cost of the given object for sale and purchase purposes, given in silver.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>oedit create [new vnum]:</strong><br>
+  Creates a new object of a new vnum in the area, and places the builder into 
+  the object editor mode.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>delaffect [number in affects 
+  list under &quot;show&quot;]:</strong><br>
+  Deletes an affect on the list. Typing &quot;show&quot;, look toward the bottom 
+  for the affects list. The list number will be on the far left.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>ed:</strong><br>
+  Extra description editor. Very useful for adding pictures or descriptions of 
+  items that would take up too much space in the regular room description. Click 
+  <a href="edesc.htm">here</a> to see more information on extra descriptions.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>extra [flags]:</strong><br>
+  Sets extra flags for the object, such as glow, anti-good, whatnot. Type &quot;<a href="ohelp.htm#extra">? 
+  extra</a>&quot; for a list of flags that can be used.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>level [number]:</strong><br>
+  Sets the level of the object, with a 30-level difference (thus a level 90 object 
+  can be worn by a level 60).</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>long [string]:</strong><br>
+  Sets the long name for the object, what the player sees when they come into 
+  a room and see the object on the ground. Example: &quot;A long blade is here, 
+  waiting for its owner.&quot;</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>material [word_or_words]:</strong><br>
+  Sets a material word for an object. If more than one word, use the underscore 
+  (_) key to connect the words, instead of the space bar, as words separated by 
+  a regular space will zork the mud out, and either crash it or hang it up.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>name [name key words]:</strong><br>
+  Sets the basic, operable name of the object, using one or several key words 
+  that the character would type to get or use it. Things like &quot;two handed 
+  sword&quot; or &quot;ring steel&quot; are appropriate. Keep it to 3 words or 
+  less, if possible.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>short [short string]:</strong><br>
+  Sets the short description, what the character sees when they're wearing it 
+  or picking it up, such as &quot;a high guard sword&quot;. Keep it simple and 
+  short. Do not use capitals or full stops.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>show:</strong><br>
+  Shows the oedit stats for the object. This command can also be done by pressing 
+  the &lt;enter&gt; key on a blank line in the editor.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>type [type]:</strong><br>
+  Sets object type. Weapon, armor, jewelry, trash. &quot;? type&quot; gives a 
+  list of possible types. One type per object please.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>v0 through v4:</strong><br>
+  Sets V values for the types, based on the type of object. Typing v# will show 
+  you a list of ? files you can use, and what each v value can do for that particular 
+  object.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>wear [flags]:</strong><br>
+  Sets wear location of an object. If you want it to be worn in the first place, 
+  make sure you set the first wear flag to &quot;take&quot;, so they can pick 
+  it up. &quot;<a href="ohelp.htm#wear">? wear</a>&quot; will give you a list 
+  of locations.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>weight [number]:</strong><br>
+  The weight of the object, multiplied by 1/10 in pounds. Thus, an object with 
+  weight set to 20 would only weigh 2 pounds in the game. Be reasonable, everything 
+  has its weight, don't set it to 0.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>?:</strong><br>
+  Lists in-context help files for OLC that can be seen by the builder.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>version: </strong><br>
+  Gives the credits and version for our current OLC system.</font></p>
+</body>
+</html>

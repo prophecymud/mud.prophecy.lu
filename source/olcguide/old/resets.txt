@@ -1,0 +1,37 @@
+Resets in OLC
+-------------
+Resetting mobs, or objects in rooms in OLC isn't all that difficult.
+If you want to see how to make shops, see the section on shops.  This section
+deals with just loading a mob into a room as a reset, or placing an object
+in a room/in a room on a mob/in a room in another container.
+
+The easiest way to reset mobs is to go to the room you want the mob to
+originate from.  Then type "redit".
+
+"mreset (vnum of mob) (global limit) (room limit)"
+mreset=Mob Reset. 
+vnum of mob is self-explanatory.
+Global limit is the total number of mobs in the world.
+Room limit is the total number of mobs to be reset in that room.
+
+The other way is to do this:
+In the room, outside of redit:
+"reset # mob (vnum of mob) (global limit) (room limit)"
+where the # is the reset number on the list, when you type "resets" in the
+room.
+
+
+Object resets are a little more difficult, because of more possibilities
+with where and how to put an object.
+
+"oreset (vnum of object)" will reset an object with specified vnum on the 
+ground in that room.
+
+"oreset (vnum of object) inside (name of container in room)"
+resets that object inside a container already in the room.
+If you want more than one, just repeat the resets.
+
+"oreset (vnum of object) (keyword of mob) (wear location)"
+resets an object on the mob that is also reset to the room, 
+on the specified wear location.  Type "? wear-loc" to see where
+you can put the object on the mob.

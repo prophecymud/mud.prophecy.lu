@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Resets</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body link="#0000CC" vlink="#0000CC" alink="#0000CC">
+<p><font size="3" face="Arial, Helvetica, sans-serif"><strong>Resets in OLC</strong></font></p>
+<hr>
+<font size="2" face="Arial, Helvetica, sans-serif"><a href="#1">Method 1</a> <a href="#2">Method 
+2</a> </font> 
+<hr>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Resetting mobs, or objects 
+  in rooms in OLC isn't all that difficult. If you want to see how to make shops, 
+  see the section on shops. This section deals with just loading a mob into a 
+  room as a reset, or placing an object in a room/in a room on a mob/in a room 
+  in another container. </font></p>
+<font face="Arial, Helvetica, sans-serif">
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><u><a name="1"></a>Method 
+  1</u></strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><u>Mobs</u></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">The easiest way to reset 
+  mobs is to go to the room you want the mob to originate from. Then type &quot;redit&quot;.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">&quot;mreset (vnum of mob) 
+  (global limit) (room limit)&quot;<br>
+  mreset = mob reset. <br>
+  vnum of mob is self-explanatory.<br>
+  Global limit is the total number of mobs in the world.<br>
+  Room limit is the total number of mobs to be reset in that room.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><u>Objects</u></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Object resets are a little 
+  more difficult, because of more possibilities with where and how to put an object. 
+  Once again enter &quot;redit&quot;.</font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">&quot;oreset (vnum of object)&quot; 
+  will reset an object with specified vnum on the ground in that room.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">&quot;oreset (vnum of object) 
+  inside (name of container in room)&quot; resets that object inside a container 
+  already in the room. If you want more than one, just repeat the resets.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">&quot;oreset (vnum of object) 
+  (keyword of mob) (wear location)&quot; resets an object on the mob that is also 
+  reset to the room, on the specified wear location. Type &quot;? wear-loc&quot; 
+  to see where you can load the object.</font></p>
+<font face="Arial, Helvetica, sans-serif">
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><u><a name="2"></a>Method 
+  2</u></strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><u>Setting mobs outside 
+  of redit:</u></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">&quot;reset # mob (vnum 
+  of mob) (global limit) (room limit)&quot;<br>
+  where the # is the reset number on the list, when you type &quot;resets&quot; 
+  in the room.<br>
+  Global limit is the total number of mobs in the world/area.<br>
+  Room limit is the total number of mobs to be reset in that room.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><u>Setting objects outside 
+  of redit:</u></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">&quot;reset # obj (vnum 
+  of object) room&quot;<br>
+  Sets the object inside the room.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">&quot;reset # obj (vnum) 
+  inside (vnum) (global limit) (count)&quot;<br>
+  Sets an object within a container. If no limit or count is set, only one object 
+  will be set in the entire world, and the object will only load once per reboot/crash.</font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">&quot;reset # obj (vnum) 
+  (wear_loc)&quot;<br>
+  Sets the equipment to load on the mob that is reset to the room, on the specified 
+  wear location. Please note that the object reset comes after the mob, e.g. mob 
+  number is 1, object number should be 2. Type &quot;? wear-loc&quot; to see where 
+  you can load the object.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><u>General reset commands</u></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">"reset # delete&quot;<br>
+  Deletes the specified reset.&nbsp;<br>
+  RESET &lt;number&gt; RANDOM [#x exits]</font></p>
+</body>
+</html>

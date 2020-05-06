@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Redit</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body link="#0000CC" vlink="#0000CC" alink="#0000CC">
+<font size="3" face="Arial, Helvetica, sans-serif"><strong>Redit commands - Room 
+Editing </strong> </font><font face="Arial, Helvetica, sans-serif">&nbsp; </font> 
+<hr>
+<a href="#redit"><font size="2" face="Arial, Helvetica, sans-serif">Redit</font></a> 
+<font size="2" face="Arial, Helvetica, sans-serif"><a href="#reset">Resets in 
+redit</a> <a href="#exits">Exits</a></font> 
+<hr>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2"><a name="redit"></a>Redit is the room editor for OLC on Prophecy. 
+  By using the various commands, one can build quality rooms with wonderful descriptions, 
+  hidden extras, and doors leading all directions. Below is the list of commands 
+  and their uses when using Redit.</font></p>
+<p><font size="2"><strong>commands:</strong><br>
+  Lists commands that the builder may use in Redit.</font></p>
+<p><font size="2"><strong>redit create [new vnum in area]:</strong><br>
+  Creates a new vnum for a room, transfers the builder into that room, and also 
+  places the builder in Redit mode.</font></p>
+<p><font size="2"><strong>desc:</strong><br>
+  Places builder in append mode, similar to the &quot;rdesc&quot; for hostels 
+  on the live port. By typing &quot;.h&quot; on a blank line in the description 
+  editor, commands for the editor can be seen and used.</font></p>
+<p><font size="2"><strong>ed: </strong><br>
+  Extra description editor. Very useful for adding pictures or descriptions of 
+  items that would take up too much space in the regular room description. Click 
+  <a href="edesc.htm">here</a> to see more information on extra descriptions.</font></p>
+<p><font size="2"><strong>format:</strong><br>
+  Sets the description into a paragraph, word-wrapped to fit the formatting on 
+  the mud, so as not to look jumbled up on different clients or telnet.</font></p>
+<p><font size="2"><strong>name [string]: </strong><br>
+  Sets a short string for the name of the room, such as &quot;By the Temple Altar&quot; 
+  or &quot;Chapel&quot;. Please keep these brief and free of color for simplicity's 
+  sake.</font></p>
+<p><font size="2"><strong>owner [name]:</strong><br>
+  USE SPARINGLY. This sets the named person as the sole owner of the room, flagging 
+  it solitary and thus forbidding entrance by anyone other than its owner.</font></p>
+<p><font size="2"><strong>heal [number]:</strong><br>
+  Sets the healing rate of the room, 100 being &quot;normal&quot;. Do not set 
+  over 200, or less than 0. </font></p>
+<p><font size="2"><strong>mana [number]:</strong><br>
+  Sets the mana refresh rate of the room, 100 being &quot;normal&quot;. Do not 
+  set over 100, or less than 0.</font></p>
+<p><strong><font size="2">[room type]:<br>
+  </font></strong><font size="2">Sets the room type, which will have different 
+  affects on the player. Do not add &quot;room&quot; before the flag. Type &quot;<a href="rhelp.htm#room">? 
+  room</a>&quot; for the list of flags.</font></p>
+<p><strong><font size="2">[sector type]:<br>
+  </font></strong><font size="2">Sets the sector for the room, which will determine 
+  how much movement is used to move into the room and whether fly/boats are required. 
+  Do not add &quot;sector&quot; before the flag. Type &quot;<a href="rhelp.htm#sector">? 
+  sector</a>&quot; to view the list of sectors.</font></p>
+<p><font size="2"><strong>?:</strong><br>
+  Lists in-context help topics for OLC.</font></p>
+<p><font size="2"><strong>version: </strong><br>
+  Shows our version of OLC, and the people who helped make it what it is.</font></p>
+<p><strong><font size="2"><u><a name="reset"></a>Resetting mobs and objects in 
+  redit:</u></font></strong></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>mreset [mob vnum] 
+  [room max] [global max]:</strong><br>
+  Resets a mob of the given vnum to the room, with the room max being the max 
+  number of mobs possible to be in that room at one time, and the global max setting 
+  the highest number of the mobile that can be present on the mud at any given 
+  time. Be careful not to mix these up, or there will be a lot of mobs wandering 
+  around your area.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>oreset [obj vnum]<br>
+  oreset [obj vnum] [wear_location on mobile]<br>
+  oreset [obj vnum] inside [name of container already reset]:</strong><br>
+  Resets objects for the room. The first is to reset an object to the floor in 
+  the room, the second is to equip mobiles, as long as the mobile has already 
+  been reset to the room, while the third resets the object into a container that 
+  has also already been reset to the room first.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>mlist OR olist [name 
+  or vnum of mob/object]:</strong><br>
+  Lists objects or mobs based on name keywords, or their vnums, in that area.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>mshow OR oshow [name 
+  or vnum of mob/object]:</strong><br>
+  Shows medit/oedit show stats for the given mobile or object name, in that area.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><u><a name="exits"></a>Exits:</u></strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Whether it be doors leading 
+  back and forth, or making a maze to challenge players, exits are the mainstay 
+  of an area, the links to the other rooms and the doors that keep people from 
+  going through.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">A basic command syntax can 
+  be found in &quot;help olcexit&quot;, and is explained in detail here.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>[direction] dig 
+  [new vnum]:</strong><br>
+  Using a north/south/east/west/up/down for your [direction], you are both creating 
+  a new room (so use an unused vnum in your area), and creating a two-way, open 
+  link between the two rooms. To edit the room you just created, you will have 
+  to walk in that direction into the new room.</font></p>
+<p><strong><font size="2" face="Arial, Helvetica, sans-serif">[direction] link 
+  [existing vnum]:</font></strong><font size="2" face="Arial, Helvetica, sans-serif"><br>
+  Creates a two-way, open link between the room you're standing in and an existing 
+  room elsewhere. Be careful, and check to make sure the other room doesn't already 
+  have an exit on the arriving side (so if you are &quot;east link 2&quot;, make 
+  sure room 2 doesn't already have a path leading west).</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>[direction] room 
+  [existing vnum]:</strong><br>
+  Used with caution, this creates a ONE-WAY exit from the room you are standing 
+  in to an existing room. By one-way, it means that you can go to that room you 
+  just linked to, but cannot come back in the opposite direction. Good for small 
+  mazes, but don't get lost trying to do it, either.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>[direction] [flag]:</strong><br>
+  After an existing link has been made, flags can be added to the link. For example, 
+  &#8220;east door&#8221; creates a door, and &#8220;east locked&#8221; will make 
+  the door locked by default. The flags are toggles, so you can toggle it on or 
+  off.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>[direction] key 
+  [object vnum]:</strong><br>
+  Sets an EXISTING object, that should be of the type &quot;key&quot;, as the 
+  key that can unlock this door. Mandatory and set after you create, close, and 
+  lock a door.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>[direction] delete:</strong><br>
+  Removes the link from the room you're standing in to the room in that direction. 
+  Good if you messed up, or don't want the link to go there.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>? EXIT flags:</strong><br>
+  door: create a door in desired direction.<br>
+  *closed: closes the door in that direction.<br>
+  *locked: locks a closed door in that direction. Remember to create a key if 
+  necessary.<br>
+  *pickproof: thieves cannot pick open the door.<br>
+  *nopass: people with pass_door cannot go through.<br>
+  *easy/hard/infuriating: how difficult it is to pick open the lock<br>
+  *noclose: sets the door as uncloseable by the player, once opened<br>
+  *nolock: sets the door to where it cannot be locked by the player.<br>
+  hidden: when a door is NOT present in that direction, this will take the link 
+  direction off of a players &quot;autoexit&quot;, forcing them to go where they 
+  think they cannot go. Useful for hidden rooms for people to discover. Setting 
+  a door to hidden will cause the port to crash.<br>
+  window: when a door is NOT present in that direction, this will create a window. 
+  Players can look through the window to see the linked room, and archers can 
+  shoot through the window at their target in the room. However, the exit itself 
+  is small, so players cannot pass through it.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">* needs an existing door</font></p>
+</body>
+</html>

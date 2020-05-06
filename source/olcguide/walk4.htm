@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- InstanceBegin template="/walk.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>OLC walkthrough</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+
+<body link="#0000CC" vlink="#0000CC" alink="#0000CC">
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr bordercolor="#FFFFFF"> 
+    <td width="7%"><font size="2" face="Arial, Helvetica, sans-serif"><strong><a href="walk.htm">Main</a></strong></font></td>
+    <td width="14%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Modifying 
+      an area</font></td>
+    <td width="17%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      rooms</font></td>
+    <td width="19%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      objects</font></td>
+    <td width="16%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      mobiles</font></td>
+    <td width="10%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Resets</font></td>
+    <td width="17%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      a prog</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td>&nbsp;</td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk1.htm">1</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk2.htm">2</a>, 
+      <a href="walk3.htm">3</a>, <a href="walk4.htm">4</a>, <a href="walk5.htm">5</a>, 
+      <a href="walk6.htm">6</a>, <a href="walk7.htm">7</a> </font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk8.htm">8</a>, 
+      <a href="walk9.htm">9</a>, <a href="walk10.htm">10</a>, <a href="walk11.htm">11</a>, 
+      <a href="walk12.htm">12</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk13.htm">13</a>, 
+      <a href="walk14.htm">14</a>, <a href="walk15.htm">15</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk16.htm">16</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk17.htm">17</a>, 
+      <a href="walk18.htm">18</a></font></td>
+  </tr>
+</table>
+<!-- InstanceBeginEditable name="body" --> 
+<p><strong><font size="3" face="Arial, Helvetica, sans-serif">4) &nbsp; Writing 
+  the description (append mode)</font></strong></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><em>For zMUD users, &#8220;.&#8221; 
+  is the default movement character, so they will either need to change/disable 
+  it (by going into Preferences &gt; Special Characters) or disable parsing, in 
+  order to use the &quot;dot commands&quot;.</em></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">To write the room description, 
+  type &quot;desc&quot; in redit. You will enter the <a href="append.htm">append 
+  mode</a> and see this:</font></p>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr> 
+    <td height="19" bordercolor="#FFFFFF" bgcolor="#000000"> <p><font color="#999900" face="Fixedsys">desc</font></p>
+      <p><font face="Arial, Helvetica, sans-serif"><font color="#FFFFFF" size="2" face="Fixedsys">[</font><font color="#00FF00" size="2" face="Fixedsys">R</font><font color="#006600" size="2" face="Fixedsys">oom-Edi</font><font color="#00FF00" size="2" face="Fixedsys">t</font><font color="#FFFFFF" size="2" face="Fixedsys">]</font></font><font face="Fixedsys"><br>
+        <font color="#CCCCCC">-=======- Entering APPEND Mode -========-<br>
+        Type .h on a new line for help<br>
+        Terminate with a ~ or @ on a blank line.<br>
+        -=======================================-</font></font></p>
+      <p><font color="#CCCCCC" face="Fixedsys">&gt;</font></p></td>
+  </tr>
+</table>
+<p><font size="2" face="Arial, Helvetica, sans-serif">In order to write the room 
+  description, I will type it directly into the MUD. So I type <font color="#000000">&quot;</font></font><font color="#000000" size="2" face="Arial, Helvetica, sans-serif">Wooden 
+  drawers cover all the walls in this small room, save for where the door is. 
+  Small bronze plaques have been nailed onto each drawer, showing the name of 
+  the herb found within.&quot; and press enter. To see what I've written, I will 
+  type &quot;.s&quot;, as shown below.</font></p>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr> 
+    <td height="98" bordercolor="#FFFFFF" bgcolor="#000000"> <p><font color="#999900" face="Fixedsys">Wooden 
+        drawers cover all the walls in this small room, save for where the door 
+        is. Small bronze plaques have been nailed onto each drawer, showing the 
+        name of the herb found within.<br>
+        </font><font color="#999900" face="Fixedsys">.s</font></p>
+      <p><font color="#CCCCCC" face="Fixedsys">&gt; 1 Wooden drawers cover all 
+        the walls in this small room, save for where the door is. Small bronze 
+        plaques have been nailed onto each drawer, showing the name of the herb 
+        found within.</font></p></td>
+  </tr>
+</table>
+<p><font size="2" face="Arial, Helvetica, sans-serif">I will continue typing in 
+  the room description, until I am satisfied I have written enough. I type &quot;.s&quot; 
+  now and see:</font></p>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr> 
+    <td height="102" bordercolor="#FFFFFF" bgcolor="#000000"> <p><font color="#999900"><font face="Fixedsys">Close 
+        to the northern wall, a polished counter sits opposite the door, and on 
+        it are a book, a pot of ink and a quill.</font><br>
+        <font face="Fixedsys">.s</font></font></p>
+      <p><font color="#CCCCCC" face="Fixedsys">&gt; 1 Wooden drawers cover all 
+        the walls in this small room, save for where the door is. Small bronze 
+        plaques have been nailed onto each drawer, showing the name of the herb 
+        found within.<br>
+        2 Close to the northern wall, a polished counter sits opposite the door, 
+        and on it are a book, a pot of ink and a quill.</font></p></td>
+  </tr>
+</table>
+<p><font size="2" face="Arial, Helvetica, sans-serif">I then realise that I have 
+  forgotten to add a line between line 1 and line 2, since I intended to make 
+  the shopkeeper the only person who understands the plaques. So I now add a line 
+  by typing &quot;.i 2 However, the names cannot be understood, as they have been 
+  written in strange letters.&quot; This means I insert a line in front of line 
+  2. I type &quot;.f&quot; and see this:</font></p>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr> 
+    <td height="102" bordercolor="#FFFFFF" bgcolor="#000000"> <p><font color="#999900"><font face="Fixedsys">However, 
+        the names cannot understood, as they have been written in strange letters.</font><br>
+        <font face="Fixedsys">.s</font></font></p>
+      <p><font color="#CCCCCC" face="Fixedsys">&gt; 1 Wooden drawers cover all 
+        the walls in this small room, save for where the door is. Small bronze 
+        plaques have been nailed onto each drawer, showing the name of the herb 
+        found within.<br>
+        2 However, the names cannot understood, as they have been written in strange 
+        letters.<br>
+        3 </font><font color="#CCCCCC" face="Fixedsys">Close to the northern wall, 
+        a polished counter sits opposite the door, and on it are a book, a pot 
+        of ink and a quill.</font></p></td>
+  </tr>
+</table>
+<p><font size="2" face="Arial, Helvetica, sans-serif">It is not formatted, and 
+  looks very messy. So to make it look nicer, I type &quot;.f&quot;. This formats 
+  the room description so that the line stops at around 80 characters. I then 
+  type &quot;.s&quot; and now I see this:</font></p>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr> 
+    <td height="98" bordercolor="#FFFFFF" bgcolor="#000000"> <p><font color="#999900" face="Fixedsys">.f<br>
+        .s </font></p>
+      <p><font color="#CCCCCC" face="Fixedsys">&gt; 1 Wooden drawers cover all 
+        the walls in this small room, save for where the<br>
+        2 door is. Small bronze plaques have been nailed onto each drawer, showing<br>
+        3 the name of the herb found within. However, the names cannot understood, 
+        as<br>
+        4 they have been written in strange letters. Close to the northern wall, 
+        a<br>
+        5 polished counter sits opposite the door, and on it are a book, a pot 
+        of ink<br>
+        6 and a quill.</font></p></td>
+  </tr>
+</table>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Oops. I made a grammatical 
+  error. I should be &quot;the names cannot <em>be</em> understood&quot;, but 
+  I missed out the &quot;be&quot;. To add it, I type &quot;.r &quot;cannot understood&quot; 
+  &quot;cannot be understood&quot;&quot;. This means I replace the first &quot;cannot 
+  understood&quot; in the description with &quot;cannot be understood&quot;. I 
+  type &quot;.f&quot; and &quot;.s&quot; to make sure there are no more typos.</font></p>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr> 
+    <td height="98" bordercolor="#FFFFFF" bgcolor="#000000"> <p><font color="#999900" face="Fixedsys">.r 
+        &quot;cannot understood&quot; &quot;cannot be understood&quot;<br>
+        .f<br>
+        .s </font></p>
+      <p><font color="#CCCCCC" face="Fixedsys">&gt; 1 Wooden drawers cover all 
+        the walls in this small room, save for where the<br>
+        2 door is. Small bronze plaques have been nailed onto each drawer, showing<br>
+        3 the name of the herb found within. However, the names cannot understood, 
+        be <br>
+        4 as they have been written in strange letters. Close to the northern 
+        wall, a<br>
+        5 polished counter sits opposite the door, and on it are a book, a pot 
+        of ink<br>
+        6 and a quill.</font></p></td>
+  </tr>
+</table>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Very nice. But it looks 
+  a bit plain without colour. To add colour to &quot;plaques&quot; for example, 
+  I would type &quot;.r &quot;plaques&quot; &quot;`3pl`#aqu`3es``&quot;&quot;. 
+  I exit the append mode and look at the room. Voila!</font></p>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr> 
+    <td height="98" bordercolor="#FFFFFF" bgcolor="#000000"> <p><font face="Arial, Helvetica, sans-serif"><font size="2" face="Fixedsys"><font color="#666666">Inside 
+        a </font><font color="#000099">s</font><font color="#0000FF">ho</font><font color="#000099">p</font></font></font><br>
+        <font color="#CCCCCC" face="Fixedsys">&nbsp; Wooden drawers cover all 
+        the walls in this small room, save for where the<br>
+        door is. Small </font><font face="Fixedsys"><font color="#990000">b</font></font><font color="#999900" face="Fixedsys">r</font><font color="#FFFF00" face="Fixedsys">on</font><font color="#999900" face="Fixedsys">z</font><font color="#990000" face="Fixedsys">e</font><font color="#990000" face="Fixedsys"> 
+        </font><font color="#999900" face="Fixedsys">pl</font><font color="#FFFF00" face="Fixedsys">aqu</font><font color="#999900" face="Fixedsys">es</font><font color="#CCCCCC" face="Fixedsys"> 
+        have been nailed onto each drawer, showing<br>
+        the name of the herb found within. However, the names cannot be understood,<br>
+        as they have been written in strange letters. Close to the northern wall, 
+        a<br>
+        polished counter sits opposite the door, and on it are a book, a pot of 
+        ink<br>
+        and a quill. </font></p></td>
+  </tr>
+</table>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Now, it might seem odd that 
+  I don't format it, so let's see what happens if I format it with colour:</font></p>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr> 
+    <td height="98" bordercolor="#FFFFFF" bgcolor="#000000"> <p><font color="#999900" face="Fixedsys">desc<br>
+        </font><font color="#999900" face="Fixedsys">.f<br>
+        </font><font color="#999900" face="Fixedsys">.s</font></p>
+      <p><font color="#CCCCCC" face="Fixedsys">&gt; 1 Wooden drawers cover all 
+        the walls in this small room, save for where the<br>
+        2 door is. Small 1b3r#on3z1e 3pl#aqu3es have been nailed onto<br>
+        3 each drawer, showing the name of the herb found within. However, the 
+        names<br>
+        4 cannot be understood, as they have been written in strange letters. 
+        Close<br>
+        5 to the northern wall, a polished counter sits opposite the door, and 
+        on it<br>
+        6 are a book, a pot of ink and a quill. </font></p></td>
+  </tr>
+</table>
+<p><font size="2" face="Arial, Helvetica, sans-serif">So far so good. So I exit 
+  the append by typing &quot;@&quot;, and look at the room again.</font></p>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr> 
+    <td height="98" bordercolor="#FFFFFF" bgcolor="#000000"> <p><font color="#999900" face="Fixedsys">@</font></p>
+      <p><font face="Arial, Helvetica, sans-serif"><font size="2" face="Fixedsys"><font color="#666666">Inside 
+        a </font><font color="#000099">s</font><font color="#0000FF">ho</font><font color="#000099">p</font></font></font><font face="Fixedsys"><br>
+        <font color="#CCCCCC">&nbsp;&nbsp;Wooden drawers cover all the walls in 
+        this small room, save for where the<br>
+        door is. Small </font><font color="#990000">b</font></font><font color="#999900" face="Fixedsys">r</font><font color="#FFFF00" face="Fixedsys">on</font><font color="#999900" face="Fixedsys">z</font><font color="#990000" face="Fixedsys">e 
+        </font><font color="#999900" face="Fixedsys">pl</font><font color="#FFFF00" face="Fixedsys">aqu</font><font color="#999900" face="Fixedsys">es</font><font color="#CCCCCC" face="Fixedsys"> 
+        have been nailed onto<br>
+        each drawer, showing the name of the herb found within. However, the names<br>
+        cannot be understood, as they have been written in strange letters. Close<br>
+        to the northern wall, a polished counter sits opposite the door, and on 
+        it<br>
+        are a book, a pot of ink and a quill.</font></p></td>
+  </tr>
+</table>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Bad formatting. The editor 
+  reads the colour characters (i.e. `&nbsp;) as individual characters too, which 
+  is why we do not format room descriptions with colours.</font></p>
+<!-- InstanceEndEditable --> 
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr bordercolor="#FFFFFF"> 
+    <td width="50%"> <div align="right"><font size="2" face="Arial, Helvetica, sans-serif"><!-- InstanceBeginEditable name="previous" --><a href="walk3.htm">Previous 
+        step</a><!-- InstanceEndEditable --></font></div></td>
+    <td width="50%"> 
+      <div align="left"><!-- InstanceBeginEditable name="next" --><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk16.htm">Next 
+        step</a></font><!-- InstanceEndEditable --></div></td>
+  </tr>
+</table>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr bordercolor="#FFFFFF"> 
+    <td width="7%"><font size="2" face="Arial, Helvetica, sans-serif"><strong><a href="walk.htm">Main</a></strong></font></td>
+    <td width="14%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Modifying 
+      an area</font></td>
+    <td width="17%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      rooms</font></td>
+    <td width="19%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      objects</font></td>
+    <td width="16%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      mobiles</font></td>
+    <td width="10%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Resets</font></td>
+    <td width="17%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      a prog</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td>&nbsp;</td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk1.htm">1</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk2.htm">2</a>, 
+      <a href="walk3.htm">3</a>, <a href="walk4.htm">4</a>, <a href="walk5.htm">5</a>, 
+      <a href="walk6.htm">6</a>, <a href="walk7.htm">7</a> </font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk8.htm">8</a>, 
+      <a href="walk9.htm">9</a>, <a href="walk10.htm">10</a>, <a href="walk11.htm">11</a>, 
+      <a href="walk12.htm">12</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk13.htm">13</a>, 
+      <a href="walk14.htm">14</a>, <a href="walk15.htm">15</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk16.htm">16</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk17.htm">17</a>, 
+      <a href="walk18.htm">18</a></font></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

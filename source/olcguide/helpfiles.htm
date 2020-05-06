@@ -1,0 +1,531 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>OLC helpfiles</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body link="#0000CC" vlink="#0000CC" alink="#0000CC">
+<p><font size="2" face="Arial, Helvetica, sans-serif"> <font size="3"><strong><a name="top"></a>OLC 
+  In-Editor helps (The &quot;?&quot; files...)</strong></font></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">This is a listing of all 
+  the help given when someone types &quot;? blahblah&quot; under any of the edits 
+  for OLC.</font></p>
+<hr>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Help files: <a href="#act"> 
+  act</a> <a href="#affect">affect</a> <a href="#apply">apply</a> <a href="#apptype">apptype</a> 
+  <a href="#area">area</a> <a href="#armor">armor</a> <a href="#container">container</a> 
+  <a href="#exit">exit</a> <a href="#extra">extra</a> <a href="#form">form</a> 
+  <a href="#furniture">furniture</a> <a href="#imm">imm</a> <a href="#liquid">liquid</a> 
+  <a href="#off">off</a> <a href="#part">part</a> <a href="#portal">portal</a> 
+  <a href="#position">position</a> <a href="#race">race</a> <a href="#room">room</a> 
+  <a href="#sector">sector</a> <a href="#sex">sex</a> <a href="#size">size</a> 
+  <a href="#spec">spec</a> <a href="#spells">spells</a> <a href="#spellall">spellsall</a> 
+  <a href="#spellattdef">spellattdef</a> <a href="#type">type</a> <a href="#wclass">wclass</a> 
+  <a href="#weapon">weapon</a> <a href="#wear">wear</a> <a href="#wearloc">wearloc</a> 
+  <a href="#wtype">wtype</a> </font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="ahelp.htm">Aedit 
+  helpfile</a><br>
+  </font><font size="2" face="Arial, Helvetica, sans-serif"><a href="rhelp.htm">Redit 
+  helpfiles</a><br>
+  <a href="mhelp.htm">Medit helpfiles</a><br>
+  <a href="ohelp.htm">Oedit helpfiles</a></font> </p>
+<hr>
+<font face="Arial, Helvetica, sans-serif">
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="act"></a>? 
+  act (Mobile Actions)</strong></font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">- sentinel: mob will not 
+  move around in the area, instead staying in one room.<br>
+  - scavenger: random chance the mob will pick something up off of the floor in 
+  a room.</font><font size="2" face="Arial, Helvetica, sans-serif"><br>
+  - banker: will deposit and withdraw money for characters.<br>
+  - aggressive: will attack PC's according to its level.<br>
+  - stay_area: mob will not wander out of its prescribed area.<br>
+  - wimpy: mob will flee when it reaches a certain hp percentage.<br>
+  - pet: mob is charmed, and someone's pet.<br>
+  - train: mob can train other players and their stats.<br>
+  - practice: mob helps characters practice skills.<br>
+  - horse: mountable, but without mount code yet, we can't use it, yet :(<br>
+  - quest: mob can be used as a quest target.<br>
+  - undead: mob acts as a skeleton, ghost, or other undead, in spells and attacks.<br>
+  - monk: powerful hand to hand warrior<br>
+  - cleric: healer or hurter, based on how you want it to act toward you.<br>
+  - mage: can cast mage spells<br>
+  - thief: backstabs, steals, and runs away<br>
+  - warrior: fights as a warrior, strong, many attacks, no magic<br>
+  - noalign: mob not considered for alignment purposes, use sparingly.<br>
+  - nopurge: mob may not be purged by an imm from the room.<br>
+  - indoors: mob can't go outside to play<br>
+  - outdoors: mob can't come in from the cold.<br>
+  - healer: heals characters, for a certain fee.<br>
+  - gain: characters may gain skills at this person.<br>
+  - update_always: used with code updates, buggy, please don't use.<br>
+  - changer: mob can exchange gold and silver for players.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="affect"></a>? 
+  affect (mobile affect flags)</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">- blind: mob is blinded<br>
+  - invisible: mob is affected by the invisible spell.<br>
+  - detect_evil: can sense evil beings<br>
+  - detect_invis: mob can see invisible people<br>
+  - detect_magic: mob can sense magical items<br>
+  - detect_hidden: mob can see hidden or sneaking people<br>
+  - detect_good: mob can sense the light side of the Force.<br>
+  - sneak: mob is sneaking around, hard to see him come in or leave.<br>
+  - sanctuary: mob is surrounded by an aura, taking only half normal damage.<br>
+  - faerie_fire: mobs Armor Class is lowered based on level<br>
+  - infared: mob can sense heat in the dark.<br>
+  - curse: mob is cursed, making it a little easier to hit with weapons and spells.<br>
+  - poison: mob is poisoned, and will lose some hp during the course of a fight<br>
+  - protect_evil: bonus save vs. spell and AC against evil characters<br>
+  - protect_good: bonus save vs. spell and AC against good characters<br>
+  - hide: mob is affected by hide. Need detect hidden to see it.<br>
+  - sleep: mob has been put to sleep<br>
+  - charm: mob has been charmed and is now under the control of someone else.<br>
+  - flying: mob is affected by the flying spell.<br>
+  - pass_door: mob is affected by pass door, affecting its movement and ability 
+  to be bashed.<br>
+  - haste: mob is affected by haste, increasing the number of its attacks.<br>
+  - calm: mob less likely to be aggressive and also may hit less.<br>
+  - plague: mob is affected by plague, which reduces hp regeneration. Contagious.<br>
+  - weaken: mob is affected by weaken, and its strength is reduced<br>
+  - dark_vision: mob can see in the dark.<br>
+  - berserk: mob is in a frenzy, affecting its hit and damage by a marginal amount.<br>
+  - swim: mob can move through watery terrain.<br>
+  - regeneration: mob would gain hitpoints back faster when healing, but is bugged. 
+  Don't use.<br>
+  - slow: mob has had its speed reduced to less than normal, will hit less often.</font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="apply"></a>? 
+  apply</strong></font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">A list of flags for &quot;addaffect&quot; 
+  command. Stats and spells are given, but consult with an area imp before adding 
+  spells or excessive stats.</font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="apptype"></a>? 
+  apptype (object addapply types)</strong></font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">- affects: do not use this 
+  any more, to add permspells please use addaffect<br>
+  - object: affects how an object might work<br>
+  - immune/resist/vuln: &#8220;addapply immune/res/vuln [stat] [modifier] [type 
+  of i/r/v] [level]&#8221; Check with area imps before adding immunities or resistances. 
+  Remember, adding immunities or resistances to objects is forbidden. <br>
+  - weapon: affects the actions of a weapon</font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2"><strong><a name="area"></a>? area</strong></font></p>
+<p><font size="2">- changed: an automatic flag when someone edits anything inside 
+  the area.<br>
+  - added: an area that has been recently added to the mud.<br>
+  - noquest: no autoquests will be given in the area with this flag.<br>
+  - noenter: allows nobody but the builder to enter the area.<br>
+  - newbie: an area that only &quot;newbies&quot; (levels 1-5) can enter, like 
+  the mud school. Should not really be used.<br>
+  - norecall: an area generally made no-recall for purposes of the recall skill, 
+  &#8220;word of recall&#8221; spell, or clan recall.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="armor"></a>? 
+  armor (armor class types)</strong></font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">The 4 types of AC, pierce, 
+  bash, slash, and magic (exotic)</font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="container"></a>? 
+  container (container flags)</strong></font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">- closeable: container can 
+  be closed.<br>
+  - pickproof: thieves can't pick the lock on the container<br>
+  - closed: flagged as closed upon repop<br>
+  - locked: locks a closed container on repop<br>
+  - puton: objects are put on, rather than in, this container</font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="exit"></a>? 
+  exit</strong></font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">- door: creates a door in 
+  a specified direction.<br>
+  - closed: sets a door to reset at the closed position.<br>
+  - locked: locks a closed door, in a specified direction.<br>
+  - pickproof: thieves can't pick the lock on the door.<br>
+  - nopass: pass_door will not work trying to go through the door.<br>
+  - easy: thieves find it easy to pick this kind of lock.<br>
+  - hard: thieves find picking this lock a small challenge.<br>
+  - infuriating: thieves will be yelling and screaming to get this open.<br>
+  - noclose: Characters won't be able to shut the door<br>
+  - nolock: Characters won't be able to lock the door.<br>
+  - hidden: hides the exit, as long as there's no door.<br>
+  - window: makes a window to look through, as long as there isn't a door already 
+  there.</font><font face="Arial, Helvetica, sans-serif"> </font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="extra"></a>? 
+  exra (object extra flags)</strong></font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">- glow: The object is glowing 
+  with its own light, a light source that can be seen in the dark.<br>
+  - hum: Object is humming with energy, and can be heard in a quiet room.<br>
+  - dark: object is hidden, and is darkened to someone who cannot see hidden things.<br>
+  - evil: Object reeks of evil, and will have a red aura to it.<br>
+  - invis: object is invisible, and the detect invis spell is needed to see it.<br>
+  - magic: object has a magical quality about it, and will have magical aura to 
+  it.<br>
+  - nodrop: character cannot drop the object from his inventory, unless he removes 
+  curse from it.<br>
+  - bless: object is blessed, and will do well against evil or unholy creatures.<br>
+  - anti-good: persons of good align (1000 to 300) may not use this item.<br>
+  - anti-neutral: persons of neutral align (300 to -300) may not use this item.<br>
+  - anti-evil: persons of evil align (-300 to -1000) may not use this item.<br>
+  - noremove: if this object is worn, character cannot remove it unless remove 
+  curse is cast.<br>
+  - inventory: for a shop keeper. Sets the object to repop indefinitely to a shop.<br>
+  - nopurge: object may not be purged by an imm from the room.<br>
+  - rotdeath: will receive a timer when a character dies, and when that timer 
+  expires, the object will crumble and be lost.<br>
+  - visdeath: will not be seen until the character has killed the mobile that 
+  has the object.<br>
+  - nosac: object may not be sacrificed to the character's god.<br>
+  - nonmetal: object has non-metallic properties, that could be harmful to certain 
+  mobiles.<br>
+  - nolocate: cannot be found by the locate object spell<br>
+  - meltdrop: will dissolve into smoke when the character drops it.<br>
+  - timer and sell: not to be used.<br>
+  - burnproof: the object cannot be damaged or destroyed by magic/weapons<br>
+  - nouncurse: object may not be uncursed using the remove curse spell<br>
+  - pkonly: Player Killers may only hold or use this item<br>
+  - nopkonly: Non-player killers may only hold or use this item.</font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="form"></a>? 
+  form (mobile form flags)</strong></font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">- edible: parts can be eaten 
+  after killed<br>
+  - poison: parts poisonous when eaten<br>
+  - magical: creature is not &quot;natural&quot;, and made of magic stuff<br>
+  - construct: creature is a magical construct, such as a golem<br>
+  - instant_decay: mob corpse rots upon death<br>
+  - other: mob form cannot be easily classified<br>
+  - animal: mob is a basic, natural animal<br>
+  - sentient: mob is capable of complex thoughts, human-like<br>
+  - undead: a spirit of the nether realms, skeleton, ghost, etc.<br>
+  - mist: form is that of a cloud or fine mist<br>
+  - intangible: cannot be seen or touched or thought of<br>
+  - biped: walks on two legs<br>
+  - centaur: body of a horse, torso and head and arms of a human<br>
+  - insect: a bug, generally small<br>
+  - spider: 8 legs, feared by many people<br>
+  - crustacean: crabs or other shellfish<br>
+  - worm: mush, creepy crawly insect that moves around in dirt.<br>
+  - blob: mob is a blob, without bones, slimy, oozy<br>
+  - mammal: warm blooded<br>
+  - bird: has wings to fly, generally small<br>
+  - reptile: cold blooded, scales, forked tongue<br>
+  - snake: slithery, cold blooded, feetless reptiles<br>
+  - dragon: very large and fearsome beast<br>
+  - amphibian: salamander, or any other creature that can live both on land and 
+  in water<br>
+  - fish: fins, scales, lives in water and nowhere else<br>
+  - cold_blood: cold blooded creature, needs sunlight, affected heavily by cold 
+  weather</font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="furniture"></a>? 
+  furniture (furniture flags)</strong><br>
+  sit_on rest_on sleep_on stand_on<br>
+  sit_at rest_at sleep_at stand_at<br>
+  sit_in rest_in sleep_in stand_in<br>
+  put_on put_at put_in put_inside</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="imm"></a>? 
+  imm/res/vuln</strong></font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">Different types of immunities, 
+  resistances, and vulnerabilities are listed here. Most are self-explanatory, 
+  but if you need help, ask an area imp to explain them for you.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="liquid"></a>? 
+  liquid (liquid types)</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">This will list a series 
+  of liquids you may use in fountains and drink containers. There are differing 
+  columns with different stats.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">- name: name of the liquid 
+  in question<br>
+  - color: the color it will appear when someone looks at the container<br>
+  - proof: the higher the number, the quicker and longer the person stays drunk 
+  after drinking it<br>
+  - full: number of hours it will satisfy hunger. Some are none (like water) because 
+  they have no value in the way of nutrition.<br>
+  - thirst: number of hours it will satisfy thirst<br>
+  - food: its value as a food <br>
+  - ssize: how much of it will fit in a container, or how many drinks you could 
+  get out of filling once</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="off"></a>? 
+  off (mobile offenseive behaviors)</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">- area_attack: mob can hit 
+  more than one person at a time<br>
+  - backstab: mob is capable of using backstab skill against characters<br>
+  - bash: mob may bash character<br>
+  - berserk: mob may use berserk skill during combat<br>
+  - disarm: mob will sometimes disarm during combat<br>
+  - dodge: mob has the dodge skill<br>
+  - fade: mob can fade in and out, hard to hit or see during a fight<br>
+  - fast: mob may take the initiative, getting the first attack in a fight<br>
+  - kick: mob throws out a mildly damaging kick during the fight<br>
+  - dirt_kick: blinds opponents temporarily.<br>
+  - parry: mob can fend off weapons with his own<br>
+  - rescue: mob will rescue those it deems worthy of it.<br>
+  - tail: mob uses tail for an extra weapon in a fight<br>
+  - trip: mob can take someone's feet out from under them<br>
+  - crush: overpowering attack, extra damage<br>
+  - assist_all: mob will assist anyone on a whim<br>
+  - assist_align: mob will assist like-aligned players and mobiles in a fight<br>
+  - assist_race: mob will assist players and mobs of the same race<br>
+  - assist_players: mob will assist players that are in a fight<br>
+  - assist_guard: mob will aid guards in seeing to justice<br>
+  - assist_vnum: mob assists only mobs of the same vnum<br>
+  - flurry: executes a flurry of attacks at random<br>
+  - spellbane: capable of reflecting spells back at the caster<br>
+  - riposte: a counterattack, based on parry success</font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="part"></a>? 
+  part (mobile parts)</strong></font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">Typing this gives the builder 
+  a list of possible parts. Each part should be self-explanatory.</font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="portal"></a>? 
+  portal (portal flags)</strong></font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">- normal_exit: normal exit, 
+  won't do anything messy to a character<br>
+  - no_curse: portal can't be cursed, or lead to a cursed area<br>
+  - go_with: charmies and pets may follow characters through this portal<br>
+  - buggy: random chance the portal might go somwhere else<br>
+  - random: portal leads to a random room</font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="position"></a>? 
+  position (mobile positions)</strong></font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">Self explanatory</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="race"></a>? 
+  race/race?</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">? race shows the possible 
+  humans races (e.g. Chereks, Murgos), while race ? shows all possible races (e.g. 
+  pig, song bird).</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="room"></a>? 
+  room</strong></font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2">- dark: players without lights will not be able to see, unless 
+  it is outdoors and in broad daylight hours.<br>
+  - no_mob: mobiles will not wander/flee into the room, good for healers or rooms 
+  frequented by players.<br>
+  - indoors: changes in time and weather cannot be seen by the player if the room 
+  is flagged indoors.<br>
+  - no_teleport: players may not use the teleport spell to enter this room.<br>
+  - no_clanrecall: clan members may not return to their clan halls from here.<br>
+  - no_quit: players may not quit in this room, and are asked to go before they 
+  do.<br>
+  - private: only 2 people or mobiles may be in the room at any one given time.<br>
+  - safe: fighting will not occur in this room as long as it is safe.<br>
+  - solitary: only one person or mob may be in this room at a given time.<br>
+  - pet_shop: flags the room as a pet shop, using that room and the next room 
+  consecutively in vnums. The first room is where the shopkeeper sells the pets, 
+  and the second room is where the pet mobs will be reset.<br>
+  - no_recall: flags the room unable to be recalled from, using the recall skill 
+  or the word of recall spell.<br>
+  - imp_only: implementer immortals may enter this room only.<br>
+  - gods_only: immortals only in this room.<br>
+  - heroes_only: mortal heroes may enter this room, or higher level.<br>
+  - newbies_only: characters from level 1 to 5 may enter this room only.<br>
+  - law: Pk rules will be enforced in this room, useful for city streets.<br>
+  - nowhere: someone in this room will not appear when someone types &quot;where&quot;<br>
+  - wizard_only: another immortal level, for imms only in this room.<br>
+  - stable: mount seller, and as code doesn't support mount, it has no use right 
+  now.<br>
+  - no_magic: spells may not be cast in this room<br>
+  - nogate: characters may not use the gate spell to enter this room.<br>
+  - nologon: if a character quits here, they will log back on at recall.<br>
+  - nostatus: characters' hunger and thirst will not change in this room.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2"><strong><a name="sector"></a>? sector</strong></font></p>
+<p><font size="2">- inside: 1 movement point to move into this sector.<br>
+  - city: 2 movement points to move into this sector.<br>
+  - field: 2 movement points to move into this sector.<br>
+  - forest: 3 movement points to move into this sector.<br>
+  - hills: 4 movement points to move into this sector.<br>
+  - mountain: 6 movement points to move into this sector.<br>
+  - swim: 4 movement points to move into this sector.<br>
+  - noswim: fly spell required to move over this terrain, or a boat.<br>
+  - unused: unused, and leave it that way (don't use if for a sector).<br>
+  - air: fly spell required to negotiate through this region.<br>
+  - desert: 9 mv points, and will affect thirst a little quicker.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="sex"></a>? 
+  sex (Mobile Genders)</strong></font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">Male, female, neutral, random, 
+  and none, all self-explanatory.</font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="size"></a>? 
+  size (mobile sizes)</strong></font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">Sizes affect how hard and 
+  how difficult it is to hit certain creatures. Large creatures may be a little 
+  slower, but hit harder, where as small creatures might not do much damage, but 
+  are fast and hard to hit. Keep mobile sizes relative and appropriate, humans 
+  being medium.</font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="spec"></a>? 
+  spec (special mobile functions)</strong></font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">- spec_breath_any: mob will 
+  cast any type of breath spell<br>
+  - spec_breath_gas: mob casts gas breath<br>
+  - spec_breath_acid: mob casts acid breath<br>
+  - spec_breath_fire: mob casts fire breath<br>
+  - spec_breath_frost: mob casts frost breath<br>
+  - spec_breath_lighnting: mob casts lightning breath<br>
+  - spec_cast_adept: mob casts adept-level mage spells.<br>
+  - spec_cast_cleric: mob casts cleric spells, like blind.<br>
+  - spec_cast_judge: mob casts judging spells (not sure what they do)<br>
+  - spec_cast_mage: casts mage spells, like fireball.<br>
+  - spec_cast_undead: casts plaguing, undead spells<br>
+  - spec_executioner: mob acts as a form of executioner of the law.<br>
+  - spec_fido: mob will devour corpses on the ground.<br>
+  - spec_guard: mob enforces the law, protecting the innocent and punishing those 
+  needing it.<br>
+  - spec_janitor: mob picks up things from the ground, as its cleaning duty.<br>
+  - spec_mayor: DON'T USE - specific movement of Sendar's mayor, won't work in 
+  your town.<br>
+  - spec_poison: mob will poison player, if given the chance<br>
+  - spec_thief: mob backstabs and steals money from a player.<br>
+  - spec_nasty: low down, dirty scoundrel.<br>
+  - spec_troll_member and spec_ogre_member: no such things as trolls and ogres 
+  in Prophecy. Don't use.<br>
+  - spec_patrolman: an old police officer, please don't use.<br>
+  - spec_angarak_guard: an Eastern guard, will react unfavorably towards Alorns.<br>
+  - spec_alorn_guard: A western guard, will attack Angaraks on sight.<br>
+  - spec_questmaster: holds questmaster's routine and code, ask imps before using.<br>
+  - spec_inkeeper: hostel keeper's code, don't use</font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="spells"></a>? 
+  spells</strong></font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">- call lightning: A powerful 
+  bolt hits all enemies, given outdoors and bad weather<br>
+  - calm: stops fighting in a room, reduces hitroll<br>
+  - continual light: creates a ball of light for use as a light<br>
+  - control weather [better/worse]: make the weather better or worse<br>
+  - create food: magic mushroom, instant food supply<br>
+  - create rose: make a red rose for your darling<br>
+  - create spring: fountain-in-a-spell<br>
+  - earthquake: shakes ground, damaging non-flying mobs/people in the room.<br>
+  - faerie fog: reveals all hidden mobs/items in the room<br>
+  - farsight: just type &quot;scan&quot;<br>
+  - floating disc: a container floaty to take a load off your inventory.<br>
+  - gate: transport you to a given location<br>
+  - holy word: help your friends, damn your enemies, lose all your movement.<br>
+  - locate person: find out where that person is!<br>
+  - locate object: find the missing link...<br>
+  - mass healing: heal everyone in your group<br>
+  - mass invis: cast invisibility on everyone in your group<br>
+  - nexus: two-way gateway to somewhere<br>
+  - portal: a one-way gateway to somewhere<br>
+  - scourge of torak: area-affect maladictions, similar to holy word, but reverse 
+  affects<br>
+  - summon: pull a buddy out of trouble<br>
+  - ventriloquate: make someone say something they really didn't<br>
+  - gas breath: area affect poisoning spell</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="spellall"></a>? 
+  spells all</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Lists all the spells, instead 
+  of by group as above.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="spellattdef"></a>? 
+  spells attack/defend/self/object</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Most of these are commonly 
+  known and used attack spells. Any questions can be directed toward the area 
+  implementors or experienced builders.</font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2"><strong><a name="type"></a>? type (object types)</strong></font></p>
+<p><font size="2">Most of the object types are self-explanatory. There are too 
+  many of them here to write out what they do, so if you have any questions, just 
+  ask either an experienced builder or an imp if you don't know what a certain 
+  object type does.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="wclass"></a>? 
+  wclass (weapon types)</strong></font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif">Lists the different weapon 
+  types that can be used on the mud.</font><font face="Arial, Helvetica, sans-serif"> 
+  </font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><strong><font size="2"><a name="weapon"></a>? weapon (mob dam type)</font></strong></p>
+<p><font size="2">Lists the name of the dam noun on the left and the noun on the 
+  right.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2"><strong><a name="wear"></a>? wear (object wear flags)</strong></font></p>
+<p><font size="2">- take: allows the character to get the object off of the ground.<br>
+  - finger: rings and such.<br>
+  - neck: capes, necklaces, and such.<br>
+  - body: worn about the torso<br>
+  - head: helmets, worn on the head.<br>
+  - legs: pants, leggings, arm plates, anything worn on the legs.<br>
+  - feet: boots, shoes, socks, anything worn on the feet.<br>
+  - hands: gloves, gauntlets, anything worn on the hands.<br>
+  - arms: arm plates, sleeves, anything worn on the arms.<br>
+  - shield: anything that could be used as a shield against attack.<br>
+  - about: worn about the body, like cloaks.<br>
+  - waist: belts, anything worn about the waist.<br>
+  - wrist: bracelets and bracers, anything worn about the wrists.<br>
+  - wield: weapons, anything wielded to do harm against another.<br>
+  - hold: wands, staves, anything held in the hand<br>
+  - float: set to float next to the character, and will fall away from the corpse 
+  upon death.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2"><strong><a name="wearloc"></a>? wear-loc (mobile wear locations)</strong></font></p>
+<p><font size="2">Most of the wear locations are self-explanatory, and the same 
+  as &quot;? wear&quot; above.</font></p>
+<p><font size="2">- rfinger: right finger<br>
+  - lfinger: left finger<br>
+  - rwrist: right wrist<br>
+  - lwrist: left wrist<br>
+  - neck1/2: first or second neck location<br>
+  - none: in mobile's inventory</font></p>
+</font> 
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="wtype"></a>? 
+  wtype (special weapon flags)</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">- flaming: causes extra 
+  damage by burning the victim, possibility of blinding by smoke<br>
+  - frost: extra damage by freezing cold, may also add chill touch affect<br>
+  - vampiric: draws some life from the victim, adding to the attacker, also lowers 
+  align.<br>
+  - sharp: the weapon will do a small amount of random extra damage<br>
+  - vorpal: has a random chance of doing double damage<br>
+  - twohands: requires two hands to wield and use<br>
+  - shocking: causes extra damage thorugh electrocution, and may weaken victims<br>
+  - poison: may envenom the blood of an opponent.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+</body>
+</html>

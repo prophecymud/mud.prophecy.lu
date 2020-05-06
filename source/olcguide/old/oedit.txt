@@ -1,0 +1,103 @@
+Oedit - OLC's Obect Editor
+--------------------------
+
+Making weapons and armor, keys to unlock doors, or cool-looking pieces
+of nothing, Oedit is the way to go.  The list of commands goes as follows:
+
+addaffect [location] [number]:
+	Adds an affect, such as hitroll or strenght or whatnot, to an object.
+	Check with builder imps before adding affects, as having too many
+	may upset equipment balance in the game, which is working on being
+	fixed.
+
+addapply affects [type] [number] [spell] [level] [optionall hidden]:
+	Adds a permanent affect to a piece of eq.  Consult the area imps before
+	adding immunities or resistances, or vulns for that matter.
+	Example : "addapply vuln strength -3 weaken 100 hidden"
+
+addoprog/deloprog:
+	These are to not be used, as oprogs code was never completed.
+
+cost [# silver]:
+	Sets the cost of the given object for sale and purchase purposes,
+	given in silver.
+
+oedit create [new vnum]:
+	Creates a new object of a new vnum in the area, and places the builder
+	into the object editor mode.
+
+delaffect [number in affects list under "show"]:
+	Deletes an affect on the list.  Typing "show", look toward the bottom
+	for the affects list.  The list number will be on the far left.
+
+ed:
+	Similar to the Extra descriptions set in Redit, you can add keywords
+	for inscriptions on rings, tags on merchandise for stores, 
+	Ed add [keyword]:
+		Adds an extra description with that keyword, putting the builder
+		into the text append mode to write the desc.
+	Ed edit [existing keyword]:
+		Allows builder to modify the text of a keyword description, buy 
+		placing them into the text append mode for that keyword.
+	Ed delete [existing keyword]:
+		Removes unwanted keywords from the list for that object.
+
+long [string]:
+	Sets the long name for the object, what the player sees when they come into
+	a room and see the object on the ground.  Example: "A long blade is here, waiting
+	for its owner."
+
+name [name key words]:
+	Sets the basic, operable name of the object, using one or several key words that
+	the character would type to get or use it.  Things like "two handed sword" or "ring steel"
+	are appropriate.  Keep it to 3 words or less, if possible.
+
+short [short string]:
+	Sets the short description, what the character sees when they're wearing it or picking 
+	it up, such as "A high guard sword".  Keep it simple and short.
+
+show:
+	Shows the Oedit stats for the object.  This command can also be done by pressing the
+	<enter> key on a blank line in the editor.
+
+v0 through v4:
+	Sets V values for the types, based on the type of object.  Typing v# will show you a list
+	of ? files you can use, and what each v value can do for that particluar object.
+
+weight [number]:
+	The weight of the object, multiplied by 1/10 in pounds.  Thus, an object with weight
+	set to 20 would only weigh 2 pounds in the game.  Be reasonable, everyghing has its weight,
+	don't set it to 0.
+
+extra [flags]:
+	Sets extra flags for the object, such as glow, anti-good, whatnot.  Type "? extra"
+	for a list of flags that can be used.
+
+wear [flags]:
+	Sets wear location of an object.  If you want it to be worn in the first place, 
+	make sure you set the first wear flag to "take", so they can pick it up.
+	"? wear" will give you a list of locations.
+
+type [type]:
+	Sets object type.  Weapon, armor, jewelry, trash.  "? type" gives a list of
+	possible types.  One type per object please.
+
+material [word_or_words]:
+	Sets a material word for an object.  If more than one word, use the undersocre
+	(_) key to connect the words, instead of the space bar, as words separated by
+	a regular space will zork the mud out, and either crash it or hang it up.
+
+level [number]:
+	Sets the level of the object, with a 30-level difference (thus a level 90 
+	object can be worn by a level 60).  
+
+condition:
+	Useless number, was used for a repair system, which we don't have.  Don't
+	use this, please.
+
+?:
+	Lists in-context help files for OLC that can be seen by the builder.
+
+version: 
+	Gives the credits and version for our current OLC system.
+

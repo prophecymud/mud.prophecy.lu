@@ -1,0 +1,294 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- InstanceBegin template="/walk.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>OLC walkthrough</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+
+<body link="#0000CC" vlink="#0000CC" alink="#0000CC">
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr bordercolor="#FFFFFF"> 
+    <td width="7%"><font size="2" face="Arial, Helvetica, sans-serif"><strong><a href="walk.htm">Main</a></strong></font></td>
+    <td width="14%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Modifying 
+      an area</font></td>
+    <td width="17%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      rooms</font></td>
+    <td width="19%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      objects</font></td>
+    <td width="16%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      mobiles</font></td>
+    <td width="10%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Resets</font></td>
+    <td width="17%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      a prog</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td>&nbsp;</td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk1.htm">1</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk2.htm">2</a>, 
+      <a href="walk3.htm">3</a>, <a href="walk4.htm">4</a>, <a href="walk5.htm">5</a>, 
+      <a href="walk6.htm">6</a>, <a href="walk7.htm">7</a> </font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk8.htm">8</a>, 
+      <a href="walk9.htm">9</a>, <a href="walk10.htm">10</a>, <a href="walk11.htm">11</a>, 
+      <a href="walk12.htm">12</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk13.htm">13</a>, 
+      <a href="walk14.htm">14</a>, <a href="walk15.htm">15</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk16.htm">16</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk17.htm">17</a>, 
+      <a href="walk18.htm">18</a></font></td>
+  </tr>
+</table>
+<!-- InstanceBeginEditable name="body" -->
+<p><font size="3" face="Arial, Helvetica, sans-serif"><strong>12) Object values 
+  (v0-v4)</strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Here is a table of different 
+  types of objects, their values:</font></p>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr valign="top"> 
+    <td width="50%"><strong><font size="2" face="Arial, Helvetica, sans-serif">Light</font></strong></td>
+    <td width="2%">&nbsp;</td>
+    <td width="50%"><font size="2" face="Arial, Helvetica, sans-serif"><strong>Money</strong></font></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="50%" bgcolor="#000000"> <p><font color="#CCCCCC" face="Fixedsys">[v2] 
+        Light: &nbsp;[0]</font></p></td>
+    <td width="5" rowspan="2">&nbsp;</td>
+    <td width="50%" bgcolor="#000000"> <p><font color="#CCCCCC" size="2" face="Fixedsys">[v0] 
+        Gold: &nbsp;&nbsp;[0]</font></p></td>
+  </tr>
+  <tr valign="top"> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Used to set the number 
+      of hours the light will last. 0 means the light will not work, -1 or 999 
+      means the light will last forever.</font></td>
+    <td width="50%"><font size="2" face="Arial, Helvetica, sans-serif">The amount 
+      of silver the money is worth when picked up.</font></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="50%">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="50%">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="50%"><strong><font size="2" face="Arial, Helvetica, sans-serif">Wand/staff</font></strong></td>
+    <td width="5">&nbsp;</td>
+    <td width="50%"><strong><font size="2" face="Arial, Helvetica, sans-serif">Scroll/potion/pill</font></strong></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="50%" bgcolor="#000000"> <p><font color="#CCCCCC" size="2" face="Fixedsys">[v0] 
+        Level: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0]<br>
+        [v1] Charges Total: &nbsp;[0]<br>
+        [v2] Charges Left: &nbsp;&nbsp;[0]<br>
+        [v3] Spell: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reserved</font></p></td>
+    <td width="5" height="147" rowspan="2">&nbsp;</td>
+    <td width="50%" bgcolor="#000000"> <p><font color="#CCCCCC" face="Fixedsys">[v0] 
+        Level: &nbsp;[0]<br>
+        [v1] Spell: &nbsp;reserved<br>
+        [v2] Spell: &nbsp;reserved<br>
+        [v3] Spell: &nbsp;reserved<br>
+        [v4] Spell: &nbsp;reserved</font></p></td>
+  </tr>
+  <tr valign="top"> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">v0 - the level of spells 
+      inside the wand/staff<br>
+      v1 - the total number of charges the wand/staff holds&quot;<br>
+      v2 - the number of charges in wand/staff when loaded (i.e. may not be at 
+      total)<br>
+      v3 - the spell the wand/staff casts</font></td>
+    <td width="50%"><font size="2" face="Arial, Helvetica, sans-serif">v0 - the 
+      level of the scroll determines the level of the spells<br>
+      v1-v4 - slots for different spells</font></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="50%">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="50%">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="50%"><strong><font size="2" face="Arial, Helvetica, sans-serif">Armour</font></strong></td>
+    <td width="5">&nbsp;</td>
+    <td width="50%"><strong><font size="2" face="Arial, Helvetica, sans-serif">Weapon</font></strong></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="50%" bgcolor="#000000"> <p><font color="#CCCCCC" face="Fixedsys">[v0] 
+        Ac pierce &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0]<br>
+        [v1] Ac bash &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0]<br>
+        [v2] Ac slash &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0]<br>
+        [v3] Ac exotic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [0]</font></p></td>
+    <td width="5" rowspan="2">&nbsp;</td>
+    <td width="50%" bgcolor="#000000"> <p><font color="#CCCCCC" face="Fixedsys">[v0] 
+        Weapon class: &nbsp;&nbsp;exotic<br>
+        [v1] Number of dice: [0]<br>
+        [v2] Type of dice:&nbsp;&nbsp; [0]<br>
+        [v3] Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;none<br>
+        [v4] Special type: &nbsp;&nbsp;none</font></p></td>
+  </tr>
+  <tr valign="top"> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">v0-v3 - the base ac 
+      of the eq, positive integer</font></td>
+    <td width="50%"><font size="2" face="Arial, Helvetica, sans-serif">v0 - determines 
+      type of weapon<br>
+      v1 - the amount of damage dice rolled<br>
+      v2 - the number of faces on the damage dice (does not have to be physically 
+      possible)<br>
+      v3 - determines dam noun of weapon<br>
+      v4 - determines weapon flags</font></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="50%">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="50%">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="50%"><strong><font size="2" face="Arial, Helvetica, sans-serif">Container/keyring</font></strong></td>
+    <td width="5">&nbsp;</td>
+    <td width="50%"><strong><font size="2" face="Arial, Helvetica, sans-serif">Furniture</font></strong></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="50%" bgcolor="#000000"> <p><font color="#CCCCCC" size="2" face="Fixedsys">[v0] 
+        Weight: &nbsp;&nbsp;&nbsp;&nbsp;[0 kg]<br>
+        [v1] Flags: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[none]<br>
+        [v2] Key: &nbsp;&nbsp;&nbsp;&nbsp;none [0]<br>
+        [v3] Capacity &nbsp;&nbsp;&nbsp;[0]<br>
+        [v4] Weight Mult [0]</font></p></td>
+    <td width="5" rowspan="2">&nbsp;</td>
+    <td width="50%" bgcolor="#000000"> <p><font color="#CCCCCC" size="2" face="Fixedsys">[v0] 
+        Max people: &nbsp;&nbsp;&nbsp;&nbsp;[0]<br>
+        [v1] Max weight: &nbsp;&nbsp;&nbsp;&nbsp;[0]<br>
+        [v2] Furniture Flags: none<br>
+        [v3] Heal bonus:&nbsp;&nbsp;&nbsp;&nbsp; [0]<br>
+        [v4] Mana bonus: &nbsp;&nbsp;&nbsp;&nbsp;[0]</font></p></td>
+  </tr>
+  <tr valign="top"> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">v0 - the weight the 
+      container/keyring can hold<br>
+      v1 - determines whether it can be closed/locked etc.<br>
+      v2 - key of the object if any<br>
+      v3, v4 - not used</font></td>
+    <td width="50%"><font size="2" face="Arial, Helvetica, sans-serif">v0 - the 
+      maximum number of people who can sit on the furniture<br>
+      v1 - the maximum weight the furniture can support<br>
+      v2 - determines positions players can make on furniture (sleep, sit etc.) 
+      and prepositions<br>
+      v3, v4 - the healing rate of furniture</font></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="50%">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="50%">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="50%"><strong><font size="2" face="Arial, Helvetica, sans-serif">Food</font></strong></td>
+    <td width="5">&nbsp;</td>
+    <td width="50%"><strong><font size="2" face="Arial, Helvetica, sans-serif">Drink 
+      container</font></strong></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="50%" bgcolor="#000000"> <p><font color="#CCCCCC" size="2" face="Fixedsys">[v0] 
+        Food hours: [0]<br>
+        [v1] Full hours: [0]<br>
+        [v3] Poisoned: &nbsp;&nbsp;No</font><font color="#CCCCCC" size="2" face="Arial, Helvetica, sans-serif"><br>
+        </font></p></td>
+    <td width="5" height="84" rowspan="2">&nbsp;</td>
+    <td width="50%" bgcolor="#000000"> <p><font color="#CCCCCC" size="2" face="Fixedsys">[v0] 
+        Liquid Total: [0]<br>
+        [v1] Liquid Left: &nbsp;[0]<br>
+        [v2] Liquid: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;water<br>
+        [v3] Poisoned: &nbsp;&nbsp;&nbsp;&nbsp;No<br>
+        </font></p></td>
+  </tr>
+  <tr valign="top"> 
+    <td height="69"><font size="2" face="Arial, Helvetica, sans-serif">v0 - number 
+      of food hours (ticks) food gives<br>
+      v1 - not used, appears to have no effect<br>
+      v3 - determines if food is poisoned or not</font></td>
+    <td width="50%"><font size="2" face="Arial, Helvetica, sans-serif">v0 - the 
+      total amount of liquid the container can hold<br>
+      v1 - the amount of liquid in container when it loads<br>
+      v2 - the type of liquid loading in container<br>
+      v3 - determines if liquid is poisoned or not</font><font size="2" face="Fixedsys">&nbsp;</font></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="50%">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="50%">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="50%"><strong><font size="2" face="Arial, Helvetica, sans-serif">Portal</font></strong></td>
+    <td width="5">&nbsp;</td>
+    <td width="50%"><strong><font size="2" face="Arial, Helvetica, sans-serif">Fountain</font></strong></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="50%" bgcolor="#000000"> <p><font color="#CCCCCC" size="2" face="Fixedsys">[v0] 
+        Charges: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0]<br>
+        [v1] Exit Flags: &nbsp;&nbsp;&nbsp;&nbsp;none<br>
+        [v2] Portal Flags: &nbsp;&nbsp;none<br>
+        [v3] Goes to (vnum): [0]</font><font color="#CCCCCC" size="2" face="Arial, Helvetica, sans-serif"><br>
+        </font></p></td>
+    <td width="5" rowspan="2">&nbsp;</td>
+    <td width="50%" bgcolor="#000000"> <p><font color="#CCCCCC" size="2" face="Fixedsys">[v0] 
+        Liquid Total: [0]<br>
+        [v1] Liquid Left: &nbsp;[0]<br>
+        [v2] Liquid: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;water</font></p></td>
+  </tr>
+  <tr valign="top"> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">v0 - the number of 
+      times the portal can be used. -1 means the portal lasts forever<br>
+      v1 - although it can be set, it has no effect on the portal, so don't use<br>
+      v2 - behaviour of portal, e.g. buggy means portal may not work 100% of the 
+      time<br>
+      v3 - destination of portal</font></td>
+    <td width="50%"><font size="2" face="Arial, Helvetica, sans-serif">v0, v1 
+      - not set, as a fountain contains a neverending supply of liquid<br>
+      v2 - the type of liquid held in the fountain</font></td>
+  </tr>
+</table>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>The following object 
+  types do not have any values: trash, treasure, key, boat, npccorpse, protect, 
+  map, warpstone, roomkey, gem, jewelry, jukebox</strong></font></p>
+<!-- InstanceEndEditable --> 
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr bordercolor="#FFFFFF"> 
+    <td width="50%"> <div align="right"><font size="2" face="Arial, Helvetica, sans-serif"><!-- InstanceBeginEditable name="previous" --><a href="walk11.htm">Previous 
+        step</a><!-- InstanceEndEditable --></font></div></td>
+    <td width="50%"> 
+      <div align="left"><!-- InstanceBeginEditable name="next" --><a href="walk13.htm"><font size="2" face="Arial, Helvetica, sans-serif">Next 
+        section: Creating mobiles</font></a><!-- InstanceEndEditable --></div></td>
+  </tr>
+</table>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr bordercolor="#FFFFFF"> 
+    <td width="7%"><font size="2" face="Arial, Helvetica, sans-serif"><strong><a href="walk.htm">Main</a></strong></font></td>
+    <td width="14%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Modifying 
+      an area</font></td>
+    <td width="17%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      rooms</font></td>
+    <td width="19%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      objects</font></td>
+    <td width="16%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      mobiles</font></td>
+    <td width="10%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Resets</font></td>
+    <td width="17%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      a prog</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td>&nbsp;</td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk1.htm">1</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk2.htm">2</a>, 
+      <a href="walk3.htm">3</a>, <a href="walk4.htm">4</a>, <a href="walk5.htm">5</a>, 
+      <a href="walk6.htm">6</a>, <a href="walk7.htm">7</a> </font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk8.htm">8</a>, 
+      <a href="walk9.htm">9</a>, <a href="walk10.htm">10</a>, <a href="walk11.htm">11</a>, 
+      <a href="walk12.htm">12</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk13.htm">13</a>, 
+      <a href="walk14.htm">14</a>, <a href="walk15.htm">15</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk16.htm">16</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk17.htm">17</a>, 
+      <a href="walk18.htm">18</a></font></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- InstanceBegin template="/walk.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>OLC walkthrough</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+
+<body link="#0000CC" vlink="#0000CC" alink="#0000CC">
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr bordercolor="#FFFFFF"> 
+    <td width="7%"><font size="2" face="Arial, Helvetica, sans-serif"><strong><a href="walk.htm">Main</a></strong></font></td>
+    <td width="14%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Modifying 
+      an area</font></td>
+    <td width="17%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      rooms</font></td>
+    <td width="19%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      objects</font></td>
+    <td width="16%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      mobiles</font></td>
+    <td width="10%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Resets</font></td>
+    <td width="17%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      a prog</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td>&nbsp;</td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk1.htm">1</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk2.htm">2</a>, 
+      <a href="walk3.htm">3</a>, <a href="walk4.htm">4</a>, <a href="walk5.htm">5</a>, 
+      <a href="walk6.htm">6</a>, <a href="walk7.htm">7</a> </font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk8.htm">8</a>, 
+      <a href="walk9.htm">9</a>, <a href="walk10.htm">10</a>, <a href="walk11.htm">11</a>, 
+      <a href="walk12.htm">12</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk13.htm">13</a>, 
+      <a href="walk14.htm">14</a>, <a href="walk15.htm">15</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk16.htm">16</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk17.htm">17</a>, 
+      <a href="walk18.htm">18</a></font></td>
+  </tr>
+</table>
+<!-- InstanceBeginEditable name="body" --> 
+<p><font size="3" face="Arial, Helvetica, sans-serif"><strong>3)&nbsp;&nbsp;Modifying 
+  the room</strong></font></p>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr> 
+    <td height="19" bordercolor="#FFFFFF" bgcolor="#000000"> <p><font color="#CCCCCC" face="Fixedsys"><font size="2">Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        []</font></font></p></td>
+  </tr>
+</table>
+<p><font size="2" face="Arial, Helvetica, sans-serif">To change the name of the 
+  room, type &#8220;name `8Inside a `4s`$ho`4p``&#8221;.</font></p>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr> 
+    <td height="19" bordercolor="#FFFFFF" bgcolor="#000000"> <p><font face="Arial, Helvetica, sans-serif"><font color="#CCCCCC" size="2" face="Fixedsys">Sector: 
+        &nbsp;&nbsp;&nbsp;&nbsp;[inside]</font></font><font color="#CCCCCC" face="Fixedsys"></font></p></td>
+  </tr>
+</table>
+<p><font size="2" face="Arial, Helvetica, sans-serif">As you can see, sector is 
+  set to &quot;inside&quot;, which is correct, as shops are indoors. If you want 
+  to set the sector to something else, for example &quot;mountain&quot; or &quot;field&quot;, 
+  type the sector flag by itself, i.e. &quot;mountain.&quot;</font></p>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr> 
+    <td height="19" bordercolor="#FFFFFF" bgcolor="#000000"> <p><font face="Arial, Helvetica, sans-serif"><font face="Arial, Helvetica, sans-serif"><font color="#CCCCCC" size="2" face="Fixedsys">Room 
+        flags: [none]</font></font></font></p></td>
+  </tr>
+</table>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Now for the room flags. 
+  When I type &quot;? room&quot;, I see this:</font></p>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr> 
+    <td height="19" bordercolor="#FFFFFF" bgcolor="#000000"> <p><font color="#999900" face="Fixedsys">? 
+        room </font></p>
+      <p><font color="#CCCCCC" face="Fixedsys">dark &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        &nbsp;no_mob &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;indoors 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;no_teleport 
+        <br>
+        no_clanrecall &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;no_quit &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;safe<br>
+        solitary &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pet_shop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        no_recall &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imp_only 
+        <br>
+        gods_only &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;heroes_only 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newbies_only &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;law 
+        <br>
+        nowhere &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wizard_only 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;no_magic 
+        <br>
+        nogate &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nologon 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nostatus 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;saveover</font></p></td>
+  </tr>
+</table>
+<p><font size="2" face="Arial, Helvetica, sans-serif">The room will need to be 
+  &quot;dark&quot;, since Ulgos can only stand the darkness, and we also need 
+  &quot;indoors&quot;, which means you cannot cast certain weather spells in the 
+  room, or see the weather. If you want to remove an existing flag, for example 
+  &quot;no_mob&quot;, type &quot;no_mob&quot;.</font></p>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr> 
+    <td height="19" bordercolor="#FFFFFF" bgcolor="#000000"> <p><font face="Arial, Helvetica, sans-serif"><font face="Arial, Helvetica, sans-serif"><font face="Arial, Helvetica, sans-serif"><font color="#CCCCCC" size="2" face="Fixedsys">Health 
+        recovery:[100]<br>
+        Mana recovery &nbsp;:[100]</font></font></font></font></p></td>
+  </tr>
+</table>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Modifying the health and 
+  mana regeneration rates will not be necessary for a shop. Setting the rates 
+  to 0 means players will not heal every tick, and 100 is the normal healing rate. 
+  If for example it was a healer's room, you may change to to 150 (i.e. 50% faster 
+  healing rate) by typing &quot;heal 150&quot; and &quot;mana 150&quot;.</font></p>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr> 
+    <td height="19" bordercolor="#FFFFFF" bgcolor="#000000"> <p><font color="#CCCCCC" face="Arial, Helvetica, sans-serif"><font size="2" face="Fixedsys">Owner 
+        : &nbsp;&nbsp;&nbsp;&nbsp;[]<br>
+        Characters: [builder]<br>
+        Objects: &nbsp;&nbsp;&nbsp;[none]</font></font></p></td>
+  </tr>
+</table>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Do not set the owner flag 
+  to anything, as that means only the owner of the room and immortals can enter 
+  the room. However, you may set owner flags in clan rooms. The characters and 
+  objects flags change according to who/what is in the room, and do not need to 
+  be set.</font></p>
+<p><font face="Arial, Helvetica, sans-serif"><strong><font size="2">Extra descriptions</font></strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Go to <a href="edesc.htm">here</a> 
+  for the OLC guide &quot;Extra descs&quot;, which should be able to answer most, 
+  if not all, questions regarding them.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Now we press the enter key 
+  again to check what we've got so far.</font></p>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr> 
+    <td height="19" bordercolor="#FFFFFF" bgcolor="#000000"> <p><font face="Fixedsys"><font color="#FFFFFF" size="2">[</font><font color="#00FF00" size="2">R</font><font color="#006600" size="2">oom-Edi</font><font color="#00FF00" size="2">t</font><font color="#FFFFFF" size="2">]</font></font><font size="2" face="Fixedsys"><br>
+        <font color="#CCCCCC">Description:<br>
+        Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [</font><font color="#666666">Inside 
+        a </font><font color="#000099">s</font><font color="#0000FF">ho</font><font color="#000099">p</font><font color="#CCCCCC">]</font><br>
+        <font color="#CCCCCC">Area: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 112] 
+        new area<br>
+        Vnum: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1000]<br>
+        Sector: &nbsp;&nbsp;&nbsp;&nbsp;[inside]<br>
+        Room flags: [dark indoors]<br>
+        Health recovery:[100]<br>
+        Mana recovery &nbsp;:[100]<br>
+        Owner : &nbsp;&nbsp;&nbsp;&nbsp;[]<br>
+        Characters: [builder]<br>
+        Objects: &nbsp;&nbsp;&nbsp;[none]</font></font></p></td>
+  </tr>
+</table>
+<!-- InstanceEndEditable --> 
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr bordercolor="#FFFFFF"> 
+    <td width="50%"> <div align="right"><font size="2" face="Arial, Helvetica, sans-serif"><!-- InstanceBeginEditable name="previous" --><a href="walk2.htm">Previous 
+        step</a><!-- InstanceEndEditable --></font></div></td>
+    <td width="50%"> 
+      <div align="left"><!-- InstanceBeginEditable name="next" --><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk4.htm">Next 
+        step</a></font><!-- InstanceEndEditable --></div></td>
+  </tr>
+</table>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr bordercolor="#FFFFFF"> 
+    <td width="7%"><font size="2" face="Arial, Helvetica, sans-serif"><strong><a href="walk.htm">Main</a></strong></font></td>
+    <td width="14%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Modifying 
+      an area</font></td>
+    <td width="17%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      rooms</font></td>
+    <td width="19%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      objects</font></td>
+    <td width="16%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      mobiles</font></td>
+    <td width="10%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Resets</font></td>
+    <td width="17%" align="center"><font size="2" face="Arial, Helvetica, sans-serif">Creating 
+      a prog</font></td>
+  </tr>
+  <tr bordercolor="#FFFFFF"> 
+    <td>&nbsp;</td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk1.htm">1</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk2.htm">2</a>, 
+      <a href="walk3.htm">3</a>, <a href="walk4.htm">4</a>, <a href="walk5.htm">5</a>, 
+      <a href="walk6.htm">6</a>, <a href="walk7.htm">7</a> </font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk8.htm">8</a>, 
+      <a href="walk9.htm">9</a>, <a href="walk10.htm">10</a>, <a href="walk11.htm">11</a>, 
+      <a href="walk12.htm">12</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk13.htm">13</a>, 
+      <a href="walk14.htm">14</a>, <a href="walk15.htm">15</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk16.htm">16</a></font></td>
+    <td align="center"><font size="2" face="Arial, Helvetica, sans-serif"><a href="walk17.htm">17</a>, 
+      <a href="walk18.htm">18</a></font></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

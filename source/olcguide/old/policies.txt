@@ -1,0 +1,236 @@
+Rules:
+
+The following are a set of general guidelines set forth
+for players of Prophecy, to ensure that everyone has the
+equal chance to attain their highest goals without having
+to worry about those around them getting the same goals
+by means of cheating.  These rules should also foster an
+environment where people can speak and have fun in a role-
+playing environment coupled with a social setting, without
+having to bear harassment, foul language, or criticism.
+
+The first rule is common sense.  What isn't written in the
+rules doesn't meant that it's not illegal.  Things will be
+dealt with on a case-by-case basis, and, depending on how
+your actions affect the spirit of the game and the circum-
+stances which you did your action under, you will face a
+similar penalty under rules that closest cover your case.
+Afterwards, a note stating the precedent will be posted,
+after which the rule will be enforced.
+
+If you are not sure about something, assume it is *NOT*
+legal, then either write a note or ask an immortal about
+the rule.  Responses may take some time depending on the
+issue, so when you ask, please allow just a little bit of
+time for the response.
+
+Typing "help policy<#>" (ex. help policy1, policy2, etc.)
+will show rules under general categories:
+Policy1: Personal and Character Matters
+Policy2: Channels
+Policy3: Scripting/Botting
+Policy4: Player Killing (Non-PK people need to read this too)
+Policy5: Building, Coding, and improving Prophecy
+Policy6: Harassment
+Policy7: Quests
+Policy8: Multiplaying and Networks
+Policy9: Reimbursment and Miscellaneous
+
+
+Policy1: Personal and Character Matters
+
+A) Personal information, to include name, email address, physical
+   address, or otherwise, is given at your own risk.  If you do
+   not want people to know, do not tell.
+B) The advertisement, purchasing, selling, or trading of characters
+   is illegal.  If you do not want the character, delete it.
+C) Sharing characters is strongly discouraged.  Keep in mind that if
+   you are the 'primary' user of the character, and the 'secondary'
+   user(s) get your character denied, deleted, or penalized in any
+   other way, you are out of luck.  Do not complain to the immortal
+   staff, learn your lesson, and don't share your characters next
+   time.
+D) Do not reveal other people's alts, to include immortal alts.  If
+   you choose to reveal your own alts, then do not be surprised if
+   other people ask those alts for things pertaining to your main
+   character.
+E) On a similar note, keep your characters as separate as possible
+   for roleplay purposes.  Placing all quest equipment on one "storage"
+   alt could cause problems, if the alt happens to be deleted, or items
+   get lost in the transfer.
+
+Policy2: Channels
+
+A) English only on public channels.  Please respect people whose primary
+   language may not be English, but attempt it with limited success.
+   English is the most common language to our MUD, thus it makes for easy
+   communications and keeps mis-understandings and fights to a minimum.
+   If you feel you must speak in your native tongue, please do so in tells,
+   on clan channels (if permitted by the Lord), or gather with your friends
+   in a group or in a room.
+B) Public channels include: OOC, Gossip, Question/Answer, Grats, Quote,
+                            Flame, *MUSIC*, Shout, Yell
+C) Do not swear/curse on public channels.
+D) Swears/curses include: Shit, Fuck, Damn, Ass, Sexual/Racial/Religious slurs.
+   If it isn't nice, don't say it.  If you must curse, use the flame channel, 
+   but keep the fire away from other people.
+E) First offense for newbies is a warning.  All others will be at admin's dis-
+   cretion.  If you've been playing a while, you should know what flies and what
+   doesn't.  Also, if you are asked to cease a conversation containing question-
+   able content, please stop, or you will risk a nochannel.  Penalties may include
+    24 or more hours of no-channeling, and loss of other priviledges.
+F) Spam/Flooding:  Spam is using the same command, either in channels or in a 
+   room, that can be seen by everyone else.  Using the same command three times
+   or more with visible results to people in the room will result in a nochannel.
+   Flooding is similar to spam, with the result that it outputs a lot of information
+   on another player's screen in a very short amount of time.  If you want to spell
+   up, please be mindful of the other players in the room.  Go one room away to
+   cast your spells.
+
+Policy3: Scripting/Botting
+
+A) The only scripts authorized are hunt scripts for PK (Pussies :P) or food/
+   hunger triggers.  Triggers that spam a room with any other command will
+   be asked to be changed. (Those aquest triggers with emotes included, use
+   gtell or whisper to yourself).
+B) Scripting for spells or skills improvement is illegal.  Practices are there
+   for that purpose.  Practice the skill as high as it will go, then use the
+   skill in combat or where it can be used.
+C) Rule of thumb: If you're not going to be at your keyboard for long periods
+   of time, type 'quit'.  Idling or botting your skills may result in loss of 
+   hours and the skills you were practicing.
+
+Policy4: Player Killing, Non-PK, and Aggressive Actions
+
+A) Non-PK's will not interfere in PK affairs.  This includes, but is not limited
+   to: spelling up a PK player, locating enemies of the PK player, summoning the
+   PK player near his or her enemies, or giving the PK player access to hard-to-
+   reach areas or clan halls.  Non-PK's caught assisting PK players will find
+   themselves PKset in very short order.
+B) Looting:
+   1) You must be PKset.
+   2) You must have the violent timer.
+   3) You must have had some part in the fight.  If you didn't help kill it,
+      leave the corpse alone.
+
+   Non-PK's looting corpses will be PKset.  PK players not abiding by the above
+   will have the eq removed from their inventories and returned to the owner;
+   further offenses will lead to slaying, jail, or other, more creative punish-
+   ments.
+C) Losing:
+   1) Trust nobody.  If a no-loot one-on-one turns into 5 against one, and you
+      get looted, do not proceed to complain on public channels (see 'help
+      policy2' for what the public channels are).  Get together with clan mates
+      and allies and plot to loot the guy that got you.
+   2) Everyone loses at one time or another.  If you can't handle this, type
+      'quit'.  Take a walk, call your friends/family, grab your favorite drink,
+      catch your breath, calm down, then come back.
+D) Aggressive Actions:
+   1) No PK'ing in enemy clan halls.  If you see an open portal, walk past it.
+   2) If a PKer is linkdead before the fight starts in the open, walk past him/her.
+   3) Do not summon Non-PK's or lowbies to aggressive mobiles.  Do not bring aggro
+      mobiles into populated areas.  This includes thief and janitor mobs.
+
+Policy5: Building, Coding, and Improving Prophecy
+
+A) If you would like to build, write a note to 'Ctuchik Builder'.  Please include
+   the following: Character name, email address, how long you've been playing MUDs,
+   how long you've been playing on Prophecy, previous building experience, if any,
+   what area you would like to build, and why you would like to become a builder.
+B) If you would like to code, write a note to 'Kheldar Coder'.  Include your name,
+   character name, email address, MUD experience, and coding experience.
+C) Potential builders and coders will then be contacted as early as possible to
+   discuss their applications, and to make any necessary arrangements.  Do not be
+   discouraged if you are turned down: there may be a time in the near future where
+   you can help out again.
+D) If you have a constructive, positive idea to change something about the code or
+   an area, note the immortals with your ideas.  Do not flood note boards with "This
+   area stinks" or "This code isn't fair".
+E) If you aren't contributing, don't bash.  Builders and coders give of their free
+   time in the hopes of making Prophecy a better place.  If you have a problem with
+   an area or a piece of code, first think of how it might be improved, then follow
+   (D) above.  Do not bash builders or coders.
+
+Policy6: Harassment
+
+A) Prophecy has a zero tolerance policy for harassment.  This includes, but is not limited
+   to, racial, gender, religious, or slander harassment.  If you don't have anything nice 
+   to say, DO NOT SAY IT.  If you do not like one particular person, do not start a fight;
+   ignore that person, turn off the channels if they are using them, or quit and come back 
+   at a time when that person is not around.
+B) If you find you are being harassed by someone, kindly ask them to stop, then ignore that
+   person.  If you are asked to stop your actions by someone, have enough self-control and
+   respect to leave them alone.
+C) If asking and ignoring do not work, write a note to 'Immortal <person>', with person being
+   the offender.  This will serve as a written alarm, and the offender may then receive a 
+   written warning from the immortals.
+D) Further harassing action will result in deletion of your character, denial of the use of
+   your character, or a ban of your connection site.
+E) Harassment through means other than the MUD, but related to the MUD (I.E., harassing somone
+   you met on the MUD via ICQ, AIM, or E-Mail) will be treated in the same manner.  Leave your
+   gripes at the login screen, and do not quit and try to harass the person through other means.
+
+Policy7: Quests
+
+A) Quests are given by the quest immortals as a means to spicen up the MUD.  They are a service
+   provided by the immortal, and are subject to rules of courtesy and respect not just for the
+   immortal, but for other participants in the quest.
+B) Quests may include find-the-imm, object gathering, Player-Killing quests, tournaments, or 
+   scrimmages.
+C) Quest rules are set by the immortal running the quest.  If you're not sure of a rule, ask.
+   If the quest immortal asks you not to do something, please stop doing it in the spirit of
+   keeping the quest fair and fun for all.  Changes in the rules may occur on the fly, so if
+   you think it may even be remotely illegal or cause you to have an unfair advantage, stop
+   and ask.
+D) If you do not like the way the quest is being run, please do not be rude and interrupt the
+   quest.  Ask the immortal through tells or notes, or type 'quest stop' and write a note.  If
+   you have ideas on quests, or how a certain quest can be better run, take the time to think
+   your idea through, then present the idea to the quest immortals.
+E) It's not whether you win or lose, but the fun and learning that can occur.  Between quests,
+   take the time to talk to those people that always seem to win, and ask them how they did it.
+   Also take pains to walk around the mud (cast 'gate' mob is not considered walking) and learn
+   how to get to places, and what items, no matter how insignificant they may seem, are in the
+   areas.  Knowledge is power for the future.
+
+Policy8: Multiplaying and Networks
+
+A) Multiplaying is the connection of two or more players from the same computer terminal.
+   This act is illegal, and you will be first warned to log one character off.  If you re-
+   fuse to log one character off, and don't provide substantial evidence as to why you
+   shouldn't, the higher level character in question will be deleted.  As in "help policy1",
+   keep your characters separate.  If you need equipment for your low level alt, log it off,
+   get your high-level character, gather the equipment in a bag, then drop the bag off in
+   a safe place.  Then log the higher level character off, log the lower character back on
+   and pick up the bag from your secret spot.
+B) Networking on Prophecy is allowed under these conditions: Whoever is the "leader" of the
+   network will be asked to note the immortals.  Please include player's real names, the
+   characters each player will use, and, if possible, the IP address/location you will be
+   networking from.  Please wait for the security immortals to note you back before using
+   the network.  Problems with players on the network will be dealt with through the "leader",
+   so choose someone who can be trusted to play by the rules.
+C) What one player does on a network will reflect on the entire network.  One player messes
+   up, the entire network can expect the penalty to happen to them as well.  If you play by
+   the rules, and don't cause a lot of trouble, then you will be able to continue connecting
+   your network to Prophecy.  Keep messing up, and you may find that the entire network will
+   not be able to play.
+
+Policy9: Reimbursment, Miscellaneous
+
+A) Reimbursment for items will occur for the following:
+   1) Corpse restores resulting from lost corpses during crashes.
+   2) Valuable, uncommon items left on the ground during crashes.
+B) Please, be mindful of what you are dropping and sacrificing.  Before you rush and type
+   in "sacrifice bag", check and make sure that's the bag you *want* to sacrifice, and not
+   the bag full of your life savings.  There will be limited re-imbursments in these cases,
+   provided you have taken as many measures as you could to prevent against it.
+C) Autoquest items:
+   1) If you reroll, we will *not* exchange your aq items, including weapons, for aq points
+      towards another item or as a "trade" so you can obtain an object appropriate for your
+      class or level.
+   2) If you plan to reroll after purchasing an autoquest item, please allow several days
+      before you re-roll with the object.  There is a small bug that is being worked out
+      that resets the owner if you reroll immediately after earning the gear.  Just wait
+      a couple days before you reroll.
+D) If you see a bug in the code, please write a note to 'Kheldar Coder Immortal'.  Explain
+   what you can of what the bug was, what you were doing before the bug, and what the bug
+   produced for results.  People found abusing bugs will be deleted.

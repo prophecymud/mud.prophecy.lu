@@ -1,0 +1,159 @@
+Medit - OLC's Mobile Editor
+---------------------------
+
+Challenging mobiles fill an area with life and population, giving it characters of
+its own for players to interact with, or kill.  Medit commands are accessed by typing
+"medit [existing mob vnum in area]" or "medit create [new mobile vnum in area]"
+Commands are as follows:
+
+alignment [number]:
+	Sets the alignment of the mobile, from pure evil (-1000) to angelic (1000)
+	Keep in mind that low level mobiles should lean more toward neutral than some
+	higher level mobs, to keep people from radically changing their align just
+	on the basis of their kills.
+
+commands:
+	Lists the commands for Medit.
+
+medit create [new vnum]:
+	Using a new vnum, the Medit editor creates a new mobile, placing the builder
+	into Medit mode for that mobile.
+
+desc:
+	Places the builder into the Text Append mode, like room descriptions, except that
+	this is to set the mobile's description, what the player sees when they type "look
+	[mobile]".  Same editor commands as for the redit append mode.
+
+level [number]:
+	Sets the level of the mobile.  Please keep in a 1 to 100 range, and keep in mind the
+	level range your area is for.
+
+long [string]:
+	Sets the long description of the mobile, what the players will see when they walk into
+	a room with the mobile already in it.  Examples: "A city guard protects his post." or
+	other such brief, appropriate messages.
+
+name [key words]:
+	Sets the key word names for the mobile, the words that a character would type to get a 
+	response from the mobile.  Examples are "city guard" or "healer".  Keep it to 3 words,
+	if you can help it, less.
+
+short [string]:
+	Sets a short string, that a player sees while fighting, or talking to a mobile.
+	Examples are "A Guard" or "The healer"
+
+show:
+	Shows medit stats of the mobile.  This same command can also be accomplished by just
+	hitting <enter> on a blank line.
+
+spec spec_[special function name]:
+	Sets a pre-coded special function for the mobile, such as spec_alorn_guard
+	or spec_angarak_guard.  For a list of special functions, type "? spec".
+
+sex [male/female/neutral/random]:
+	Sets the gender of the mobile.  Male/Female/Neutral are self-explanatory.
+	Random sets the gender randomly upon mob repop in the area.
+
+act [flags]:
+	Sets the basic action types for the mobile, a fixed default being "NPC".
+	Things such as aggressive, cleric, or scavenger are under act.  Type "? act" for
+	a listing of possible actions.
+
+affect [flags]:
+	Sets what the mobile is affected by, such as haste, flying, or blind.  Type 
+	"? affect" to see a list of possible affect spells that the mobile can use.
+
+armor [#pierce #bash #slash #exotic]:
+	Sets the armor class of the mobile.  There is a mobile level and stats chart
+	for Prophecy, on Mandorallen's page.  Compare to that chart, (multiply by 10,
+	if the case calls for it, as the old Diku code was still considered then).
+	Example: "Armor -100 -100 -100 -75" sets the 4 armor types to those values
+	on that mobile.
+
+form [flags]:
+	Sets the form of the mobile, such as sentient (capable of thought) or biped.
+	For a list of flags, type "? form".
+
+part [flags]:
+	Sets the parts of the mobile, such as arms, legs, guts, head, whatnot.
+	"? part" will give you a list of parts that you can use.
+
+imm/res/vuln [flags]:
+	Sets the immunities, resistances, and vulnerabilities of the mobs.  Please
+	don't set too many immunities or resistances without balancing a few vulnerabilities
+	in with it to balance it out.  Mobs will be tested.
+
+material [word]:
+	Sets the material for the mob, such as flesh, skin_and_bones, rock, whatnot.
+	When using multiple words, DO NOT PUT SPACES BETWEEN THE WORDS.  Instead, use
+	the underscore (_) key to connect the words, as spaces in the material zork the
+	mud and cause it to hang up or crash.
+
+off [flags]: 
+	Sets offensive flags, such as area_attack, that the mobile uses in a fight.
+	Type "? off" for a list of useable flags.
+
+size [size flags]:
+	Sets the size of the mobile, affecting how well it fights against a character,
+	allowing it certain bonuses.  Tiny would be a mouse, small for birds, medium for human,
+	large, huge, and giant, for anything else on that sort of scale. Only one size may be set,
+	so see "? size " for the listing of sizes you can use.
+
+hitdice [#d#+bonus]: 
+	Sets the hitpoints of the mob, based on a roll of a specific number of x-sided dice.
+	See Mandorallen's mobile level chart to get a general idea of the range your mobile should
+	be in for hitdice.
+
+manadice [#d#+bonus]:
+	For spellcasting mobs, sets the mana that they have.
+
+damdice [#d#bonus]:
+	Sets the damage that the mobile can do, based on a dice roll with added bonus.
+	Check Mandorallen's chart for an idea of what you should have, don't make a level 1 mob that
+	can deal 1000 damage a hit.  
+
+damtype [damnoun]:
+	Sets the default damage noun of the mobile, if it isn't wielding a weapon.
+	See "? weapon" for a list of nouns and the names you can use to set them.
+
+race [race]:
+	Looking at "race ?" under OLC help, (race ?, not ? race), you can set the race of the mobile,
+	and thus effectively cut down on manually setting parts and certain affects.  Old Diku races,
+	as well as Prophecy's human races, are all listed in "race ?".
+
+position start [position]
+position default [position]:
+	Sitting, resting, standing, or sleeping, the four standard positions.  The start position
+	is how the mobile will be when it repops, and the default is the position it will return to
+	after a fight.
+
+wealth [number in SILVER]:
+	Sets the amount of money the mobile is carrying, in silver.  If you want the mob to carry
+	a little bit of gold, remember the exchange rate is 100 silver per gold, but the editor
+	will mix it up some, so you could have 20 gold and 4000 silver upon autogolding a mob.
+
+hitroll [number]:
+	Sets a hitroll bonus for the mob.  Keep to a modest amount, so that players might have an
+	equal chance at hitting the mob as it has at them.
+
+group [group number]:
+	Set with other mobiles of a different type, this sets a group number that the mobile belongs
+	to for purposes of assisting his fellows.
+
+addmprog [vnum of mprog] [trigger] [%]
+	Sets an mprog with given vnum, to the trigger at % of the time.  Such as:
+	"Addmprog 250 grall 100" will set mprog 250 to the mob, greeting all who
+	come in 100% of the time.
+
+delmprog [number on list]:
+	Removes an mprog from the list.  First, type "show" or hit <enter> on a blank line,
+	and look at the far left column for the mprog number on the list, starting with 0 and going
+	up in 1 number increments as mprogs are added.
+
+?:
+	Lists the types of in-context OLC help files one may view.
+
+version: 
+	Shows the credits and current version of our OLC editor.
+
+

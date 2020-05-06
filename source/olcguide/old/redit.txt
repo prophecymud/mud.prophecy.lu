@@ -1,0 +1,154 @@
+Redit commands - Room Editing
+-----------------------------
+Redit is the Room editor for OLC on Prophecy.  By using the various commands, one 
+can build quality rooms with wonderful descriptions, hidden extras, and doors leading
+any which way.  Below is the list of commands and their uses when using Redit.
+
+commands:
+	Lists commands that the builder may use in Redit.
+
+redit create [new vnum in area]:
+	Creates a new vnum for a room, places the builder in that room, and also
+	places the builder in Redit mode.  Good for making the first room of the
+	area.
+
+desc:
+	Places builder in append mode, similar to the "rdesc" for hostels on the 
+	live port.  By typing ".h" on a blank line in the description editor,
+	commands for the editor can be seen and used.
+
+ed: 
+	Extra description editor.  Very useful for adding pictures or descriptions
+	of items that would take up too much space in the regular room description.
+	ED is broken down into three commands:
+
+		Ed add [keyword]: Adds an extra desc with the key word to look at,
+				Automatically placing the builder in append mode 
+				for the extra description.  The append editor is 
+				the same editor used for making rooms descriptions.
+
+		Ed edit [keyword]: Used to edit an existing ED keyword in the room,
+				This also automatically places the builder in append
+				mode to edit that extra description.
+
+		Ed delete [keyword]: Used to remove unwanted extra descriptions from
+				the list in the room.
+
+format:
+	Sets the description into a paragraph, word-wrapped to fit the formatting
+	on the mud, so as not to look jarbled up on different clients or telnet.
+
+name [string]: 
+	Sets a short string for the name of the room, such as "By the Temple Altar"
+	or "Chapel".  Please keep these brief and free of color for simplicity's
+	sake.
+
+mreset [mob vnum] [room max] [global max]:
+	resets a mob of the given vnum to the room, with the room max being the max
+	number of mobs possible to be in that room at one time, and the global max
+	setting the highest number of the mobile that can be present on the mud at
+	any given time.  Be careful not to mix these up, or there will be a lot of
+	mobs wandering around your area.
+
+oreset [obj vnum]
+oreset [obj vnum] [wear_location on mobile]
+oreset [obj vnum] inside [name of container already reset]:
+	Resets objects for the room.  The first is to reset an object to the floor in
+	the room, the second is to equip mobiles, as long as the mobile has already been
+	reset to the room, while the third resets the object into a container that has 
+	also already been reset to the room first.
+
+mlist OR olist [name or vnum of mob/object]:
+	lists objects or mobs based on name keywords, or their vnums, in that area.
+
+mshow OR oshow [name or vnum of mob/object]:
+	shows medit/oedit show stats for the given mobile or object name, in that area.
+
+owner [name]:
+	USE SPARINGLY.  This sets the named person as the sole owner of the room, flagging
+	it solitary and thus forbidding entrance by anyone other than its owner.
+
+heal [number]:
+	Sets the healing rate of the room, 100 being "normal".  Do not set over 200, or less
+	than 0.  
+
+mana [number]:
+	Sets the mana refresh rate of the room, 100 being "normal".  Do not set over 100, or
+	less than 0.
+
+?:
+	Lists in-context help topics for OLC.
+
+version: 
+	Shows our verion of OLC, and the people who helped make it what it is.
+
+
+Exits:
+------
+
+Whether it be doors leading back and forth, or making a maze to challenge players, exits
+are the mainstay of an area, the links to the other rooms and the doors that keep people
+from going through.
+
+A basic command syntax can be found in "help olcexit", and is explained in detail here.
+
+[direction] dig [new vnum]:
+	Using a north/south/east/west/up/down for your [direction], you are both creating
+	a new room (so use an unused vnum in your area), and creating a two-way, open
+	link between the two rooms.  To edit the room you just created, you will have to
+	walk in that direction into the new room.
+
+[direction] link [existing vnum]:
+	Creates a two-way, open link between the room you're standing in and an existing
+	room elsewhere.  Be careful, and check to make sure the other room doesn't already
+	have an exit on the arriving side (so if you are "east link 2", make sure room 2
+	doesn't already have a path leading west).
+
+[direction] room [existing vnum]:
+	Used with caution, this creates a ONE-WAY exit from the room you are standing in
+	to an existing room.  By one-way, it means that you can go to that room you just
+	linked to, but cannot come back in the opposite direction.  Good for small mazes,
+	but don't get lost trying to do it, either.
+
+[direction] door:
+	Sets a door in the specified direction, as long as the direction contains a link
+	to another room.  If you want a door, this is the FIRST command you type after
+	creating the link.
+
+[direction] closed:
+	After setting a door in a direction, typing closed with relation to that door will
+	reset the door as closed.  Type again to leave the door open.
+
+[direction] locked:
+	After setting a door, then closing the door, you may lock it using this command.
+	Typing this command again will remove the lock.
+
+[direction] key [object vnum]:
+	Sets an EXISTING object, of they type "key", as the key that can unlock this door.
+	Mandatory and set after you create, close, and lock a door.
+
+[direction] delete:
+	Removes the link from the room your standing in to the room in that direction.
+	Good if you messed up, or don't want the link to go there.
+
+
+For other exit flags pertaining to doors, while in Redit, type "? exit".  Setting the
+[direction] [flag] with those flags will make the door have those properties.
+
+? EXIT flags:
+
+door: create a door in desired direction.
+closed: closes the door in that direction.
+locked: locks a closed door in that direction.
+pickproof: safe from thieves picking the lock.
+nopass: people with pass_door cannot go through.
+easy/hard/infuriating: the difficulty with which a thief will find himself trying to pick the lock.
+noclose: sets the door as uncloseable by the player, once opened
+nolock: sets the door to where it cannot be locked by the player.
+hidden: when a door is NOT present in that direction, this will take the link direction off of 
+	a players "autoexit", forcing them to go where they think they cannot go.  Useful also
+	for hidden rooms for people to discover.
+window: when a door is NOT present in that direction, this will put a window, which players can look,
+	and archers can shoot, through to see the next room.  However, the exit itself is so small, that
+	adventurers and all their gear cannot possibly fit through it.
+

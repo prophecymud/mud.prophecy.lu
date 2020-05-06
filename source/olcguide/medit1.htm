@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Medit</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+<font size="3" face="Arial, Helvetica, sans-serif"> <strong>Medit - OLC's Mobile 
+Editor </strong> </font><font face="Arial, Helvetica, sans-serif"> </font> 
+<hr>
+<p><a href="medit.htm"><font size="2" face="Arial, Helvetica, sans-serif">Medit 
+  (arranged alphabetically)</font></a><font size="2" face="Arial, Helvetica, sans-serif"> 
+  <a href="#medit1">Medit (arranged to medit order)</a> <a href="#mprog">Adding 
+  mprogs</a></font></p>
+<hr>
+<font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2"><a name="medit1"></a>Challenging mobiles fill an area with life 
+  and population, giving it characters of its own for players to interact with 
+  or kill. Medit commands are accessed by typing &quot;medit [existing mob vnum 
+  in area]&quot; or &quot;medit create [new mobile vnum in area]&quot;<br>
+  Commands are as follows:</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>commands:</strong><br>
+  Lists the commands for medit.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>medit create [new 
+  vnum]:</strong><br>
+  Using a new vnum, the medit editor creates a new mobile, placing the builder 
+  into Medit mode for that mobile.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>show:</strong><br>
+  Shows medit stats of the mobile. This same command can also be accomplished 
+  by just hitting &lt;enter&gt; on a blank line.</font></p>
+</font> <font face="Arial, Helvetica, sans-serif"> 
+<p><font size="2"><strong>?:</strong><br>
+  Lists the types of in-context OLC help files one may view.</font></p>
+<p><font size="2"><strong>version: </strong><br>
+  Shows the credits and current version of our OLC editor.</font></p>
+</font> 
+<hr>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>name [key words]:</strong><br>
+  Sets the key word names for the mobile, the words that a character would type 
+  to get a response from the mobile. Examples are &quot;city guard&quot; or &quot;healer&quot;. 
+  Keep it to 3 words, if you can help it, less.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>act [flags]:</strong><br>
+  Sets the basic action types for the mobile, a fixed default being &quot;NPC&quot;. 
+  Things such as aggressive, cleric, or scavenger are under act. Type &quot;? 
+  act&quot; for a listing of possible actions.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>sex [male/female/neutral/random]:</strong><br>
+  Sets the gender of the mobile. Random sets the gender randomly upon mob repop 
+  in the area.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>group [group number]:</strong><br>
+  Set with other mobiles of a different type, this sets a group number that the 
+  mobile belongs to for purposes of assisting his fellows.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>race [race]:</strong><br>
+  Looking at &quot;race ?&quot; under OLC help, (race ?, not ? race), you can 
+  set the race of the mobile, and thus effectively cut down on manually setting 
+  parts and certain affects. Old Diku races, as well as Prophecy's human races, 
+  are all listed in &quot;race ?&quot;.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>level [number]:</strong><br>
+  Sets the level of the mobile. Please keep in a 1 to 100 range, and keep in mind 
+  the level range your area is for.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>alignment [number]:</strong><br>
+  Sets the alignment of the mobile, from pure evil (-1000) to angelic (1000). 
+  Keep in mind that low level mobiles should lean more toward neutral than some 
+  higher level mobs, to keep people from radically changing their align just on 
+  the basis of their kills.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>hitroll [number]:</strong><br>
+  Sets a hit roll bonus for the mob. Keep to a modest amount, so that players 
+  might have an equal chance at hitting the mob as it has at them.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>damtype [damnoun]:</strong><br>
+  Sets the default damage noun of the mobile, if it isn't wielding a weapon. See 
+  &quot;? weapon&quot; for a list of nouns and the names you can use to set them.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>hitdice [#d#+bonus]: 
+  </strong><br>
+  Sets the hitpoints of the mob, based on a roll of a specific number of x-sided 
+  dice. See &#8220;help levelchart1&#8221; to &#8220;help levelchart5&#8221; to 
+  get a general idea of the range your mobile should have for hitdice.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>damdice [#d#bonus]:</strong><br>
+  Sets the damage that the mobile can do, based on a dice roll with added bonus. 
+  Check &#8220;help levelchart1&#8221; to &#8220;help levelchart5&#8221; for an 
+  idea of what you should have; don't make a level 1 mob that can deal 1000 damage 
+  a hit. </font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>manadice [#d#+bonus]:</strong><br>
+  For spell casting mobs, sets the mana that they have.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>affect [flags]:</strong><br>
+  Sets what the mobile is affected by, such as haste, flying, or blind. Type &quot;? 
+  affect&quot; to see a list of possible affect spells that the mobile can use.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>ac [# # # #]<br>
+  armor [#pierce #bash #slash #exotic]:</strong></font><font face="Arial, Helvetica, sans-serif"><br>
+  <font size="2">Sets the mobile's armour class - ac [pierce] [bash] [slash] [exotic]. 
+  Make sure it is negative and not positive.</font></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>form [flags]:</strong><br>
+  Sets the form of the mobile, such as sentient (capable of thought) or biped. 
+  For a list of flags, type &quot;? form&quot;.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>part [flags]:</strong><br>
+  Sets the parts of the mobile, such as arms, legs, guts, head, whatnot. &quot;? 
+  part&quot; will give you a list of parts that you can use.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>imm/res/vuln [flags]:</strong><br>
+  Sets the immunities, resistances, and vulnerabilities of the mobs. Please don't 
+  set too many immunities or resistances without balancing a few vulnerabilities 
+  in with it to balance it out. Mobs will be tested.</font><font face="Arial, Helvetica, sans-serif"> 
+  </font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>off [flags]: </strong><br>
+  Sets offensive flags, such as area_attack, that the mobile uses in a fight. 
+  Type &quot;? off&quot; for a list of useable flags.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>size [size flags]:</strong><br>
+  Sets the size of the mobile, affecting how well it fights against a character, 
+  allowing it certain bonuses. Tiny would be a mouse, small for birds, medium 
+  for human, large, huge, and giant, for anything else on that sort of scale. 
+  Only one size may be set, so see &quot;? size &quot; for the listing of sizes 
+  you can use.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>material [word]:</strong><br>
+  Sets the material for the mob, such as flesh, skin_and_bones, rock, whatnot. 
+  When using multiple words, DO NOT PUT SPACES BETWEEN THE WORDS. Instead, use 
+  the underscore (_) key to connect the words, as spaces in the material zork 
+  the mud and cause it to hang up or crash.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>position start [position]<br>
+  position default [position]:</strong><br>
+  Sitting, resting, standing, or sleeping, the four standard positions. The start 
+  position is how the mobile will be when it repops, and the default is the position 
+  it will return to after a fight.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>wealth [number in 
+  SILVER]:</strong><br>
+  Sets the amount of money the mobile is carrying, in silver. If you want the 
+  mob to carry a little bit of gold, remember the exchange rate is 100 silver 
+  per gold, but the editor will mix it up some, so you could have 20 gold and 
+  4000 silver upon autogolding a mob.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>spec spec_[special 
+  function name]:</strong><br>
+  Sets one pre-coded special function for the mobile, such as spec_alorn_guard. 
+  For a list of special functions, type &quot;? spec&quot;. To remove the spec, 
+  type &quot;spec none&quot;.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>short [string]:</strong><br>
+  Sets a short string that a player sees while fighting, or talking to a mobile.<br>
+  Examples are &quot;A Guard&quot; or &quot;The healer&quot;</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>long [string]:</strong><br>
+  Sets the long description of the mobile, what the players will see when they 
+  walk into a room with the mobile already in it. Examples: &quot;A city guard 
+  protects his post.&quot; or other such brief, appropriate messages.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>desc:</strong><br>
+  Places the builder into the text append mode, like room descriptions, except 
+  that this is to set the mobile's description, what the player sees when they 
+  type &quot;look [mobile]&quot;. Same editor commands as for the redit append 
+  mode.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><u><a name="mprog"></a>Adding 
+  mprogs</u></strong></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>addmprog [vnum of 
+  mprog] [trigger] [%]</strong><br>
+  Sets an mprog with given vnum, to the trigger at % of the time. Such as: &quot;Addmprog 
+  250 grall 100&quot; will set mprog 250 to the mob, greeting all who come in 
+  100% of the time.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>delmprog [number 
+  on list]:</strong><br>
+  Removes an mprog from the list. First, type &quot;show&quot; or hit &lt;enter&gt; 
+  on a blank line, and look at the far left column for the mprog number on the 
+  list, starting with 0 and going up in 1 number increments as mprogs are added.</font></p>
+</body>
+</html>

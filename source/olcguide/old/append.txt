@@ -1,0 +1,43 @@
+Notes On Append Mode
+--------------------
+For room, mob, or extra descriptions, a text editor known as
+"Append mode" is used when you type "desc" (redit or medit)
+or "ed add"/"ed edit" (redit or oedit).
+
+There will be a prompt saying "Entering append mode, type .h
+on a blank line for help, terminate with a ~ or a @ on a blank
+line", then a few lines under that, a ">" Prompt.  Whatever you
+type after that > will be entered as part of that description,
+so watch what you're typing :)  Type it line for line, as every
+time you hit the enter key, it will sotre the line you just typed
+and get ready for a new line to be input.
+
+commands (listed when you type ".h" on a clean line)
+--------
+.f  --> formats the lines to word wrapping, making the desc
+        look like an even block paragraph rather than a jumble of 
+        cut off lines.
+
+.s  --> shows what you've typed so far, in case you forget.
+
+.c  --> clears the ENTIRE desc, to start over again.
+
+.r "old string" "new string"  --> replaces the old string
+           with the new string,  Be sure to include the "" marks.
+
+This is quite useful.  First, type your desc in regular white
+coloring.  Then, if you want to add color, .r "plain word" "word
+with color code".  The reason for this is the fact that the color code
+characters are factored as part of the word wrap, so it makes the 
+paragraph look ill-formatted if you add color first.
+
+Example: > Red roses are here.
+         > .f
+         > .r "Red roses" "`1Red`` roses"
+
+
+.h  --> lists the commands and their uses.
+
+@ (after typing enter to get a blank line) --> save what you've
+typed and exit append mode.
+

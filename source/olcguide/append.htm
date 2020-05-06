@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Append mode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body link="#0000CC" vlink="#0000CC" alink="#0000CC">
+<p><strong><font size="3" face="Arial, Helvetica, sans-serif">Notes on append 
+  mode</font></strong></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">For room, mob, or extra 
+  descriptions, a text editor known as &quot;append mode&quot; is used when you 
+  type &quot;desc&quot; (redit or medit) or &quot;ed add&quot;/&quot;ed edit&quot; 
+  (redit or oedit). </font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">There will be a prompt saying 
+  &quot;Entering append mode, type .h on a blank line for help, terminate with 
+  a ~ or a @ on a blank line&quot;, then a few lines under that, a &quot;&gt;&quot; 
+  prompt. Whatever you type after that &gt; will be entered as part of that description, 
+  so watch what you're typing :) Type it line for line, as every time you hit 
+  the enter key, it will sort the line you just typed and get ready for a new 
+  line to be input.</font></p>
+<p><strong><font size="2" face="Arial, Helvetica, sans-serif"><u>Commands (listed when you 
+  type &quot;.h&quot; on a clean line)</u></font></strong></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>.f</strong><br>
+  Formats the lines to word wrapping, making the desc look like an even block 
+  paragraph rather than a jumble of cut off lines. Please note that the colour 
+  characters are counted in the word wrapping.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>.s</strong><br>
+  Shows what you've typed so far, in case you forget.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>.c</strong><br>
+  Clears the ENTIRE desc, to start over again.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>.r &quot;old string&quot; 
+  &quot;new string&quot;</strong><br>
+  Replaces the old string with the new string, Be sure to include the &quot;&quot; 
+  marks.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">This is quite useful. First, 
+  type your desc in regular white coloring. Then, if you want to add color, .r 
+  &quot;plain word&quot; &quot;word with color code&quot;. The reason for this 
+  is the fact that the color code characters are factored as part of the word 
+  wrap, so it makes the paragraph look ill-formatted if you add color first.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">Example:<br>
+  &gt; Red roses are here.<br>
+  &gt; .f<br>
+  &gt; .r &quot;Red roses&quot; &quot;`1Red`` roses&quot;</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>.h</strong><br>
+  Lists the commands and their uses.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong>@</strong><br>
+  Save what you've typed and exits append mode.</font></p>
+</body>
+</html>

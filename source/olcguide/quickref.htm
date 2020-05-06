@@ -1,0 +1,628 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Quick reference sheet</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body link="#0000CC" vlink="#0000CC" alink="#0000CC">
+<p><font size="3" face="Arial, Helvetica, sans-serif"><strong><a name="top"></a>Quick 
+  reference sheet</strong></font></p>
+<hr>
+<p><font size="2" face="Arial, Helvetica, sans-serif"> Quick reference sheet: 
+  <a href="#triggers">Triggers</a> <a href="#variables">Variables</a> <a href="#ifchecks">If 
+  checks</a> <a href="#commands">MOBcommands</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="mprog.htm">Mprog 
+  guide</a> </font><font size="2" face="Arial, Helvetica, sans-serif"><a href="examples.htm">Examples</a> 
+  <a href="omprog.htm">Original mprog guide</a></font></p>
+<hr>
+<p><strong><font size="2" face="Arial, Helvetica, sans-serif"><a name="triggers"></a>Triggers</font></strong></p>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr> 
+    <td><strong><font size="2" face="Arial, Helvetica, sans-serif">Trigger</font></strong></td>
+    <td><strong><font size="2" face="Arial, Helvetica, sans-serif">Argument</font></strong></td>
+    <td><p><strong><font size="2" face="Arial, Helvetica, sans-serif">What needed 
+        to activate trigger</font></strong></p></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">act</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">string</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">act of PC must match 
+      string</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">speech</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">string</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">dialogue (say, tell) 
+      to mobile must match string</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">rand</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">percentage</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">chance to check whenever 
+      a PC is in the area</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">bribe</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">minimum amount of coins 
+      (counted in silver) given to mobile</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">give</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">object name/object 
+      vnum/all</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">object given to mobile 
+      matches argument</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">greet</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">percentage</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">chance to check if 
+      visible character enters mobile's room</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">grall</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">percentage</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">chance to check when 
+      any character enters mobile's room</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">entry</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">percentage</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">chance to check when 
+      mobile moves to a new room</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">exit</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">exit number</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">a visible character 
+      exiting in direction from mobile's room</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">exall</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">exit number</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">any character exiting 
+      in direction from mobile's room</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">kill</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">percentage</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">chance to check when 
+      mobile begins fighting</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">fight</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">percentage</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">chance to check at 
+      fight_pulse if mobile is fighting</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">hpcnt</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">percentage</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">lower than mobile's 
+      hit/max_hi if mobile is fighting</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">death</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">percentage</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">chance to check after 
+      mobile has been slain</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">surr</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">percentage</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">chance to activate 
+      when a character surrenders to mobile</font></td>
+  </tr>
+</table>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="variables"></a>Variables</strong></font></p>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif"><strong>Variable</strong></font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"><strong>Mobile</strong></font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"><strong>Actor</strong></font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"><strong>Victim</strong></font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"><strong>Random</strong></font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"><strong>Target</strong></font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"><strong>Object</strong></font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"><strong>2nd object</strong></font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">name</font></td>
+    <td>$i</td>
+    <td>$n</td>
+    <td>$t</td>
+    <td>$r</td>
+    <td>$q</td>
+    <td>$o</td>
+    <td>$p</td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">short desc/title</font></td>
+    <td>$I</td>
+    <td>$N</td>
+    <td>$T</td>
+    <td>$R</td>
+    <td>$Q</td>
+    <td>$O</td>
+    <td>$P</td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">he/she/it</font></td>
+    <td>$j</td>
+    <td>$e</td>
+    <td>$E</td>
+    <td>$J</td>
+    <td>$X</td>
+    <td>--</td>
+    <td>--</td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">him/her/it</font></td>
+    <td>$l</td>
+    <td>$m</td>
+    <td>$M</td>
+    <td>$L</td>
+    <td>$Y</td>
+    <td>--</td>
+    <td>--</td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">his/hers/its</font></td>
+    <td>$k</td>
+    <td>$s</td>
+    <td>$S</td>
+    <td>$K</td>
+    <td>$Z</td>
+    <td>--</td>
+    <td>--</td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">a/an</font></td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+  </tr>
+</table>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a name="ifchecks"></a>If 
+  checks</strong></font></p>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr> 
+    <td><strong><font size="2" face="Arial, Helvetica, sans-serif">If check</font></strong></td>
+    <td><strong><font size="2" face="Arial, Helvetica, sans-serif">Argument(s)</font></strong></td>
+    <td><strong><font size="2" face="Arial, Helvetica, sans-serif">Meaning</font></strong></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">rand</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">number</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is random percentage 
+      less than or equal to number</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">mobhere</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">vnum</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is a mobile with this 
+      vnum in the room</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is a mobile with this 
+      name in the room</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">objhere</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">vnum</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is an object with this 
+      vnum in the room</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is an object with this 
+      name in the room</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">mobexists</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does NPC 'name' exist 
+      somewhere in the world</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">objexists</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does object 'name' 
+      exist somewhere in the world</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">people</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">== integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is the number of people 
+      in room equal to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">players</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">== integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is the number of PCs 
+      in the room equal to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">mobs</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">== integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is the number of NPCs 
+      in the room equal to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">clones</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">== integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is the number of NPCs 
+      in the room with the same vnum as the NPC who activated the program equal 
+      to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">order</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">== integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is the order (of several 
+      similar NPCs) of the NPC who activated the trigger equal to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">hour</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is the hour (game time) 
+      equal to integer</font></td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isnpc</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">$*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* an NPC</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">ispc</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">$*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* a PC</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isgood</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* have a good 
+      alignment</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isneutral</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* have a neutral 
+      alignment</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isevil</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* have an evil 
+      alignment</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isimmort</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* an immortal (level 
+      of $* &gt; LEVEL_HERO)</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">ischarm</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* affected by charm</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isfollow</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* a follower with 
+      their master in the room</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isactive</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s position &gt; 
+      POS_SLEEPING</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isdelay</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* have a delayed 
+      MOBprogram pending</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isvisible</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* visible to NPC 
+      who activated the program</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">hastarget</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* have a MOBprogram 
+      target in the room</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">istarget</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* the target of 
+      NPC who activated the program</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">isquested</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">$*</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* quested</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">affected</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* affect</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* affected by affect</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">act</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* act</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s ACT set to 
+      act</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">off</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* off</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s OFF set to 
+      off</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">imm</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* imm</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s IMM set to 
+      imm</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">carries</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* carrying object 
+      name</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">wears</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* wearing object 
+      name</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">has</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* type</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* have object 
+      of item_type type</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">uses</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* type</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* wearing object 
+      of item_type type</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s name name</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">pos</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* position</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s position position 
+      (sleeping etc.)</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">clan</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* belong to clan 
+      name</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">race</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* name</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $* of race name</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">class</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* name</font></td>
+    <td><p><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s class name</font></p></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">objtype</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* type</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s item_type type</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">vnum</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s virtual number 
+      equal to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">hpcnt</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">$* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s hippoint percentage 
+      equal to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">room</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">$* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is vnum of the room 
+      $* is in equal to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">sex</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">$* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s sex equal to 
+      integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">level</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">$* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s level equal 
+      to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">align</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">$* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*'s align equal 
+      to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">money</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">$* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Does $* have money 
+      (in silver) equal to integer</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">objval#</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">$* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is $*-&gt;value[#] 
+      equal to integer (# from 0-4)</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">grpsize</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif"> $* == integer</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">Is group size of $* 
+      equal to integer</font></td>
+  </tr>
+</table>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+<p><strong><font size="2" face="Arial, Helvetica, sans-serif"><a name="commands"></a>MOBcommands</font></strong></p>
+<table width="100%" border="1" bordercolor="#FFFFFF">
+  <tr> 
+    <td width="20%"><strong><font size="2" face="Arial, Helvetica, sans-serif">MOBcommand</font></strong></td>
+    <td width="26%"><strong><font size="2" face="Arial, Helvetica, sans-serif">Argument(s)</font></strong></td>
+    <td width="8%">&nbsp;</td>
+    <td width="20%"><strong><font size="2" face="Arial, Helvetica, sans-serif">MOBcommand</font></strong></td>
+    <td width="26%"><strong><font size="2" face="Arial, Helvetica, sans-serif">Argument(s)</font></strong></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">ASOUND</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[text_string]</font></td>
+    <td width="5"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">ECHO</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[text_string]</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">GECHO</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[text_string]</font></td>
+    <td width="5"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">ZECHO</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[text_string]</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">ECHOAT</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[victim] [text_string]</font></td>
+    <td width="5"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">ECHOAROUND</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[victim] [text_string]</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">MLOAD</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[vnum]</font></td>
+    <td width="5"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">OLOAD</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[vnum] {level} {wear|room}</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">KILL</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[victim]</font></td>
+    <td width="5"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">FLEE</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">REMOVE</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[victim] [vnum]</font></td>
+    <td width="5"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">JUNK</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[object]</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">PURGE</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[argument]</font></td>
+    <td width="5"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">AT</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[destination] [command]</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">GOTO</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[destination]</font></td>
+    <td width="5"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">TRANSFER</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[victim] [destination]</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">GTRANSFER</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[victim] [destination]</font></td>
+    <td width="5"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">OTRANSFER</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[object] [destination]</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">FORCE</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[victim] [command]</font></td>
+    <td width="5"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">GFORCE</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[victim] [command]</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">VFORCE</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[victim] [command]</font></td>
+    <td width="5"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">CAST</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[spell] [victim]</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">DAMAGE</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[victim] [min] [max] 
+      {lethal}</font></td>
+    <td width="5"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">CALL</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[vnum] [victim] [target1] 
+      [target2]</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">DELAY</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td width="5"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">CANCEL</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+  </tr>
+  <tr> 
+    <td><font size="2" face="Arial, Helvetica, sans-serif">REMEMBER</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">[victim]</font></td>
+    <td width="5"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">FORGET</font></td>
+    <td><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+  </tr>
+</table>
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="#top">top</a></font></p>
+</body>
+</html>

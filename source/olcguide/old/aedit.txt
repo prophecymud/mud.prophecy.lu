@@ -1,0 +1,89 @@
+Aedit - Area Edit
+-----------------
+
+Useful in the overall management of areas by the implementors on the builder's
+port, and also useful in editing time and weather customs by the builder to tailor
+his or her area.  Below are the commands used by the Area Editor under OLC.
+
+age:
+	The age of the area, in weeks.  This number is not to be altered in any form, 
+	please do not use this command.
+
+builder [name]:
+	Sets up the named person for building the area, regardless of OLC security.
+	If more than one person is building the area, names have to be done one at 
+	a time.
+
+commands:
+	shows a list of possible commands under Aedit.
+
+aedit create [vnum]:
+	For builder port implementors only.  This command is used after consulting 
+	"alist" to find the last vnum used for an area, found in the far left side
+	of the columns.  This command can be used outside of the Aedit editor, and
+	will also put the user into the Aedit editor upon creation of the area.
+
+filename ../area/[area].are:
+	For builder port implementors only.  This command sets a filename for the
+	parea account folder that stores area files.
+
+name [Name of Area]:
+	Sets up a regular name for the area, such as Sendar or Algarian Plains.
+
+reset:
+	resets the area, so mobs and objects may repop.  
+
+security 9:
+	Sets OLC security for the area, so that only the area imps and the builders
+	set for the area may edit the area as necessary.  To be used by area imps 
+	only.
+
+show:
+	Shows the Aedit stats for the area.  By hitting the enter key on a blank
+	line in aedit, it does the same thing as the "sho" command.
+
+vnum [lower vnum] [upper vnum]:
+	In one command, sets the uppoer and lower vnum range for the area.
+	For area imps only.  Check against other areas to make
+	sure vnums don't overlap.
+
+lvnum [lower vnum #]:
+	Resets the lower vnum for the range of the area.
+
+uvnum [upper vnum #]:
+	Resets the upper vnum for the range of the area.
+
+credits {level_range} Builder_name Area_name:
+	Sets up the credits, which players will see when they type "areas" on the
+	mud.  It will look something like "{10 25} Joe Joe's Diner"
+
+?:
+	Shows the listing of in-context OLC helpfiles available.
+
+version:
+	Gives the version and credits for our version of OLC.
+
+
+Customs (For All Builders):
+Customs add a flavor to the area, setting it away from the usual "The Day has begun."
+There are two sets of customs, Time and Weather.
+
+Time customs:
+-------------
+There are four time customs, reflecting the start of the day, sunrise, sunset, and darkness.
+When in Aedit, just type "time [type] [string you want to use for that time]"
+
+Time types: daybreak sunrise sunset dark
+Example: "time sunrise The sun rises in the east."
+
+
+Weather Customs:
+----------------
+There are six weather customs, reflecting things such as rain, lightning, or the stoppage
+of such.  When in Aedit, just type "weather [type][string you want to use for that kind of
+weather]"
+
+Weather types: clear cloudy rain stoprain lightning stoplightning
+Example: "weather clear The clouds roll away, revealing clear skies."
+
+
