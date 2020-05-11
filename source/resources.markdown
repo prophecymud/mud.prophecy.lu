@@ -9,6 +9,11 @@ permalink: /resources/
 * [Mudlet](https://www.mudlet.org)
 * [MUSHclient](http://mushclient.com/)
 
+## Equipment
+
+* [Official eq tables (Beta)](/eqdump/)
+* [Murmus's Prophecy MUD-eq site](http://mudeq.darkeye.net/)
+
 ## Misc
 
 * [Prophecy on GitHub](http://github.com/prophecymud)
