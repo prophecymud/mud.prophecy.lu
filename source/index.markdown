@@ -13,7 +13,7 @@ We are constantly adding new areas based on the Belgariad with the help of our b
 
 Prophecy offers 91 mortal levels and the choice of going PK set at any time. Player Killing is encouraged but restricted to a 10 level range. Roleplaying is also highly encouraged and you are asked to use an unique name for your character in order to retain the MUD's roleplaying atmosphere.
 
-If you have what it takes you may eventually join one of our clans and defend your clan's honor either as a Guardian of the West or in the Army of Angaraks. For those who sympathize with neither power there is always the choice of joining the Neutral clan or the despised Clan of the Bear.
+If you have what it takes you may eventually join one of our PK clans and defend your clan's honor either as a Guardian of the West or in the Army of Angaraks. For those who sympathize with neither power there is always the choice of joining the Legions of Neutral or the despised Bear Cult.
 
 Whether you're a returning player or completely new, come join us!
 
