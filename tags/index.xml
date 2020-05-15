@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Prophecy MUD</title>
-    <link>/tags/</link>
+    <link>https://github.com/prophecythemud/mud.prophecy.lu/tags/</link>
     <description>Recent content in Tags on Prophecy MUD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 14 May 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://github.com/prophecythemud/mud.prophecy.lu/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Prophecy MUD, Prophecy, Text-based gaming, MUDs, About Prophecy MUD, Introduction</title>
-      <link>/tags/prophecy-mud-prophecy-text-based-gaming-muds-about-prophecy-mud-introduction/</link>
+      <link>https://github.com/prophecythemud/mud.prophecy.lu/tags/prophecy-mud-prophecy-text-based-gaming-muds-about-prophecy-mud-introduction/</link>
       <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/prophecy-mud-prophecy-text-based-gaming-muds-about-prophecy-mud-introduction/</guid>
+      <guid>https://github.com/prophecythemud/mud.prophecy.lu/tags/prophecy-mud-prophecy-text-based-gaming-muds-about-prophecy-mud-introduction/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tutorial</title>
-      <link>/tags/tutorial/</link>
+      <link>https://github.com/prophecythemud/mud.prophecy.lu/tags/tutorial/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/tutorial/</guid>
+      <guid>https://github.com/prophecythemud/mud.prophecy.lu/tags/tutorial/</guid>
       <description></description>
     </item>
     
