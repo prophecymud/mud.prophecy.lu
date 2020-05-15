@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://prophecythemud.github.io/mud.prophecy.lu/about/</loc>
+    <lastmod>2020-05-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://prophecythemud.github.io/mud.prophecy.lu/</loc>
+    <lastmod>2020-05-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://prophecythemud.github.io/mud.prophecy.lu/blog/</loc>
     <lastmod>2020-05-14T00:00:00+00:00</lastmod>
   </url>
@@ -14,11 +24,6 @@
   
   <url>
     <loc>https://prophecythemud.github.io/mud.prophecy.lu/categories/info/</loc>
-    <lastmod>2020-05-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://prophecythemud.github.io/mud.prophecy.lu/</loc>
     <lastmod>2020-05-14T00:00:00+00:00</lastmod>
   </url>
   
@@ -75,36 +80,6 @@
   <url>
     <loc>https://prophecythemud.github.io/mud.prophecy.lu/tags/tutorial/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://prophecythemud.github.io/mud.prophecy.lu/about/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://prophecythemud.github.io/mud.prophecy.lu/blog/goisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://prophecythemud.github.io/mud.prophecy.lu/blog/hugoisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://prophecythemud.github.io/mud.prophecy.lu/categories/go/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://prophecythemud.github.io/mud.prophecy.lu/categories/jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://prophecythemud.github.io/mud.prophecy.lu/blog/migrate-from-jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
