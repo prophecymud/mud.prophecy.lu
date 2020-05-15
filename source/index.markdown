@@ -7,7 +7,7 @@ layout: home
 
 {{ site.description }}
 
-Prophecy has been around since 1995 and is still growing. It is based on the Belgariad saga by David and Leigh Eddings and runs with a heavily modified ROM 2.4 code with a lot of unique features, such as our clan system and the by-now famous quest system.
+Prophecy has been around since 1995 and is still growing. It is based on the Belgariad saga by David and Leigh Eddings and runs with a heavily modified ROM 2.4 code with a lot of changes and unique features, such as our clan system, our automated quests and miniquests, and much more.
 
 We are constantly adding new areas based on the Belgariad with the help of our brilliant builder staff. The world looks and feels like the world the Eddings couple once created.
 
