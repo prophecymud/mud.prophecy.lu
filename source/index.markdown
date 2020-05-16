@@ -7,4 +7,8 @@ layout: home
 
 {{ site.description }}
 
-[mud.prophecy.lu:4000](telnet://mud.prophecy.lu:4000)
+Whether you're a returning player or completely new, come join us!
+
+Point your MUD client at [mud.prophecy.lu:4000](telnet://mud.prophecy.lu:4000),
+play from your browser with the [Grapevine web client](https://grapevine.haus/games/Prophecy/play),
+or check out our [Resources](/resources/) page for other ways to play.
