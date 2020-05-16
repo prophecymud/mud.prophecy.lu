@@ -1,10 +1,8 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
+layout: page
+title: About Us
+permalink: /About/
 ---
-
 
 #About Us
 Prophecy MUD is a huge, text-based world (+121 original areas) run on heavily modified ROM 2.4 code. Like all traditional MUDs, Prophecy is completely devoid of graphics. This is a feature, not a bug! First-time MUD gamers will be surprised how very engrossing a text-based game can be. Prophecy’s content and gaming style is based on the popular David Eddings fantasy series The Belgariad and The Malloreon. The books serve as the basis for choice of character race, class, and initial alignment. Prophecy MUD is a natural for roleplay, yet also provides opportunities for restricted player killing. A friendly player base and clans dedicated to new player support make Prophecy the perfect beginner’s gateway to MUDs.
@@ -24,3 +22,6 @@ Are you a Prophecy MUD “veteran”? Drop in and check the place out–we love 
 
 #Join Us!
 In any case, if you like the idea of reliving the glory days of ROM MUDs, are a new player looking for a first game to cut your teeth on, or simply looking for a place to while away a few hours in one of the longest-running servers out there, point your client to [mud.prophecy.lu:4000](telnet://mud.prophecy.lu:4000). Or, for instant gratification, use a ready-to-play browser client such as [Prophecy MUD on Grapevine](https://grapevine.haus/games/Prophecy/play) or [Prophecy MUD on MudPortal](http://www.mudportal.com/play?host=mud.prophecy.lu&port=4000).
+
+
+
