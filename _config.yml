@@ -1,3 +1,33 @@
+
+Skip to content
+Pull requests
+Issues
+Marketplace
+Explore
+@prophecythemud
+Learn Git and GitHub without any code!
+
+Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
+prophecymud /
+mud.prophecy.lu
+
+1
+0
+
+    1
+
+Code
+Issues 1
+Pull requests 2
+Actions
+Projects 0
+Security 0
+
+    Insights
+
+mud.prophecy.lu/_config.yml
+@anhegofcherek anhegofcherek Add site.play_url 86876b0 14 days ago
+56 lines (50 sloc) 1.97 KB
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
@@ -23,27 +53,7 @@ source: source
 title: Prophecy MUD
 email: anheg@prophecy.lu
 description: >- # this means to ignore newlines until "baseurl:"
- Prophecy: The MUD is a huge world (+121 original areas) run on heavily modified ROM 2.4 code. Prophecy’s content and gaming style is based on the David Eddings fantasy book series The Belgariad and The Malloreon. The books serve as the basis for a character’s race, class, and initial alignment. The game is a natural for roleplay, yet also provides opportunities for restricted player killing. A friendly player base and clans dedicated to new player support make Prophecy the perfect beginner’s gateway to MUDs.
-
-
-### About Us
-Prophecy MUD is a huge, text-based world (+121 original areas) run on heavily modified ROM 2.4 code since 1994. Like all traditional MUDs, Prophecy is completely devoid of graphics. This is a feature, not a bug! First-time MUD gamers will be surprised how very engrossing a text-based game can be. Prophecy’s content and gaming style is based on the popular David Eddings fantasy series The Belgariad and The Malloreon. The books serve as the basis for choice of character race, class, and initial alignment. Prophecy MUD is a natural for roleplay, yet also provides opportunities for restricted player killing. A friendly player base and clans dedicated to new player support make Prophecy the perfect beginner’s gateway to MUDs.
-
-
-### Questing
-Prophecy MUD offers games within the game, such as auto-questing which allows players to earn customizable gear, experience, and in-game currency. Unique mini-quests can be found in many areas that offer a challenge as well as rich rewards. Finally, there are Immortal-hosted quests for added amusement and coveted prizes. 
-
-### On-going Development
-Prophecy MUD was officially ported to the Go language in December 2019 after years of development, facilitating continuous improvement and ensuring stable gameplay for years to come. Prophecy MUD manager "King Anheg” is keeping busy with new changes such as elective ‘hometowns’, ooc buffer retrieval for catching up on the latest public discussions, scrimmages on demand for purchase, and other Good Things(TM) !
-
-### Former Players Welcome
-Are you a Prophecy MUD “veteran”? Drop in and check the place out! We love catching up with returning players--there's a very good chance you'll be recognized and welcomed accordingly. If you built an area here, it’s most likely still in use. We’re a no-pwipe MUD, so your character(s), hostel room stash, and qeq are right where you left them.
-
-
-### Join Us!
-In any case, if you like the idea of reliving the glory days of ROM MUDs, are a new player looking for a first game to cut your teeth on, or simply looking for a place to while away a few hours in one of the longest-running servers out there, point your client to [mud.prophecy.lu:4000](telnet://mud.prophecy.lu:4000). Or, for instant gratification, use a ready-to-play browser client such as [Prophecy MUD on Grapevine](https://grapevine.haus/games/Prophecy/play) or [Prophecy MUD on MudPortal](http://www.mudportal.com/play?host=mud.prophecy.lu&port=4000).
-
-
+  Prophecy MUD is a text-based Multi-User Dungeon game set in the world of David Eddings's Belgariad and Malloreon books.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  prophecymud
@@ -52,6 +62,8 @@ github_username:  prophecymud
 theme: minima
 plugins:
   - jekyll-feed
+
+play_url: telnet://mud.prophecy.lu/
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -72,3 +84,18 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+    © 2020 GitHub, Inc.
+    Terms
+    Privacy
+    Security
+    Status
+    Help
+
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
+
