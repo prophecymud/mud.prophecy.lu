@@ -1,3 +1,33 @@
+
+Skip to content
+Pull requests
+Issues
+Marketplace
+Explore
+@prophecythemud
+Learn Git and GitHub without any code!
+
+Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
+prophecymud /
+mud.prophecy.lu
+
+1
+0
+
+    1
+
+Code
+Issues 1
+Pull requests 2
+Actions
+Projects 0
+Security 0
+
+    Insights
+
+mud.prophecy.lu/_config.yml
+@anhegofcherek anhegofcherek Add site.play_url 86876b0 14 days ago
+56 lines (50 sloc) 1.97 KB
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
@@ -54,3 +84,18 @@ play_url: telnet://mud.prophecy.lu/
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+    © 2020 GitHub, Inc.
+    Terms
+    Privacy
+    Security
+    Status
+    Help
+
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
+

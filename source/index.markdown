@@ -5,18 +5,19 @@
 layout: home
 ---
 
-{{ site.description }}
+### About Us
+Prophecy MUD is a huge, text-based world (+121 original areas) run on heavily modified ROM 2.4 code since 1994. Like all traditional MUDs, Prophecy is completely devoid of graphics. This is a feature, not a bug! First-time MUD gamers will be surprised how very engrossing a text-based game can be. Prophecy’s content and gaming style is based on the popular David Eddings fantasy series The Belgariad and The Malloreon. The books serve as the basis for choice of character race, class, and initial alignment. Prophecy MUD is a natural for roleplay, yet also provides opportunities for restricted player killing. A friendly player base and clans dedicated to new player support make Prophecy the perfect beginner’s gateway to MUDs.
 
-Prophecy has been around since 1995 and is still growing. It is based on the Belgariad saga by David and Leigh Eddings and runs with a heavily modified ROM 2.4 code with a lot of changes and unique features, such as our clan system, our automated quests and miniquests, and much more.
 
-We are constantly adding new areas based on the Belgariad with the help of our brilliant builder staff. The world looks and feels like the world the Eddings couple once created.
+### Questing
+Prophecy MUD offers games within the game, such as auto-questing which allows players to earn customizable gear, experience, and in-game currency. Unique mini-quests can be found in most areas that offer a challenge as well as rich rewards. Finally, there are Immortal-hosted quests for added amusement and coveted prizes.
 
-Prophecy offers 91 mortal levels and the choice of going PK set at any time. Player Killing is encouraged but restricted to a 10 level range. Roleplaying is also highly encouraged and you are asked to use an unique name for your character in order to retain the MUD's roleplaying atmosphere.
+### On-going Development
+Prophecy MUD was officially ported to the Go language in December 2019 after years of development, facilitating continuous improvement and ensuring stable gameplay for years to come. Prophecy MUD manager "King Anheg” is keeping busy with new changes such as elective ‘hometowns’, ooc buffer retrieval for catching up on the latest public discussions, scrimmages on demand for purchase, and other Good Things(TM) !
 
-If you have what it takes you may eventually join one of our PK clans and defend your clan's honor either as a Guardian of the West or in the Army of Angaraks. For those who sympathize with neither power there is always the choice of joining the Legions of Neutral or the despised Bear Cult.
+### Former Players Welcome
+Are you a Prophecy MUD “veteran”? Drop in and check the place out! We love catching up with returning players--there's a very good chance you'll be recognized and welcomed accordingly. If you built an area here, it’s most likely still in use. We’re a no-pwipe MUD, so your character(s), hostel room stash, and qeq are right where you left them.
 
-Whether you're a returning player or completely new, come join us!
 
-Point your MUD client at [mud.prophecy.lu:4000](telnet://mud.prophecy.lu:4000),
-play from your browser with the [Grapevine web client](https://grapevine.haus/games/Prophecy/play),
-or check out our [Resources](/resources/) page for other ways to play.
+### Join Us!
+In any case, if you like the idea of reliving the glory days of ROM MUDs, are a new player looking for a first game to cut your teeth on, or simply looking for a place to while away a few hours in one of the longest-running servers out there, point your client to [mud.prophecy.lu:4000](telnet://mud.prophecy.lu:4000). Or, for instant gratification, use a ready-to-play browser client such as [Prophecy MUD on Grapevine](https://grapevine.haus/games/Prophecy/play) or [Prophecy MUD on MudPortal](http://www.mudportal.com/play?host=mud.prophecy.lu&port=4000).
