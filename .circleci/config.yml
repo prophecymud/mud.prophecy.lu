@@ -12,9 +12,7 @@ jobs:
       - run:
           name: Which bundler?
           command: bundle -v
-      - run:
-          name: Bootstrap
-          command: make bootstrap
+      - ruby/install-deps
       - run:
           name: Build
           command: make build

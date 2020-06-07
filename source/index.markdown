@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
@@ -6,13 +5,12 @@
 layout: home
 ---
 
-
 ### About Us
 Prophecy MUD is a huge, text-based world (+121 original areas) run on heavily modified ROM 2.4 code since 1994. Like all traditional MUDs, Prophecy is completely devoid of graphics. This is a feature, not a bug! First-time MUD gamers will be surprised how very engrossing a text-based game can be. Prophecy’s content and gaming style is based on the popular David Eddings fantasy series The Belgariad and The Malloreon. The books serve as the basis for choice of character race, class, and initial alignment. Prophecy MUD is a natural for roleplay, yet also provides opportunities for restricted player killing. A friendly player base and clans dedicated to new player support make Prophecy the perfect beginner’s gateway to MUDs.
 
 
 ### Questing
-Prophecy MUD offers games within the game, such as auto-questing which allows players to earn customizable gear, experience, and in-game currency. Unique mini-quests can be found in many areas that offer a challenge as well as rich rewards. Finally, there are Immortal-hosted quests for added amusement and coveted prizes. 
+Prophecy MUD offers games within the game, such as auto-questing which allows players to earn customizable gear, experience, and in-game currency. Unique mini-quests can be found in most areas that offer a challenge as well as rich rewards. Finally, there are Immortal-hosted quests for added amusement and coveted prizes.
 
 ### On-going Development
 Prophecy MUD was officially ported to the Go language in December 2019 after years of development, facilitating continuous improvement and ensuring stable gameplay for years to come. Prophecy MUD manager "King Anheg” is keeping busy with new changes such as elective ‘hometowns’, ooc buffer retrieval for catching up on the latest public discussions, scrimmages on demand for purchase, and other Good Things(TM) !
